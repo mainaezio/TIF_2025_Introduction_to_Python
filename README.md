@@ -1,14 +1,14 @@
-# TIF_2024_Introduction_to_Python
+# TIF_2025_Introduction_to_Python
 
 Introduzione a Python per Fisica
 =================================
 
 Il materiale in questo repository viene utilizzato per il corso di Tecniche Informatiche per la Fisica
-del primo anno del Corso di Laurea in Fisica dell'Università di Torino nell'Anno Accademico 2024/2025.
+del primo anno del Corso di Laurea in Fisica dell'Università di Torino nell'Anno Accademico 2025/2026.
 
 Il corso si pone l'obiettivo di familiarizzare gli studenti con l'uso del linguaggio Python e con le principali librerie utilizzate in ambito scientifico: Numpy, Scipy e Matplotlib.
 
-I notebooks Jupyter delle lezioni sono disponibili anche su: [http://www.to.infn.it/~maina/didattica/TIF_2024](http://www.to.infn.it/~maina/didattica/TIF_2024)
+I notebooks Jupyter delle lezioni sono disponibili anche su: [http://www.to.infn.it/~maina/didattica/TIF_2025](http://www.to.infn.it/~maina/didattica/TIF_2025)
 
 - in formato html (sola lettura)
 
