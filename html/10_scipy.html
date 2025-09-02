@@ -7529,7 +7529,7 @@ a.anchor-link {
 </li></li></li></li></li></li></ul>
 </div>
 <hr/>
-<h2 id="10.1-Nozioni-fondamentali">10.1 Nozioni fondamentali<a class="anchor-link" href="#10.1-Nozioni-fondamentali">¶</a></h2><p>La libreria scipy (SCIentific PYthon) fornisce un gran numero di algoritmi numerici. In questo notebook vengono presentati quelli di uso più comune che servono a calcolare integrali, trovare zeri, massimi e minimi di funzioni, risolvere equazioni differenziali e interpolare dati.<br/>
+<h2 id="Nozioni-fondamentali">Nozioni fondamentali<a class="anchor-link" href="#Nozioni-fondamentali">¶</a></h2><p>La libreria scipy (SCIentific PYthon) fornisce un gran numero di algoritmi numerici. In questo notebook vengono presentati quelli di uso più comune che servono a calcolare integrali, trovare zeri, massimi e minimi di funzioni, risolvere equazioni differenziali e interpolare dati.<br/>
 <code>scipy</code> è basata su <code>numpy</code>. Nella <a href="https://docs.scipy.org/doc/scipy/reference/tutorial/general.html">documentazione di scipy</a> viene raccomandato di importare le due librerie separatamente.</p>
 </div>
 </div>
@@ -7734,7 +7734,7 @@ Confrontare la risposta di un algoritmo con un grafico è spesso, quando possibi
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.2-Integrazione-numerica">10.2 Integrazione numerica<a class="anchor-link" href="#10.2-Integrazione-numerica">¶</a></h2><div style="padding:20px 20px 0px 50px;">
+<h2 id="Integrazione-numerica">Integrazione numerica<a class="anchor-link" href="#Integrazione-numerica">¶</a></h2><div style="padding:20px 20px 0px 50px;">
 <img alt="No description has been provided for this image" src="../Images/integral_comic_strip.png" width="900"/>
 <p> <br>
 (Svein Linge, Hans Petter Langtangen - Programming for Computations)</br></p>
@@ -8281,7 +8281,7 @@ Un invito alla prudenza:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.3-Risolvere--equazioni--differenziali-ordinarie">10.3 Risolvere  equazioni  differenziali ordinarie<a class="anchor-link" href="#10.3-Risolvere--equazioni--differenziali-ordinarie">¶</a></h2><div style="padding:20px 20px 20px 50px;">
+<h2 id="Risolvere--equazioni--differenziali-ordinarie">Risolvere  equazioni  differenziali ordinarie<a class="anchor-link" href="#Risolvere--equazioni--differenziali-ordinarie">¶</a></h2><div style="padding:20px 20px 20px 50px;">
 <img alt="No description has been provided for this image" src="../Images/FE_comic_strip.png" width="900"/>
 <p> <br>
 (Svein Linge, Hans Petter Langtangen - Programming for Computations)</br></p>
@@ -8665,7 +8665,7 @@ odeint(func, y0, t, args=(), Dfun=None, col_deriv=0, full_output=0, ml=None, mu=
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.4-Ricerca-delle-radici">10.4 Ricerca delle radici<a class="anchor-link" href="#10.4-Ricerca-delle-radici">¶</a></h2><p>Cercare una $x$ tale che $f(x)=0$
+<h2 id="Ricerca-delle-radici">Ricerca delle radici<a class="anchor-link" href="#Ricerca-delle-radici">¶</a></h2><p>Cercare una $x$ tale che $f(x)=0$
 si chiama <em>ricerca delle radici</em> di $f$. Si noti che un problema del tipo $g(x)=h(x)$ può essere riformulato come $f(x)=g(x)−h(x)=0$.</p>
 <p>Il modulo <code>optimize</code> di <code>scipy</code> fornisce diversi strumenti per la ricerca delle radici.</p>
 <p><br/></p>
@@ -8822,139 +8822,7 @@ si chiama <em>ricerca delle radici</em> di $f$. Si noti che un problema del tipo
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.5-Fit-di-un-set-di-dati">10.5 Fit di un set di dati<a class="anchor-link" href="#10.5-Fit-di-un-set-di-dati">¶</a></h2><p>Scipy fornisce una funzione piuttosto flessibile (basato sull'algoritmo di Levenburg-Marquardt), <code>scipy.optimize.curve_fit</code>, per interpolare un set di dati. L'assunzione è che vengano dati un set di punti
-$x_1, x_2,\cdots,x_N$, i corrispondenti valori $y_i$ e una dipendenza funzionale $y=f(x,\vec{p})$.
-Per fare un esempio, il numero di atomi non decaduti in un campione di una sostanza radioattiva segue la legge
-$$ N(t,N_0,\tau) = N_0\,\exp\left(-\frac{t}{\tau}\right).$$
-Si vuole determinare i parametri $\vec{p}=(p_1, p_2, \ldots,p_k)$ in modo che $r$, la somma degli scarti quadratici fra la curva e i dati, sia la più piccola possibile:</p>
-<p>$$r = \sum\limits_{i=1}^N \left(y_i - f(x_i, \vec{p})\right)^2$$</p>
-<p>Questo approccio è particolarmente utile quando i dati sono affetti da <em>rumore</em>: per ogni coppia $x_i,y_i$ è presente un termine di errore (ignoto) $\epsilon_i$, tale che $y_i=f(x_i,\vec{p})+\epsilon_i$.</p>
-<p>Un esempio per chiarire: assumiamo di avere dei dati che sappiamo essere descritti dalla funzione:
-$$f(x,\vec{p}) = a \exp(-b x) + c,$$
-che dipende dai parametri $\vec{p}=(a,b,c)$, che devono essere determinati usando i dati.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Fit function y=f(x,p) with parameters p=(a,b,c). """</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span>
-
-<span class="c1">#create fake data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="c1">#add noise</span>
-<span class="n">yi</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-<span class="c1">#call curve fit function</span>
-<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">)</span>
-<span class="c1"># extract fit parameters</span>
-<span class="n">af</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">cf</span> <span class="o">=</span> <span class="n">popt</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Optimal parameters are af=</span><span class="si">{</span><span class="n">af</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">, bf=</span><span class="si">{</span><span class="n">bf</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">, and cf=</span><span class="si">{</span><span class="n">cf</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
-
-<span class="c1"># best fit curve</span>
-<span class="n">yfitted</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">af</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">cf</span><span class="p">)</span>
-
-<span class="c1">#plot</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'data $y_i$'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">yfitted</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'fit $f(x_i)$'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Si noti che nell'esempio precedente abbiamo definito la funzione da utilizzare per il fit $y = f(x)$ usando del codice Python. Quindi possiamo utilizzare una funzione (quasi) arbitraria nel metodo <code>curve_fit</code>.</p>
-<p>La funzione <code>curve_fit</code> restituisce una tuple <code>popt, pcov</code>. Il primo elemento, <code>popt</code>, contiene l'ntupla dei parametri ottimali (OPTimal Parameters), cioè i parametri che minimizzano la somma degli scarti quadratici. Il secondo elemento, <code>pcov</code>, contiene la matrice di covarianza di tutti i parametri (Sperimentazioni di Fisica). La diagonale fornisce la varianza della stima dei parametri. La standard deviation sulla stima dei parametri può quindi essere calcolata come</p>
-<pre><code>perr = np.sqrt(np.diag(pcov)).
-</code></pre>
-<p>L'algoritmo di Levenburg-Marquardt richiede, per iniziare la sua procedura, una stima iniziale dei parametri. Se questa non viene fornita, come nell'esempio precedente, il valore “1.0“ viene assunto come stima di partenza.</p>
-<p>Se l'algoritmo non riesce a fittare i dati con la funzione ipotizzata, è necessario fornire a <code>curve_fit</code> una stima migliore per i parametri iniziali. Nell'esempio precedente potremmo passare le nostre stime cambiando la linea</p>
-<div class="highlight"><pre><span></span><span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">)</span>
-</pre></div>
-<p>in</p>
-<div class="highlight"><pre><span></span><span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.6</span><span class="p">))</span>
-</pre></div>
-<p>se avessimo ragione di ritenere che <em>a</em> = 2, <em>b</em> = 1 and <em>c</em> = 0.6 siano dei valori "ragionevoli". Una volta che la stima iniziale è "più o meno corretta" il fit funziona bene.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="width:95%; padding:5px 10px 5px; border-style:solid; border-width:0px 0px 0px 10px; border-color:#b8d0d0; margin:20px 0px 10px 10px">
-<h4> Imparare Facendo</h4>
-<p>Un set di misure ha dato il risultato
-<code>
-array([ 1.98781717e-01,  3.24825975e-01,  2.98912925e-01,  4.93741345e-02,
-3.80536122e-01, -2.05719267e-01, -7.71630572e-03, -1.51733833e-01,
-1.73748896e-02,  9.02509179e-03, -2.20920245e-02,  1.34501550e-02,
-3.06908554e-01,  2.34147443e-01,  7.75703310e-01,  4.99104499e-01,
-5.66648179e-01,  1.04641129e+00,  1.67507051e+00,  1.77283086e+00,
-1.96239227e+00,  2.27163706e+00,  2.54161451e+00,  3.09807009e+00,
-3.45291476e+00,  4.23653254e+00,  4.58924190e+00,  5.08824411e+00,
-5.76377627e+00,  6.04351916e+00,  6.59161494e+00,  7.25319841e+00,
-7.96917169e+00,  8.06559558e+00,  8.91595385e+00,  9.78458262e+00,
-1.04143742e+01,  1.14280612e+01,  1.18132229e+01,  1.25599940e+01,
-1.35895984e+01,  1.41159890e+01,  1.53848688e+01,  1.63810995e+01,
-1.69877641e+01,  1.77683845e+01,  1.88923474e+01,  1.95531287e+01,
-2.12809123e+01,  2.15518168e+01])
-</code>
-ai tempi
-<code>
-array([0.        , 0.10204082, 0.20408163, 0.30612245, 0.40816327,
-0.51020408, 0.6122449 , 0.71428571, 0.81632653, 0.91836735,
-1.02040816, 1.12244898, 1.2244898 , 1.32653061, 1.42857143,
-1.53061224, 1.63265306, 1.73469388, 1.83673469, 1.93877551,
-2.04081633, 2.14285714, 2.24489796, 2.34693878, 2.44897959,
-2.55102041, 2.65306122, 2.75510204, 2.85714286, 2.95918367,
-3.06122449, 3.16326531, 3.26530612, 3.36734694, 3.46938776,
-3.57142857, 3.67346939, 3.7755102 , 3.87755102, 3.97959184,
-4.08163265, 4.18367347, 4.28571429, 4.3877551 , 4.48979592,
-4.59183673, 4.69387755, 4.79591837, 4.89795918, 5.        ])
-</code>
-Trovate la parabola della forma <code>
-y(t) = a<em>t**2 + b</em>t + c
-</code>
-che meglio approssima i dati.<br/>
-Fate un plot dei dati e della curva ottenuta.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.6-Ottimizzazione-ovvero-trovare-minimi-(e-massimi)">10.6 Ottimizzazione ovvero trovare minimi (e massimi)<a class="anchor-link" href="#10.6-Ottimizzazione-ovvero-trovare-minimi-(e-massimi)">¶</a></h2><p>Spesso è necessario trovare il minimo o il massimo di una particolare funzione <em>f(x)</em> dove <em>f</em> è una funzione scalare mentre <em>x</em> può essere un vettore. Applicazioni tipiche sono la minimizzazione di quantità come il costo, il rischio o l'errore, oppure la massimizzazione della produttività, efficienza o profitto. Le routines di ottimizzazione tipicamente forniscono un metodo per minimizzare una funzione data: per massimizzare <em>f(x)</em> è sufficiente minimizzare <em>g(x)= − f(x)</em>.</p>
+<h2 id="Ottimizzazione-ovvero-trovare-minimi-(e-massimi)">Ottimizzazione ovvero trovare minimi (e massimi)<a class="anchor-link" href="#Ottimizzazione-ovvero-trovare-minimi-(e-massimi)">¶</a></h2><p>Spesso è necessario trovare il minimo o il massimo di una particolare funzione <em>f(x)</em> dove <em>f</em> è una funzione scalare mentre <em>x</em> può essere un vettore. Applicazioni tipiche sono la minimizzazione di quantità come il costo, il rischio o l'errore, oppure la massimizzazione della produttività, efficienza o profitto. Le routines di ottimizzazione tipicamente forniscono un metodo per minimizzare una funzione data: per massimizzare <em>f(x)</em> è sufficiente minimizzare <em>g(x)= − f(x)</em>.</p>
 <p>Di seguito, un esempio che mostra (i) la definizione della funzione <em>f(x)</em> da minimizzare e (ii) la chiamata a <code>scipy.optimize.fmin</code> a cui vengono passati la funzione <em>f</em> da minimizzare e un valore iniziale <em>x</em><sub>0</sub> da cui partire per la ricerca del minimo, e che restituisce il valore <em>x</em> per cui <em>f(x)</em> ha un minimo locale. Tipicamente, la ricerca del minimo è locale, nel senso che l'algoritmo segue il gradiente (derivata multidimensionale) nel punto in cui si trova.
 Facciamo come prima cosa il grafico della funzione. Il plot suggerisce che i due minimi più a destra possono essere cercati partendo dai due punti <em>x</em><sub>0</sub> = 1.0 e <em>x</em><sub>0</sub> = 2.0.</p>
 </div>
@@ -9092,6 +8960,138 @@ Facciamo come prima cosa il grafico della funzione. Il plot suggerisce che i due
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Fit-di-un-set-di-dati">Fit di un set di dati<a class="anchor-link" href="#Fit-di-un-set-di-dati">¶</a></h2><p>Scipy fornisce una funzione piuttosto flessibile (basato sull'algoritmo di Levenburg-Marquardt), <code>scipy.optimize.curve_fit</code>, per interpolare un set di dati. L'assunzione è che vengano dati un set di punti
+$x_1, x_2,\cdots,x_N$, i corrispondenti valori $y_i$ e una dipendenza funzionale $y=f(x,\vec{p})$.
+Per fare un esempio, il numero di atomi non decaduti in un campione di una sostanza radioattiva segue la legge
+$$ N(t,N_0,\tau) = N_0\,\exp\left(-\frac{t}{\tau}\right).$$
+Si vuole determinare i parametri $\vec{p}=(p_1, p_2, \ldots,p_k)$ in modo che $r$, la somma degli scarti quadratici fra la curva e i dati, sia la più piccola possibile:</p>
+<p>$$r = \sum\limits_{i=1}^N \left(y_i - f(x_i, \vec{p})\right)^2$$</p>
+<p>Questo approccio è particolarmente utile quando i dati sono affetti da <em>rumore</em>: per ogni coppia $x_i,y_i$ è presente un termine di errore (ignoto) $\epsilon_i$, tale che $y_i=f(x_i,\vec{p})+\epsilon_i$.</p>
+<p>Un esempio per chiarire: assumiamo di avere dei dati che sappiamo essere descritti dalla funzione:
+$$f(x,\vec{p}) = a \exp(-b x) + c,$$
+che dipende dai parametri $\vec{p}=(a,b,c)$, che devono essere determinati usando i dati.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">curve_fit</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Fit function y=f(x,p) with parameters p=(a,b,c). """</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="c1">#create fake data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="c1">#add noise</span>
+<span class="n">yi</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1">#call curve fit function</span>
+<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">)</span>
+<span class="c1"># extract fit parameters</span>
+<span class="n">af</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">cf</span> <span class="o">=</span> <span class="n">popt</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Optimal parameters are af=</span><span class="si">{</span><span class="n">af</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">, bf=</span><span class="si">{</span><span class="n">bf</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">, and cf=</span><span class="si">{</span><span class="n">cf</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+
+<span class="c1"># best fit curve</span>
+<span class="n">yfitted</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">af</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">cf</span><span class="p">)</span>
+
+<span class="c1">#plot</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'data $y_i$'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">yfitted</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'fit $f(x_i)$'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Si noti che nell'esempio precedente abbiamo definito la funzione da utilizzare per il fit $y = f(x)$ usando del codice Python. Quindi possiamo utilizzare una funzione (quasi) arbitraria nel metodo <code>curve_fit</code>.</p>
+<p>La funzione <code>curve_fit</code> restituisce una tuple <code>popt, pcov</code>. Il primo elemento, <code>popt</code>, contiene l'ntupla dei parametri ottimali (OPTimal Parameters), cioè i parametri che minimizzano la somma degli scarti quadratici. Il secondo elemento, <code>pcov</code>, contiene la matrice di covarianza di tutti i parametri (Sperimentazioni di Fisica). La diagonale fornisce la varianza della stima dei parametri. La standard deviation sulla stima dei parametri può quindi essere calcolata come</p>
+<pre><code>perr = np.sqrt(np.diag(pcov)).
+</code></pre>
+<p>L'algoritmo di Levenburg-Marquardt richiede, per iniziare la sua procedura, una stima iniziale dei parametri. Se questa non viene fornita, come nell'esempio precedente, il valore “1.0“ viene assunto come stima di partenza.</p>
+<p>Se l'algoritmo non riesce a fittare i dati con la funzione ipotizzata, è necessario fornire a <code>curve_fit</code> una stima migliore per i parametri iniziali. Nell'esempio precedente potremmo passare le nostre stime cambiando la linea</p>
+<div class="highlight"><pre><span></span><span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">)</span>
+</pre></div>
+<p>in</p>
+<div class="highlight"><pre><span></span><span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">yi</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.6</span><span class="p">))</span>
+</pre></div>
+<p>se avessimo ragione di ritenere che <em>a</em> = 2, <em>b</em> = 1 and <em>c</em> = 0.6 siano dei valori "ragionevoli". Una volta che la stima iniziale è "più o meno corretta" il fit funziona bene.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="width:95%; padding:5px 10px 5px; border-style:solid; border-width:0px 0px 0px 10px; border-color:#b8d0d0; margin:20px 0px 10px 10px">
+<h4> Imparare Facendo</h4>
+<p>Un set di misure ha dato il risultato
+<code>
+array([ 1.98781717e-01,  3.24825975e-01,  2.98912925e-01,  4.93741345e-02,
+3.80536122e-01, -2.05719267e-01, -7.71630572e-03, -1.51733833e-01,
+1.73748896e-02,  9.02509179e-03, -2.20920245e-02,  1.34501550e-02,
+3.06908554e-01,  2.34147443e-01,  7.75703310e-01,  4.99104499e-01,
+5.66648179e-01,  1.04641129e+00,  1.67507051e+00,  1.77283086e+00,
+1.96239227e+00,  2.27163706e+00,  2.54161451e+00,  3.09807009e+00,
+3.45291476e+00,  4.23653254e+00,  4.58924190e+00,  5.08824411e+00,
+5.76377627e+00,  6.04351916e+00,  6.59161494e+00,  7.25319841e+00,
+7.96917169e+00,  8.06559558e+00,  8.91595385e+00,  9.78458262e+00,
+1.04143742e+01,  1.14280612e+01,  1.18132229e+01,  1.25599940e+01,
+1.35895984e+01,  1.41159890e+01,  1.53848688e+01,  1.63810995e+01,
+1.69877641e+01,  1.77683845e+01,  1.88923474e+01,  1.95531287e+01,
+2.12809123e+01,  2.15518168e+01])
+</code>
+ai tempi
+<code>
+array([0.        , 0.10204082, 0.20408163, 0.30612245, 0.40816327,
+0.51020408, 0.6122449 , 0.71428571, 0.81632653, 0.91836735,
+1.02040816, 1.12244898, 1.2244898 , 1.32653061, 1.42857143,
+1.53061224, 1.63265306, 1.73469388, 1.83673469, 1.93877551,
+2.04081633, 2.14285714, 2.24489796, 2.34693878, 2.44897959,
+2.55102041, 2.65306122, 2.75510204, 2.85714286, 2.95918367,
+3.06122449, 3.16326531, 3.26530612, 3.36734694, 3.46938776,
+3.57142857, 3.67346939, 3.7755102 , 3.87755102, 3.97959184,
+4.08163265, 4.18367347, 4.28571429, 4.3877551 , 4.48979592,
+4.59183673, 4.69387755, 4.79591837, 4.89795918, 5.        ])
+</code>
+Trovate la parabola della forma <code>
+y(t) = a<em>t**2 + b</em>t + c
+</code>
+che meglio approssima i dati.<br/>
+Fate un plot dei dati e della curva ottenuta.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Altri-metodi-numerici">Altri metodi numerici<a class="anchor-link" href="#Altri-metodi-numerici">¶</a></h2><p>Scientific Python and Numpy forniscono molti altri algoritmi numerici: per esempio interpolazione di funzioni, trasformate di Fourier, funzioni speciali (Funzioni di Bessel etc.), signal processing e filtri.</p>
 </div>
 </div>
@@ -9125,8 +9125,8 @@ Facciamo come prima cosa il grafico della funzione. Il plot suggerisce che i due
 <h2 id="Ricerca-delle-radici">Ricerca delle radici<a class="anchor-link" href="#Ricerca-delle-radici">¶</a></h2><p>Sono disponibili diversi metodi per la ricerca delle radici di una funzione nel modulo <code>scipy.optimize</code>.</p>
 <h4 id="Metodo-di-Bisezione">Metodo di Bisezione<a class="anchor-link" href="#Metodo-di-Bisezione">¶</a></h4><p>L'algoritmo <code>bisect</code> è robusto e semplice, anche se non molto veloce.  Il metodo richiede che la funzione abbia segni opposti ai due estremi dell'intervallo in cui la radice viene cercata.</p>
 <h4 id="Metodo-fsolve">Metodo <code>fsolve</code><a class="anchor-link" href="#Metodo-fsolve">¶</a></h4><p>Un metodo alternativo, spesso più efficiente, è <code>fsolve</code>. Richiede solo un punto di partenza vicino alla radice attesa e funziona anche con problemi multi-dimensionali.</p>
-<h2 id="Fit-di-un-set-di-dati">Fit di un set di dati<a class="anchor-link" href="#Fit-di-un-set-di-dati">¶</a></h2><p>SciPy fornisce la funzione <code>curve_fit</code> per effettuare il fit di un set di dati basato su un modello ipotizzato. Questo approccio minimizza la somma degli scarti quadratici tra i dati e la curva.</p>
 <h2 id="Ottimizzazione:-trovare-massimi-e-minimi">Ottimizzazione: trovare massimi e minimi<a class="anchor-link" href="#Ottimizzazione:-trovare-massimi-e-minimi">¶</a></h2><p>La routine <code>scipy.optimize.fmin</code> permette di minimizzare una funzione <code>f(x)</code>. Per massimizzare una funzione, è sufficiente minimizzare <code>-f(x)</code>.</p>
+<h2 id="Fit-di-un-set-di-dati">Fit di un set di dati<a class="anchor-link" href="#Fit-di-un-set-di-dati">¶</a></h2><p>SciPy fornisce la funzione <code>curve_fit</code> per effettuare il fit di un set di dati basato su un modello ipotizzato. Questo approccio minimizza la somma degli scarti quadratici tra i dati e la curva.</p>
 </div>
 </div>
 </div>

@@ -7527,7 +7527,7 @@ a.anchor-link {
 </li></li></li></li></ul>
 </div>
 <hr/>
-<h2 id="6.1-Introduzione">6.1 Introduzione<a class="anchor-link" href="#6.1-Introduzione">¶</a></h2><p>Le funzioni ci permettono di raggruppare una sequenza di comandi in un blocco logico. La funzione è identificata da un nome in modo da poter essere "chiamata". Comunichiamo con una funzione attraverso una interfaccia ben definita, fornendo dei parametri, e ricevendo di ritorno delle informazioni. Generalmente non sappiamo esattamente come una funzione ottiene il valore che ci restituisce, conosciamo solo l'interfaccia.</p>
+<h2 id="Introduzione">Introduzione<a class="anchor-link" href="#Introduzione">¶</a></h2><p>Le funzioni ci permettono di raggruppare una sequenza di comandi in un blocco logico. La funzione è identificata da un nome in modo da poter essere "chiamata". Comunichiamo con una funzione attraverso una interfaccia ben definita, fornendo dei parametri, e ricevendo di ritorno delle informazioni. Generalmente non sappiamo esattamente come una funzione ottiene il valore che ci restituisce, conosciamo solo l'interfaccia.</p>
 <p>Per esempio la funzione <code>math.sqrt</code>: non sappiamo esattamente come calcola la radice quadrata, ma conosciamo l'interfaccia: se passiamo il valore <em>x</em> alla funzione, ci restituisce (un valore approssimato per) $\sqrt{x}$.</p>
 <p>Possiamo raggruppare diverse funzioni in un modulo di Python e creare le nostre librerie di utilità.</p>
 </div>
@@ -7668,7 +7668,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.2-Keywords,-valori-di-default-e-parametri-opzionali-nella-definizione-di-funzioni">6.2 Keywords, valori di default e parametri opzionali nella definizione di funzioni<a class="anchor-link" href="#6.2-Keywords,-valori-di-default-e-parametri-opzionali-nella-definizione-di-funzioni">¶</a></h2><p>Python permette di definire valori di <em>default</em> per gli argomenti di una funzione.
+<h2 id="Keywords,-valori-di-default-e-parametri-opzionali-nella-definizione-di-funzioni">Keywords, valori di default e parametri opzionali nella definizione di funzioni<a class="anchor-link" href="#Keywords,-valori-di-default-e-parametri-opzionali-nella-definizione-di-funzioni">¶</a></h2><p>Python permette di definire valori di <em>default</em> per gli argomenti di una funzione.
 Questi argomenti vengono definiti argomenti con keyword o con nome.
 Ecco un esempio per chiarire: la funzione <code>myfunc</code> prende tre argomenti: <code>x</code>, <code>p</code> e <code>debug</code>. Il primo argomento <code>x</code> è una variabile “posizionale”; deve essere presente nella chiamata alla funzione. Il secondo argomento <code>p</code> ha il valore di default 2, il terzo <code>debug</code> ha come valore di default False. Questi argomenti sono opzionali: se l'utente chiama questa funzione con un solo argomento, l'argomento viene assegnato a <code>x</code> mentre <code>p</code> e <code>debug</code> assumeranno i valori di default. Se vengono forniti due argomenti (senza nome) il primo viene assegnato a <code>x</code> e il secondo a <code>p</code> mentre <code>debug</code> assumera il valore di default e così via. Quindi è possibile passare un parametro opzionale senza utilizzare la keyword, tuttavia il modo migliore e più comprensibile di usare i parametri di default è quello di utilizzare espicitamente la keyword che li individua. In questo modo non è necessario ripettare l'ordine degli argomenti.</p>
 </div>
@@ -7852,7 +7852,7 @@ print(...)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.3-Funzioni-con-un-numero-variabile-di-argomenti:-*args-e-**kwargs">6.3 Funzioni con un numero variabile di argomenti: <code>*args</code> e <code>**kwargs</code><a class="anchor-link" href="#6.3-Funzioni-con-un-numero-variabile-di-argomenti:-*args-e-**kwargs">¶</a></h2>
+<h2 id="Funzioni-con-un-numero-variabile-di-argomenti:-*args-e-**kwargs">Funzioni con un numero variabile di argomenti: <code>*args</code> e <code>**kwargs</code><a class="anchor-link" href="#Funzioni-con-un-numero-variabile-di-argomenti:-*args-e-**kwargs">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7892,6 +7892,7 @@ print(...)
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">en</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">en</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">en</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">en</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">en</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -7931,10 +7932,10 @@ purchè il numero di variabili corrisponda al numero di elementi dell'iterabile:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="L'operatore-di-impacchettamento/spacchettamento-*-per-sequenze">L'operatore di impacchettamento/spacchettamento <code>*</code> per sequenze<a class="anchor-link" href="#L'operatore-di-impacchettamento/spacchettamento-*-per-sequenze">¶</a></h4><p>L'operatore <code>*</code> ci permette di essere flessibili, definendo un oggetto con un numero variabile di elementi.<br/>
+<h3 id="L'operatore-di-impacchettamento/spacchettamento-*-per-sequenze">L'operatore di impacchettamento/spacchettamento <code>*</code> per sequenze<a class="anchor-link" href="#L'operatore-di-impacchettamento/spacchettamento-*-per-sequenze">¶</a></h3><p>L'operatore <code>*</code> ci permette di essere flessibili, definendo un oggetto con un numero variabile di elementi.<br/>
 Nell'esempio seguente <code>en_1</code> e <code>en_2</code> catturano i primi due elementi della lista. <code>en_last</code> cattura l'ultimo elemento.
 Tutti gli altri elementi, qualunque sia il loro numero, zero compreso,, vengono catturati
-da <code>*en2_rest</code>. La variabile <code>en2_rest</code> (senza <code>*</code>) contiene la lista degli elementi dall'indice 2 a len(en)-1.</p>
+da <code>*en2_rest</code>. La variabile <code>en2_rest</code> (senza <code>*</code>) contiene la lista degli elementi dall'indice 2 a len(en)-2.</p>
 </div>
 </div>
 </div>
@@ -8223,7 +8224,7 @@ da <code>*en2_rest</code>. La variabile <code>en2_rest</code> (senza <code>*</co
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="L'operatore-di-impacchettamento/spacchettamento,-**,-per-argomenti-con-nome-e-dizionari">L'operatore di impacchettamento/spacchettamento, <code>**</code>, per argomenti con nome e dizionari<a class="anchor-link" href="#L'operatore-di-impacchettamento/spacchettamento,-**,-per-argomenti-con-nome-e-dizionari">¶</a></h4>
+<h3 id="L'operatore-di-impacchettamento/spacchettamento,-**,-per-argomenti-con-nome-e-dizionari">L'operatore di impacchettamento/spacchettamento, <code>**</code>, per argomenti con nome e dizionari<a class="anchor-link" href="#L'operatore-di-impacchettamento/spacchettamento,-**,-per-argomenti-con-nome-e-dizionari">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8492,7 +8493,7 @@ i valori saranno quelli dell'ultimo dizionario. Un esempio per chiarire:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Caso-pi%C3%B9-generale:-funzioni-che-hanno-sia-*args-che-**kwargs-come-argomenti">Caso più generale: funzioni che hanno sia <code>*args</code> che <code>**kwargs</code> come argomenti<a class="anchor-link" href="#Caso-pi%C3%B9-generale:-funzioni-che-hanno-sia-*args-che-**kwargs-come-argomenti">¶</a></h4><p>Nella chiamata a una funzione tutti gli argomenti posizionali devono precedere gli argomenti con nome: <code>*args,**kwargs</code> e NON <code>**kwargs,*args</code></p>
+<h3 id="Caso-pi%C3%B9-generale:-funzioni-che-hanno-sia-*args-che-**kwargs-come-argomenti">Caso più generale: funzioni che hanno sia <code>*args</code> che <code>**kwargs</code> come argomenti<a class="anchor-link" href="#Caso-pi%C3%B9-generale:-funzioni-che-hanno-sia-*args-che-**kwargs-come-argomenti">¶</a></h3><p>Nella chiamata a una funzione tutti gli argomenti posizionali devono precedere gli argomenti con nome: <code>*args,**kwargs</code> e NON <code>**kwargs,*args</code></p>
 </div>
 </div>
 </div>
@@ -8540,7 +8541,7 @@ i valori saranno quelli dell'ultimo dizionario. Un esempio per chiarire:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.4-Cosa-succeede-quando-si-passano-argomenti-a-una-funzione-in-Python">6.4 Cosa succeede quando si passano argomenti a una funzione in Python<a class="anchor-link" href="#6.4-Cosa-succeede-quando-si-passano-argomenti-a-una-funzione-in-Python">¶</a></h2><p>In Python, gli oggetti sono passati per referenza (tipo pointer) all'oggetto. A seconda di come la referenza viene usate nella funzione e del tipo di oggetto che viene referenziato, questo può significare che qualsiasi modifica, all'interno della funzione, dell'oggetto passato si riflette immediatamente all'esterno.</p>
+<h2 id="Cosa-succeede-quando-si-passano-argomenti-a-una-funzione-in-Python">Cosa succeede quando si passano argomenti a una funzione in Python<a class="anchor-link" href="#Cosa-succeede-quando-si-passano-argomenti-a-una-funzione-in-Python">¶</a></h2><p>In Python, gli oggetti sono passati per referenza (tipo pointer) all'oggetto. A seconda di come la referenza viene usate nella funzione e del tipo di oggetto che viene referenziato, questo può significare che qualsiasi modifica, all'interno della funzione, dell'oggetto passato si riflette immediatamente all'esterno.</p>
 <p>Tre esempi per chiarire. Iniziamo passando una lista a una funzione che itera sugli elementi della sequenza raddoppiando il valore di ciascuno:</p>
 </div>
 </div>
@@ -8584,12 +8585,12 @@ all'interno della funzione:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">double_the_list</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
@@ -8603,22 +8604,6 @@ all'interno della funzione:</p>
 <span class="n">double_the_list</span><span class="p">(</span><span class="n">l_global</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"In main: s = </span><span class="si">{</span><span class="n">l_global</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>In main: s = Hello
-in double_the_list: l = Hello
-in double_the_list: changed l to l = HelloHello
-In main: s = Hello
-</pre>
 </div>
 </div>
 </div>
@@ -8716,7 +8701,7 @@ in ogni caso con lo stesso ragionamento.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.5-Passare-funzioni-come-argomenti-a-funzioni">6.5 Passare funzioni come argomenti a funzioni<a class="anchor-link" href="#6.5-Passare-funzioni-come-argomenti-a-funzioni">¶</a></h2><p>Le funzioni sono oggetti in Python, quindi è possibile passare funzioni come argomenti ad altre funzioni.</p>
+<h2 id="Passare-funzioni-come-argomenti-a-funzioni">Passare funzioni come argomenti a funzioni<a class="anchor-link" href="#Passare-funzioni-come-argomenti-a-funzioni">¶</a></h2><p>Le funzioni sono oggetti in Python, quindi è possibile passare funzioni come argomenti ad altre funzioni.</p>
 </div>
 </div>
 </div>
@@ -8776,7 +8761,7 @@ in ogni caso con lo stesso ragionamento.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.6-Moduli">6.6 Moduli<a class="anchor-link" href="#6.6-Moduli">¶</a></h2><p>I Moduli</p>
+<h2 id="Moduli">Moduli<a class="anchor-link" href="#Moduli">¶</a></h2><p>I Moduli</p>
 <ul>
 <li><p>Raggruppano funzionalità</p>
 </li>
@@ -8789,7 +8774,7 @@ in ogni caso con lo stesso ragionamento.</p>
 <li><p>Forniscono il modo per estendere Python</p>
 </li>
 </ul>
-<h3 id="6.6.1-Come-importare-moduli">6.6.1 Come importare moduli<a class="anchor-link" href="#6.6.1-Come-importare-moduli">¶</a></h3>
+<h3 id="Come-importare-moduli">Come importare moduli<a class="anchor-link" href="#Come-importare-moduli">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9019,7 +9004,7 @@ in ogni caso con lo stesso ragionamento.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.6.2-Come-creare-moduli">6.6.2 Come creare moduli<a class="anchor-link" href="#6.6.2-Come-creare-moduli">¶</a></h3><p>Un modulo non è altro che un file Python. Ecco un esempio di modulo che potete salvare in un file chiamato <code>module1.py</code>:</p>
+<h3 id="Come-creare-moduli">Come creare moduli<a class="anchor-link" href="#Come-creare-moduli">¶</a></h3><p>Un modulo non è altro che un file Python. Ecco un esempio di modulo che potete salvare in un file chiamato <code>module1.py</code>:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">someusefulfunction</span><span class="p">():</span>
     <span class="k">pass</span>
 
@@ -9185,7 +9170,7 @@ in ogni caso con lo stesso ragionamento.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.6.3-Uso-di-__name__">6.6.3 Uso di __name__<a class="anchor-link" href="#6.6.3-Uso-di-__name__">¶</a></h3><p>Riassumendo,</p>
+<h3 id="Uso-di-__name__">Uso di __name__<a class="anchor-link" href="#Uso-di-__name__">¶</a></h3><p>Riassumendo,</p>
 <ul>
 <li><p><code>__name__</code> vale <code>__main__</code> se il file viene eseguito da solo</p>
 </li>
@@ -9217,7 +9202,7 @@ file contenente un modulo contenga anche un programma principale all'interno del
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Esempio-3">Esempio 3<a class="anchor-link" href="#Esempio-3">¶</a></h3><p>Il prossimo esempio mostra un main program nel modulo <code>vectools.py</code> che dimostra l'uso delle funzioni definite nel file:</p>
+<h3 id="Esempio">Esempio<a class="anchor-link" href="#Esempio">¶</a></h3><p>Il prossimo esempio mostra un main program nel modulo <code>vectools.py</code> che dimostra l'uso delle funzioni definite nel file:</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 
@@ -9291,7 +9276,7 @@ file contenente un modulo contenga anche un programma principale all'interno del
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Esempio-4">Esempio 4<a class="anchor-link" href="#Esempio-4">¶</a></h3><p>Anche se un programma Python non è concepito per essere usato come un modulo, è buona abitudine (e di uso comune) scrivere il programma principale all'interno della condizione <code>if __name__ == "__main__"</code>:</p>
+<h3 id="Esempio">Esempio<a class="anchor-link" href="#Esempio">¶</a></h3><p>Anche se un programma Python non è concepito per essere usato come un modulo, è buona abitudine (e di uso comune) scrivere il programma principale all'interno della condizione <code>if __name__ == "__main__"</code>:</p>
 <ul>
 <li><p>capita spesso che le funzioni contenute nel file possano essere riutilizzate (risparmiando lavoro). Notate che questo incoraggia fortemente a spezzare i programmi in funzioni.</p>
 </li>
@@ -9372,7 +9357,7 @@ file contenente un modulo contenga anche un programma principale all'interno del
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.7-Eseguire-Python-al-di-fuori-di-un-Notebook">6.7 Eseguire Python al di fuori di un Notebook<a class="anchor-link" href="#6.7-Eseguire-Python-al-di-fuori-di-un-Notebook">¶</a></h2><h3 id="Eseguire-un-comando-o-uno-script-dallo-shell-di-Python">Eseguire un comando o uno script dallo shell di Python<a class="anchor-link" href="#Eseguire-un-comando-o-uno-script-dallo-shell-di-Python">¶</a></h3><p>Per lanciare lo shell di Python, dalla linea di comando eseguire (assumendo che il "prompt" di sistema sia "$"):</p>
+<h2 id="Eseguire-Python-al-di-fuori-di-un-Notebook">Eseguire Python al di fuori di un Notebook<a class="anchor-link" href="#Eseguire-Python-al-di-fuori-di-un-Notebook">¶</a></h2><h3 id="Eseguire-un-comando-o-uno-script-dallo-shell-di-Python">Eseguire un comando o uno script dallo shell di Python<a class="anchor-link" href="#Eseguire-un-comando-o-uno-script-dallo-shell-di-Python">¶</a></h3><p>Per lanciare lo shell di Python, dalla linea di comando eseguire (assumendo che il "prompt" di sistema sia "$"):</p>
 <div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>&lt;Return&gt;
 </pre></div>
 <p>La risposta dovrebbe essere simile a:</p>

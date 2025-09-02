@@ -7518,7 +7518,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 style="font-size:50px">12: Calcolo simbolico (SimPy)</h1>
-<h2 id="12.1-Introduzione">12.1 Introduzione<a class="anchor-link" href="#12.1-Introduzione">¶</a></h2><p>In questa sezione, introducciamo la libreria SymPy (SYMbolic Python). Mentre nei calcoli numerici si opera su numeri,  nel calcolo simbolico lavoriamo su variabili generiche.</p>
+<h2 id="Introduzione">Introduzione<a class="anchor-link" href="#Introduzione">¶</a></h2><p>In questa sezione, introducciamo la libreria SymPy (SYMbolic Python). Mentre nei calcoli numerici si opera su numeri,  nel calcolo simbolico lavoriamo su variabili generiche.</p>
 <p>La home page di SymPy si trova in  <a href="http://sympy.org/">http://sympy.org/</a>, e fornisce una documentzione completa ed aggiornata sulla libreria.</p>
 <p>Il calcolo simbolico è molto più lento delle operazioni su numeri reali (floating point), e quindi in genere non viene usato per le simulazioni. Tuttavia, è uno strumento potente per la preparazione del codice ed è utile per i conti analitici.</p>
 <h3 id="Output">Output<a class="anchor-link" href="#Output">¶</a></h3><p>Prima di iniziare a usare sympy, invochiamo <code>init_printing</code>, in modo che presenti le espressioni in un formato esteticamente migliore, al costo di rendere più complicato copiare l'output da una cella ad un'altra. Provate a commentare il comando <code>sympy.init_printing()</code> e rieseguire il notebook</p>
@@ -7547,7 +7547,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.2-Symbol/symbols">11.2 Symbol/symbols<a class="anchor-link" href="#11.2-Symbol/symbols">¶</a></h2><p>Prima di eseguire qualunque operazione simbolica, è necessario creare le variabili simboliche usando la funzione di SymPy <code>Symbol</code>. Le variabili simboliche vengono associate a delle variabili ordinarie per caricarle in memoria. Pur non essendo obbligatorio, in genere il
+<h2 id="Symbol/symbols">Symbol/symbols<a class="anchor-link" href="#Symbol/symbols">¶</a></h2><p>Prima di eseguire qualunque operazione simbolica, è necessario creare le variabili simboliche usando la funzione di SymPy <code>Symbol</code>. Le variabili simboliche vengono associate a delle variabili ordinarie per caricarle in memoria. Pur non essendo obbligatorio, in genere il
 nome della variabile e quella del simbolo coincidono.</p>
 </div>
 </div>
@@ -7819,7 +7819,7 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.3-Tipi-numerici">11.3 Tipi numerici<a class="anchor-link" href="#11.3-Tipi-numerici">¶</a></h2><p>SymPy ha due tipi numerici proprii: <code>Rational</code> e <code>RealNumber</code>. La classe  Rational rappresenta un numero razionale come una coppia di interi: il numeratore e il denominatore, quindi <code>Rational(1,2)</code> rappresenta <code>1/2</code>, <code>Rational(5,3)</code> rappresenta <code>5/3</code> e così via.</p>
+<h2 id="Tipi-numerici">Tipi numerici<a class="anchor-link" href="#Tipi-numerici">¶</a></h2><p>SymPy ha due tipi numerici proprii: <code>Rational</code> e <code>RealNumber</code>. La classe  Rational rappresenta un numero razionale come una coppia di interi: il numeratore e il denominatore, quindi <code>Rational(1,2)</code> rappresenta <code>1/2</code>, <code>Rational(5,3)</code> rappresenta <code>5/3</code> e così via.</p>
 </div>
 </div>
 </div>
@@ -7998,7 +7998,7 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.4-Derivazione-e-integrazione">11.4 Derivazione e integrazione<a class="anchor-link" href="#11.4-Derivazione-e-integrazione">¶</a></h2><p>SymPy può eseguire derivate ed integrali di molte funzioni in modo simbolico :</p>
+<h2 id="Derivazione-e-integrazione">Derivazione e integrazione<a class="anchor-link" href="#Derivazione-e-integrazione">¶</a></h2><p>SymPy può eseguire derivate ed integrali di molte funzioni in modo simbolico :</p>
 </div>
 </div>
 </div>
@@ -8466,7 +8466,7 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.5-Equazioni--differenziali-ordinarie-(ODE)">11.5 Equazioni  differenziali ordinarie (ODE)<a class="anchor-link" href="#11.5-Equazioni--differenziali-ordinarie-(ODE)">¶</a></h2><p>SymPy può risolvere diversi tipi di equazioni  differenziali ordinarie con il comando <code>dsolve</code>. L'equazione viene passata come primo argomento, <code>eq</code>. Il secondo argomento è la funzione <code>f(x)</code> rispetto a cui risolvere l'equazione. Un terzo argomento opzionale, <code>hint</code>, influenza il metodo che <code>dsolve</code> usa: alcuni metodi sono più adatti a certe classi di ODE, o esprimono la soluzione in forma più semplice, che altri.</p>
+<h2 id="Equazioni--differenziali-ordinarie-(ODE)">Equazioni  differenziali ordinarie (ODE)<a class="anchor-link" href="#Equazioni--differenziali-ordinarie-(ODE)">¶</a></h2><p>SymPy può risolvere diversi tipi di equazioni  differenziali ordinarie con il comando <code>dsolve</code>. L'equazione viene passata come primo argomento, <code>eq</code>. Il secondo argomento è la funzione <code>f(x)</code> rispetto a cui risolvere l'equazione. Un terzo argomento opzionale, <code>hint</code>, influenza il metodo che <code>dsolve</code> usa: alcuni metodi sono più adatti a certe classi di ODE, o esprimono la soluzione in forma più semplice, che altri.</p>
 <p>Per chiamare <code>dsolve</code>, è necessario un modo di indicare la funzione ignota che cerchiamo come soluzione e le sue derivate. Per questo ci sono le classi <code>Function</code> e <code>Derivative</code>:</p>
 </div>
 </div>
@@ -8747,7 +8747,7 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.6-Sviluppi-in-serie">11.6 Sviluppi in serie<a class="anchor-link" href="#11.6-Sviluppi-in-serie">¶</a></h2><p>Molte espressioni di SymPy possono essere sviluppate in serie di Taylor usando il metodo <code>series</code>. Sono richiesti almeno l'espressione da sviluppare e la variabile rispetto alla quale fare lo sviluppo. È possibile specificare, opzionalmente, il punto attorno al quale sviluppare, il numero massimo di termini e la direzione dello sviluppo (per maggiori informazioni consultate <code>help(Basic.series)</code>).</p>
+<h2 id="Sviluppi-in-serie">Sviluppi in serie<a class="anchor-link" href="#Sviluppi-in-serie">¶</a></h2><p>Molte espressioni di SymPy possono essere sviluppate in serie di Taylor usando il metodo <code>series</code>. Sono richiesti almeno l'espressione da sviluppare e la variabile rispetto alla quale fare lo sviluppo. È possibile specificare, opzionalmente, il punto attorno al quale sviluppare, il numero massimo di termini e la direzione dello sviluppo (per maggiori informazioni consultate <code>help(Basic.series)</code>).</p>
 </div>
 </div>
 </div>
@@ -8892,7 +8892,7 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.7-Equazioni-lineari-e--inversione-di-matrici">11.7 Equazioni lineari e  inversione di matrici<a class="anchor-link" href="#11.7-Equazioni-lineari-e--inversione-di-matrici">¶</a></h2><p>SymPy contiene una classe <code>Matrix</code> e le funzioni associate che permettono di risolvere simbolicamente un sistems di  equazioni lineari (In seguito, ovviamente, possiamo ottenere risultati numerici con <code>subs()</code> e <code>evalf()</code>). Consideriamo il caso seguente di una semplice coppia di equazioni lineari:</p>
+<h2 id="Equazioni-lineari-e--inversione-di-matrici">Equazioni lineari e  inversione di matrici<a class="anchor-link" href="#Equazioni-lineari-e--inversione-di-matrici">¶</a></h2><p>SymPy contiene una classe <code>Matrix</code> e le funzioni associate che permettono di risolvere simbolicamente un sistems di  equazioni lineari (In seguito, ovviamente, possiamo ottenere risultati numerici con <code>subs()</code> e <code>evalf()</code>). Consideriamo il caso seguente di una semplice coppia di equazioni lineari:</p>
 <p>$$\begin{aligned}
 3x + 7y&amp;= 12z\\
 4x - 2y&amp;= 5z\end{aligned}$$</p>
@@ -9126,7 +9126,7 @@ l'inverse, e la moltiplicazione fra matrici viene indicata con il simbolo <code>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Per ulteriori informazioni, si veda <code>help(solve)</code> e <code>help(solve_linear_system)</code>.</p>
-<h2 id="11.8-Equazioni-non-lineari">11.8 Equazioni non lineari<a class="anchor-link" href="#11.8-Equazioni-non-lineari">¶</a></h2><p>Risolviamo una semplice equazione come
+<h2 id="Equazioni-non-lineari">Equazioni non lineari<a class="anchor-link" href="#Equazioni-non-lineari">¶</a></h2><p>Risolviamo una semplice equazione come
 $x = x^2$. Ci sono due soluzioni ovvie: <em>x</em> = 0 and <em>x</em> = 1. Come possiamo farle trovare a Sympy?</p>
 </div>
 </div>
@@ -9200,7 +9200,7 @@ e poi lo passiamo alla funzione solve.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.9-Usare-espressioni-di-sympy-in-numpy">11.9 Usare espressioni di sympy in numpy<a class="anchor-link" href="#11.9-Usare-espressioni-di-sympy-in-numpy">¶</a></h2>
+<h2 id="Usare-espressioni-di-sympy-in-numpy">Usare espressioni di sympy in numpy<a class="anchor-link" href="#Usare-espressioni-di-sympy-in-numpy">¶</a></h2>
 </div>
 </div>
 </div>
@@ -9325,7 +9325,7 @@ e poi lo passiamo alla funzione solve.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="11.10-Output:-l'interfaccia-a-LaTeX">11.10 Output: l'interfaccia a LaTeX<a class="anchor-link" href="#11.10-Output:-l'interfaccia-a-LaTeX">¶</a></h2><p>SymPy ha la possibilità di formattare il suo output in LaTeX, in modo che sia facile inserirlo in altri documenti. LaTeX è lo standard per tutte le pubblicazioni che contengano formule di matematica o fisica. Non vi laureerete senza impararlo perchè la tesi la dovrete scrivere in LaTeX.</p>
+<h2 id="Output:-l'interfaccia-a-LaTeX">Output: l'interfaccia a LaTeX<a class="anchor-link" href="#Output:-l'interfaccia-a-LaTeX">¶</a></h2><p>SymPy ha la possibilità di formattare il suo output in LaTeX, in modo che sia facile inserirlo in altri documenti. LaTeX è lo standard per tutte le pubblicazioni che contengano formule di matematica o fisica. Non vi laureerete senza impararlo perchè la tesi la dovrete scrivere in LaTeX.</p>
 <p>All'inizio del notebook abbiamo chiamato:</p>
 <div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 </pre></div>

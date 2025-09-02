@@ -7532,7 +7532,7 @@ a.anchor-link {
 </li></li></li></li></li></li></li></li></li></ul>
 </div>
 <hr/>
-<h2 id="7.1-Introduzione">7.1 Introduzione<a class="anchor-link" href="#7.1-Introduzione">¶</a></h2><p>Il linguaggio Python di base (incluse le librerie standard) fornisce strumenti sufficienti per completare semplici progetti computazionali. Tuttavia, esistono librerie Python dedicate che permettono funzionalità estese che</p>
+<h2 id="Introduzione">Introduzione<a class="anchor-link" href="#Introduzione">¶</a></h2><p>Il linguaggio Python di base (incluse le librerie standard) fornisce strumenti sufficienti per completare semplici progetti computazionali. Tuttavia, esistono librerie Python dedicate che permettono funzionalità estese che</p>
 <ul>
 <li><p>forniscono strumenti numerici per automatizzare operazioni ricorrenti</p>
 </li>
@@ -7562,28 +7562,41 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.2-Numpy-e-gli-array">7.2 Numpy e gli array<a class="anchor-link" href="#7.2-Numpy-e-gli-array">¶</a></h2><p>La librery NumPy (NUMerical PYthon) fornisce un nuovo tipo di struttura dei dati chiamata <code>array</code>s che permette di eseguire in modo efficiente operazioni su vettori e matrici. Fornisce inoltre diverse  operazioni legate all'algebra lineare (come risolvere sistemi di equazioni lineari, calcolo di autovettori e autovalori). Viene tradizionalmente importata come <code>np</code>.<br/></p>
+<h2 id="Numpy-e-gli-array">Numpy e gli array<a class="anchor-link" href="#Numpy-e-gli-array">¶</a></h2><p>La librery NumPy (NUMerical PYthon) fornisce un nuovo tipo di struttura dei dati chiamata <code>array</code>s che permette di eseguire in modo efficiente operazioni su vettori e matrici. Fornisce inoltre diverse  operazioni legate all'algebra lineare (come risolvere sistemi di equazioni lineari, calcolo di autovettori e autovalori). Viene tradizionalmente importata come <code>np</code>.<br/></p>
 <p>NumPy introduce un nuovo tipo di dati detto “<code>array</code>”. Un array <em>sembra</em> molto simile a una lista ma può contenere solo elementi di un singolo tipo (mentre una lista può contenere oggetti di tipo diverso). Questo significa che gli array possono essere scritti in memoria in modo più efficiente. Gli array sono la struttura di dati migliore per i calcoli numerici in cui spesso si ha a che fare con vettori e matrici di tipo omogeneo.</p>
 <p>Vettori, matrici bidimensionali e matrici con più di due indici sono tutti chiamati “arrays” in NumPy.</p>
-<h3 id="7.2.1-Vettor1-(1d-arrays)">7.2.1 Vettor1 (1d-arrays)<a class="anchor-link" href="#7.2.1-Vettor1-(1d-arrays)">¶</a></h3><p>La struttura dati data che useremo più spesso è il vettore. Qualche esempio di come crearne uno:</p>
+<h3 id="Vettori-(1d-arrays)">Vettori (1d-arrays)<a class="anchor-link" href="#Vettori-(1d-arrays)">¶</a></h3><p>La struttura dati data che useremo più spesso è il vettore. Qualche esempio di come crearne uno:</p>
 <ul>
 <li>Conversione di una lista (o tuple) in un array usando <span><code>numpy.array</code></span>:</li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>&lt;class 'numpy.ndarray'&gt;
+</pre>
 </div>
 </div>
 </div>
@@ -7855,7 +7868,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.2-Operazioni-su-array">7.2.2 Operazioni su array<a class="anchor-link" href="#7.2.2-Operazioni-su-array">¶</a></h3><ul>
+<h3 id="Operazioni-su-array">Operazioni su array<a class="anchor-link" href="#Operazioni-su-array">¶</a></h3><ul>
 <li>Una volta che l'array esiste, possiamo definire e recuperare il valore degli elementi utilizzando gli indici. Per esempio:</li>
 </ul>
 </div>
@@ -8949,7 +8962,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.3-Convertire-da--array-a-lista-o-tuple">7.2.3 Convertire da  array a lista o tuple<a class="anchor-link" href="#7.2.3-Convertire-da--array-a-lista-o-tuple">¶</a></h3><p>Per convertire un array in una lista o una si possono usare le funzioni python standard <span><code>list(s0)</code></span> e <span><code>tuple(s0)</code></span> che accettano una sequenza <span><code>s0</code></span> come input e ritornano rispettivamente  una lista e una ntupla:</p>
+<h3 id="Convertire-da--array-a-lista-o-tuple">Convertire da  array a lista o tuple<a class="anchor-link" href="#Convertire-da--array-a-lista-o-tuple">¶</a></h3><p>Per convertire un array in una lista o una si possono usare le funzioni python standard <span><code>list(s0)</code></span> e <span><code>tuple(s0)</code></span> che accettano una sequenza <span><code>s0</code></span> come input e ritornano rispettivamente  una lista e una ntupla:</p>
 </div>
 </div>
 </div>
@@ -9038,7 +9051,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.4--%25timeit-per-valutare-il-tempo-di-esecuzione-di-un-comando">7.2.4  %timeit per valutare il tempo di esecuzione di un comando<a class="anchor-link" href="#7.2.4--%25timeit-per-valutare-il-tempo-di-esecuzione-di-un-comando">¶</a></h3><p>È spesso utile misurare il tempo necessario per eseguire dei comandi. Jupyter fornisce la funzione %timeit che possiamo utilizzare per mostrare la maggiore velocità delle operazioni di Numpy su array rispetto alle operazioni di math su liste.</p>
+<h3 id="%25timeit-per-valutare-il-tempo-di-esecuzione-di-un-comando">%timeit per valutare il tempo di esecuzione di un comando<a class="anchor-link" href="#%25timeit-per-valutare-il-tempo-di-esecuzione-di-un-comando">¶</a></h3><p>È spesso utile misurare il tempo necessario per eseguire dei comandi. Jupyter fornisce la funzione %timeit che possiamo utilizzare per mostrare la maggiore velocità delle operazioni di Numpy su array rispetto alle operazioni di math su liste.</p>
 </div>
 </div>
 </div>
@@ -9089,7 +9102,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.5-Matrici-(2d-arrays)">7.2.5 Matrici (2d-arrays)<a class="anchor-link" href="#7.2.5-Matrici-(2d-arrays)">¶</a></h3><p>Esistono diversi modi per creare un array a due (o più) dimensioni:</p>
+<h3 id="Matrici-(2d-arrays)">Matrici (2d-arrays)<a class="anchor-link" href="#Matrici-(2d-arrays)">¶</a></h3><p>Esistono diversi modi per creare un array a due (o più) dimensioni:</p>
 <ul>
 <li>Convertendo una lista di liste (o tuples) in un array (Ciascuna sottolista corrisponde a una riga della matrice):</li>
 </ul>
@@ -9468,7 +9481,7 @@ Estrate da $A$, in forma di array, la prima colonna, la seconda, la prima riga, 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.6-Operazioni-standard-in-Algebra-Lineare">7.2.6 Operazioni standard in Algebra Lineare<a class="anchor-link" href="#7.2.6-Operazioni-standard-in-Algebra-Lineare">¶</a></h3><h4 id="Vettori">Vettori<a class="anchor-link" href="#Vettori">¶</a></h4><p>Prodotto interno (scalare), esterno, vettoriale (quest'ultimo solo in due o tre dimensioni).</p>
+<h3 id="Operazioni-standard-in-Algebra-Lineare">Operazioni standard in Algebra Lineare<a class="anchor-link" href="#Operazioni-standard-in-Algebra-Lineare">¶</a></h3><h4 id="Vettori">Vettori<a class="anchor-link" href="#Vettori">¶</a></h4><p>Prodotto interno (scalare), esterno, vettoriale (quest'ultimo solo in due o tre dimensioni).</p>
 </div>
 </div>
 </div>
@@ -10110,7 +10123,7 @@ Verifica:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.7-Come-vettorializzare-una-funzione">7.2.7 Come vettorializzare una funzione<a class="anchor-link" href="#7.2.7-Come-vettorializzare-una-funzione">¶</a></h3><p>Per avere programmi veloci è necessario evitare di ciclare sugli elementi di vettori e matrici usando invece algoritmi vettorializzati. Il primo passo per convertire un algoritmo scalare in un algoritmo vettorializzato è costruire delle funzioni che accettino input vettoriali.
+<h3 id="Come-vettorializzare-una-funzione">Come vettorializzare una funzione<a class="anchor-link" href="#Come-vettorializzare-una-funzione">¶</a></h3><p>Per avere programmi veloci è necessario evitare di ciclare sugli elementi di vettori e matrici usando invece algoritmi vettorializzati. Il primo passo per convertire un algoritmo scalare in un algoritmo vettorializzato è costruire delle funzioni che accettino input vettoriali.
 <br/>
 AVVERTENZA: è quasi sempre possibile trovare funzioni di Numpy, quindi già vettorializzate, che facciano quello che ci serve. <code>vectorize</code> va utilizzata come ultima risorsa quando tutte le ricerche nella documentazione e in rete si sono rivelate vane.</p>
 </div>
@@ -10235,7 +10248,7 @@ AVVERTENZA: è quasi sempre possibile trovare funzioni di Numpy, quindi già vet
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -10246,17 +10259,31 @@ AVVERTENZA: è quasi sempre possibile trovare funzioni di Numpy, quindi già vet
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'a :'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'b :'</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a : [ 1  2 22]
+b : [ 1  2 22]
+</pre>
 </div>
 </div>
 </div>
@@ -10277,7 +10304,7 @@ AVVERTENZA: è quasi sempre possibile trovare funzioni di Numpy, quindi già vet
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -10288,17 +10315,31 @@ AVVERTENZA: è quasi sempre possibile trovare funzioni di Numpy, quindi già vet
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'a :'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'b :'</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a : [ 1  2 22]
+b : [ 1  2 22]
+</pre>
 </div>
 </div>
 </div>
@@ -10353,7 +10394,7 @@ AVVERTENZA: è quasi sempre possibile trovare funzioni di Numpy, quindi già vet
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.8-Array-multidimensionali">7.2.8 Array multidimensionali<a class="anchor-link" href="#7.2.8-Array-multidimensionali">¶</a></h3><p>Le funzioni di numpy possono operare su array multidimensionali. È quindi necessario poter controllare come la funzione agisce sull'array. Un caso tipico è far operare la funzione lungo un singolo asse (axis) dell'array. Un semplice esempio usando la funzione <code>sum</code>.</p>
+<h3 id="Array-multidimensionali">Array multidimensionali<a class="anchor-link" href="#Array-multidimensionali">¶</a></h3><p>Le funzioni di numpy possono operare su array multidimensionali. È quindi necessario poter controllare come la funzione agisce sull'array. Un caso tipico è far operare la funzione lungo un singolo asse (axis) dell'array. Un semplice esempio usando la funzione <code>sum</code>.</p>
 </div>
 </div>
 </div>
@@ -10406,7 +10447,7 @@ AVVERTENZA: è quasi sempre possibile trovare funzioni di Numpy, quindi già vet
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.9-Come-importare-dentro-degli-array-i-dati-contenuti-in-un-file-di-testo">7.2.9 Come importare dentro degli array i dati contenuti in un file di testo<a class="anchor-link" href="#7.2.9-Come-importare-dentro-degli-array-i-dati-contenuti-in-un-file-di-testo">¶</a></h3><p>Quando si debba trattare una grande massa di dati è essenziale poterli importare ed esportare su file in modo veloce.</p>
+<h3 id="Come-importare-dentro-degli-array-i-dati-contenuti-in-un-file-di-testo">Come importare dentro degli array i dati contenuti in un file di testo<a class="anchor-link" href="#Come-importare-dentro-degli-array-i-dati-contenuti-in-un-file-di-testo">¶</a></h3><p>Quando si debba trattare una grande massa di dati è essenziale poterli importare ed esportare su file in modo veloce.</p>
 <p>Per importare dati da un file numpy fornisce la funzione <code>loadtxt</code>:</p>
 </div>
 </div>
@@ -10601,7 +10642,7 @@ AVVERTENZA: è quasi sempre possibile trovare funzioni di Numpy, quindi già vet
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.2.10-Come-esportare-degli-array-in-un-file-di-testo">7.2.10 Come esportare degli array in un file di testo<a class="anchor-link" href="#7.2.10-Come-esportare-degli-array-in-un-file-di-testo">¶</a></h3><p>Per esportare dati in un file numpy fornisce la funzione <code>savetxt</code>.
+<h3 id="Come-esportare-degli-array-in-un-file-di-testo">Come esportare degli array in un file di testo<a class="anchor-link" href="#Come-esportare-degli-array-in-un-file-di-testo">¶</a></h3><p>Per esportare dati in un file numpy fornisce la funzione <code>savetxt</code>.
 Un esempio usando gli array importati in precedenza:</p>
 </div>
 </div>
@@ -10779,7 +10820,7 @@ Esempi:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Ulteriori-esempi-per-numpy-%E2%80%A6">Ulteriori esempi per numpy …<a class="anchor-link" href="#Ulteriori-esempi-per-numpy-%E2%80%A6">¶</a></h3><p>…si possono trovare in: <a href="https://scipy.github.io/old-wiki/pages/Numpy_Example_List.html">https://scipy.github.io/old-wiki/pages/Numpy_Example_List.html</a></p>
+<h5 id="Ulteriori-esempi-per-numpy">Ulteriori esempi per numpy<a class="anchor-link" href="#Ulteriori-esempi-per-numpy">¶</a></h5><p>Si possono trovare in: <a href="https://scipy.github.io/old-wiki/pages/Numpy_Example_List.html">https://scipy.github.io/old-wiki/pages/Numpy_Example_List.html</a></p>
 </div>
 </div>
 </div>
@@ -10840,6 +10881,20 @@ Esempi:</p>
 <h3 id="11.-Copia-Shallow-vs.-Copia-Deep">11. Copia Shallow vs. Copia Deep<a class="anchor-link" href="#11.-Copia-Shallow-vs.-Copia-Deep">¶</a></h3><ul>
 <li>Differenza tra la copia di riferimenti di array (copia shallow) e la creazione di copie indipendenti (copia deep). Uso di <code>copy.deepcopy</code>.</li>
 </ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
 </div>
 </div>
 </div>
