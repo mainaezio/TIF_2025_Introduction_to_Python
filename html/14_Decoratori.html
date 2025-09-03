@@ -7517,7 +7517,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Decoratori">Decoratori<a class="anchor-link" href="#Decoratori">¶</a></h1><p>La lezione è basata su <a href="https://realpython.com/primer-on-python-decorators/">https://realpython.com/primer-on-python-decorators/</a>.</p>
+<h1 style="font-size:50px">14: Decoratori</h1>
+<hr/>
+<h2 id="1.1-Introduzione">1.1 Introduzione<a class="anchor-link" href="#1.1-Introduzione">¶</a></h2><p>La lezione è basata su <a href="https://realpython.com/primer-on-python-decorators/">https://realpython.com/primer-on-python-decorators/</a>.</p>
 <p>Un decoratore è una funzione che prende come argomento un'altra funzione e ne amplia il comportamento senza modificarla esplicitamente.</p>
 </div>
 </div>
@@ -7740,7 +7742,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Un-primo-esempio-di-decoratore">Un primo esempio di decoratore<a class="anchor-link" href="#Un-primo-esempio-di-decoratore">¶</a></h3>
+<h3 id="1.1.1-Un-primo-esempio-di-decoratore">1.1.1 Un primo esempio di decoratore<a class="anchor-link" href="#1.1.1-Un-primo-esempio-di-decoratore">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7995,7 +7997,7 @@ Something is happening after the function is called.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Riassumendo: un decoratore si <code>avvolge</code> attorno ad una funzione e ne modifica il comportamento.</p>
-<h3 id="Esempio-2">Esempio 2<a class="anchor-link" href="#Esempio-2">¶</a></h3><p>L'azione svolta da un decoratore può essere determinato dinamicamente, cioè quando la funzione decorata viene chiamata</p>
+<h3 id="1.1.2-Esempio-2">1.1.2 Esempio 2<a class="anchor-link" href="#1.1.2-Esempio-2">¶</a></h3><p>L'azione svolta da un decoratore può essere determinato dinamicamente, cioè quando la funzione decorata viene chiamata</p>
 </div>
 </div>
 </div>
@@ -8135,7 +8137,7 @@ Something is happening after the function is called.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Riutilizzare-i-decoratori">Riutilizzare i decoratori<a class="anchor-link" href="#Riutilizzare-i-decoratori">¶</a></h3><p>Se i decoratori vengono salvati in un file possono essere importati come normali funzioni e utilizzati in ambiti diversi.</p>
+<h2 id="1.2-Riutilizzare-i-decoratori">1.2 Riutilizzare i decoratori<a class="anchor-link" href="#1.2-Riutilizzare-i-decoratori">¶</a></h2><p>Se i decoratori vengono salvati in un file possono essere importati come normali funzioni e utilizzati in ambiti diversi.</p>
 <p>Esempio:</p>
 <p>Supponiamo che in decoratori.py ci sia il codice che segue:</p>
 <pre><code>def do_twice(func):
@@ -8217,7 +8219,7 @@ Whee!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Decorare-funzioni-con-argomenti">Decorare funzioni con argomenti<a class="anchor-link" href="#Decorare-funzioni-con-argomenti">¶</a></h3><p>Per decorare funzioni con input arbitrari è necessario utilizzare la notazione <code>*args, **kwargs</code>. L'input è passato al wrapper interno che a sua volta lo passa alle funzioni da decorare.</p>
+<h2 id="1.3-Decorare-funzioni-con-argomenti">1.3 Decorare funzioni con argomenti<a class="anchor-link" href="#1.3-Decorare-funzioni-con-argomenti">¶</a></h2><p>Per decorare funzioni con input arbitrari è necessario utilizzare la notazione <code>*args, **kwargs</code>. L'input è passato al wrapper interno che a sua volta lo passa alle funzioni da decorare.</p>
 </div>
 </div>
 </div>
@@ -8291,7 +8293,7 @@ Hello Pippo
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Ritornare-valori-da-una-funzione-decorata">Ritornare valori da una funzione decorata<a class="anchor-link" href="#Ritornare-valori-da-una-funzione-decorata">¶</a></h3><p>Nell'esempio seguente l'introduzione del decoratore functools.wraps serve a facilitare l'accesso alla funzione più interna</p>
+<h2 id="1.4-Ritornare-valori-da-una-funzione-decorata">1.4 Ritornare valori da una funzione decorata<a class="anchor-link" href="#1.4-Ritornare-valori-da-una-funzione-decorata">¶</a></h2><p>Nell'esempio seguente l'introduzione del decoratore functools.wraps serve a facilitare l'accesso alla funzione più interna</p>
 </div>
 </div>
 </div>
@@ -8416,7 +8418,7 @@ La funzione ha restituito: Hi Paperino
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Decoratori-nella-definizione-di-classi">Decoratori nella definizione di classi<a class="anchor-link" href="#Decoratori-nella-definizione-di-classi">¶</a></h3><p>Python possiede dei decoratori built-in che vengono comunemente utilizzati nella costruzione di classi, @classmethod, @staticmethod, and @property. I decoratori @classmethod and @staticmethod vengono usati per definire metodi interni alla classe che non sono collegati alle particolari istanze della classe stessa. Il decoratore @property definisce un attributo (può essere richiamato senza le parentesi () ). In mancanza di un metodo <code>setter</code> l'attributo non può essere modificato dall'esterno.</p>
+<h2 id="1.5-Decoratori-nella-definizione-di-classi">1.5 Decoratori nella definizione di classi<a class="anchor-link" href="#1.5-Decoratori-nella-definizione-di-classi">¶</a></h2><p>Python possiede dei decoratori built-in che vengono comunemente utilizzati nella costruzione di classi, @classmethod, @staticmethod, and @property. I decoratori @classmethod and @staticmethod vengono usati per definire metodi interni alla classe che non sono collegati alle particolari istanze della classe stessa. Il decoratore @property definisce un attributo (può essere richiamato senza le parentesi () ). In mancanza di un metodo <code>setter</code> l'attributo non può essere modificato dall'esterno.</p>
 </div>
 </div>
 </div>
@@ -8683,7 +8685,7 @@ La funzione ha restituito: Hi Paperino
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Decoratori,-sottoclassi-e-inheritance">Decoratori, sottoclassi e inheritance<a class="anchor-link" href="#Decoratori,-sottoclassi-e-inheritance">¶</a></h4><p>Una sottoclasse di Circle:</p>
+<h3 id="1.5.1-Decoratori,-sottoclassi-e-inheritance">1.5.1 Decoratori, sottoclassi e inheritance<a class="anchor-link" href="#1.5.1-Decoratori,-sottoclassi-e-inheritance">¶</a></h3><p>Una sottoclasse di Circle:</p>
 </div>
 </div>
 </div>
