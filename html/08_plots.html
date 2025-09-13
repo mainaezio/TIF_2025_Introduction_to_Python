@@ -7857,7 +7857,7 @@ I metodi <code>set_title</code>, <code>set_xlabel</code>, <code>set_ylabel</code
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Fare-il-grafico-di-una-funzione-nota-f(x)">Fare il grafico di una funzione nota <code>f(x)</code><a class="anchor-link" href="#Fare-il-grafico-di-una-funzione-nota-f(x)">¶</a></h2><p>Il modo più semplice per fare il grafico di una funzione <code>f(x)</code>è:</p>
+<h2 id="Fare-il-grafico-di-una-funzione-nota-f(x)">Fare il grafico di una funzione nota <code>f(x)</code><a class="anchor-link" href="#Fare-il-grafico-di-una-funzione-nota-f(x)">¶</a></h2><p>Il modo più semplice per fare il grafico di una funzione <code>f(x)</code> è:</p>
 <ul>
 <li>Generare un set apportuno <code>xval</code> di ascisse in cui calcolare i valori di <code>f</code>, tipicamente usando <code>arange</code> o <code>linspace</code>.</li>
 <li>Scrivere una funzione che restituisca i valori <code>yval</code> di <code>f(x)</code> nei punti <code>xval</code>.</li>
@@ -8371,8 +8371,8 @@ Ciascuno dei comandi successivi si riferirà ad uno specifico oggetto <code>ax</
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Legende">Legende<a class="anchor-link" href="#Legende">¶</a></h3><p>La legenda per ciascuna curva viene passata con il parametro <code>label</code> nella chiamata a <code>plot</code>. Le curve prive di <code>label</code> non vengono incluse nella legenda.
-Se nessuna delle curve ha un <code>label</code> si ha un errore.</p>
+<h3 id="Legende">Legende<a class="anchor-link" href="#Legende">¶</a></h3><p>La legenda per ciascuna curva viene passata con il parametro <code>label</code> nella chiamata a <code>plot</code>. Le legende vengono mostrate invocando il metodo <code>legend</code> sul singolo garfico. Le curve prive di <code>label</code> non vengono incluse nella legenda.
+Se viene chiamato <code>legend</code> e nessuna delle curve ha un <code>label</code> si ha un errore.</p>
 </div>
 </div>
 </div>
@@ -8603,7 +8603,7 @@ Se nessuna delle curve ha un <code>label</code> si ha un errore.</p>
 <h2 id="Plot-parametrici">Plot parametrici<a class="anchor-link" href="#Plot-parametrici">¶</a></h2><p>Spesso per descrivere una curva esprimiamo le coordinate <code>y</code> dei punti sulla curva in funzione delle loro coordinate <code>x</code>. Per esempio una semicirconferenza centrata nell'origine è descritta dalla relazione $ y(x) = \sqrt{r^2 - x^2}$, dove $r$ è il raggio.<br/>
 Un modo alternativo di costruire i punti sul cerchio di raggio $r$ è di notare che possiamo usare come parametro o coordinata l'angolo del punto rispetto all'asse $\hat{x}$ come:
 $$ x(\theta) = r \cos\theta,\qquad y(\theta) = r \sin\theta$$
-Se creiamo due array sufficientemente fitti in questo modo, possiamo disegnare una circonferenza.</p>
+Se creiamo due array sufficientemente fitti in questo modo, possiamo disegnare una circonferenza nel modo seguente:</p>
 </div>
 </div>
 </div>
@@ -8749,58 +8749,157 @@ La possibilità di fare il grafico di una qualsiasi funzione con pochissima fati
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sommario-8:-Grafici-in-Matplotlib">Sommario 8: Grafici in Matplotlib<a class="anchor-link" href="#Sommario-8:-Grafici-in-Matplotlib">¶</a></h1><h2 id="Nozioni-Fondamentali">Nozioni Fondamentali<a class="anchor-link" href="#Nozioni-Fondamentali">¶</a></h2><ul>
-<li>Creazione di un oggetto grafico utilizzando la funzione <code>subplots</code>.</li>
-<li>Gli oggetti <code>Figure</code> e <code>AxesSubplot</code>.</li>
-<li>Configurazione dei parametri come il numero di righe (<code>nrows</code>) e colonne (<code>ncols</code>) per la disposizione dei subplot.</li>
+<h1 id="Sommario-8:-Grafici-con-Matplotlib---Guida-Essenziale">Sommario 8: Grafici con Matplotlib - Guida Essenziale<a class="anchor-link" href="#Sommario-8:-Grafici-con-Matplotlib---Guida-Essenziale">¶</a></h1><h2 id="I-Concetti-Fondamentali">I Concetti Fondamentali<a class="anchor-link" href="#I-Concetti-Fondamentali">¶</a></h2><h3 id="La-Struttura-Base:-Figure-e-Axes">La Struttura Base: Figure e Axes<a class="anchor-link" href="#La-Struttura-Base:-Figure-e-Axes">¶</a></h3><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>  <span class="c1"># Una figura, un grafico</span>
+</pre></div>
+<ul>
+<li><strong>Figure</strong>: La tela/pagina intera</li>
+<li><strong>Axes</strong>: Il singolo grafico (assi + area di plot)</li>
+<li><strong>Regola</strong>: Un <code>fig</code> può contenere multipli <code>ax</code></li>
 </ul>
-<h2 id="Grafico-di-una-Lista-di-Numeri">Grafico di una Lista di Numeri<a class="anchor-link" href="#Grafico-di-una-Lista-di-Numeri">¶</a></h2><ul>
-<li>Uso dei metodi <code>plot</code> e <code>scatter</code> per disegnare curve e punti.</li>
-<li>Esempi di creazione di grafici semplici con Matplotlib.</li>
+<h3 id="I-Due-Metodi-Principali">I Due Metodi Principali<a class="anchor-link" href="#I-Due-Metodi-Principali">¶</a></h3><table>
+<thead>
+<tr>
+<th><code>plot()</code></th>
+<th><code>scatter()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linee che connettono punti</td>
+<td>Punti isolati</td>
+</tr>
+<tr>
+<td>Per funzioni continue</td>
+<td>Per dati sperimentali</td>
+</tr>
+<tr>
+<td>Default: linea senza marker</td>
+<td>Default: marker senza linea</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Il-Workflow-Standard-per-un-Grafico">Il Workflow Standard per un Grafico<a class="anchor-link" href="#Il-Workflow-Standard-per-un-Grafico">¶</a></h2><h3 id="1.-Preparazione-dei-Dati">1. Preparazione dei Dati<a class="anchor-link" href="#1.-Preparazione-dei-Dati">¶</a></h3><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">n_points</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">funzione</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+<h3 id="2.-Creazione-della-Figura">2. Creazione della Figura<a class="anchor-link" href="#2.-Creazione-della-Figura">¶</a></h3><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">largh</span><span class="p">,</span> <span class="n">alt</span><span class="p">))</span>
+</pre></div>
+<h3 id="3.-Plot-dei-Dati">3. Plot dei Dati<a class="anchor-link" href="#3.-Plot-dei-Dati">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'nome'</span><span class="p">)</span>
+</pre></div>
+<h3 id="4.-Personalizzazione">4. Personalizzazione<a class="anchor-link" href="#4.-Personalizzazione">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Tempo (s)'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Posizione (m)'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Moto Armonico'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+<h3 id="5.-Salvataggio-(opzionale)">5. Salvataggio (opzionale)<a class="anchor-link" href="#5.-Salvataggio-(opzionale)">¶</a></h3><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'nome.pdf'</span><span class="p">)</span>
+</pre></div>
+<h2 id="Personalizzazione:-I-Parametri-Chiave">Personalizzazione: I Parametri Chiave<a class="anchor-link" href="#Personalizzazione:-I-Parametri-Chiave">¶</a></h2><h3 id="Colori-e-Stili">Colori e Stili<a class="anchor-link" href="#Colori-e-Stili">¶</a></h3><ul>
+<li><strong>Colori</strong>: <code>'r'</code> (rosso), <code>'b'</code> (blu), <code>'g'</code> (verde), <code>'k'</code> (nero)</li>
+<li><strong>Linee</strong>: <code>'-'</code> (solida), <code>'--'</code> (tratteggiata), <code>':'</code> (puntini), <code>'-.'</code> (tratto-punto)</li>
+<li><strong>Marker</strong>: <code>'o'</code> (cerchi), <code>'s'</code> (quadrati), <code>'^'</code> (triangoli), <code>'.'</code> (punti)</li>
 </ul>
-<h2 id="Titoli,-Nomi-degli-Assi,-Colori-e-Stile-delle-Linee">Titoli, Nomi degli Assi, Colori e Stile delle Linee<a class="anchor-link" href="#Titoli,-Nomi-degli-Assi,-Colori-e-Stile-delle-Linee">¶</a></h2><ul>
-<li>Personalizzazione dei grafici con titoli e etichette per gli assi (<code>set_title</code>, <code>set_xlabel</code>, <code>set_ylabel</code>).</li>
-<li>Uso di marker, colori (<code>color</code>) e stili di linea (<code>linestyle</code>) per differenziare le serie di dati.</li>
+<h3 id="Controllo-degli-Assi">Controllo degli Assi<a class="anchor-link" href="#Controllo-degli-Assi">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">)</span>  <span class="c1"># Limiti manuali</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>             <span class="c1"># Griglia</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>    <span class="c1"># Rapporto aspetto</span>
+</pre></div>
+<h2 id="Plot-Multipli:-Le-Tre-Situazioni">Plot Multipli: Le Tre Situazioni<a class="anchor-link" href="#Plot-Multipli:-Le-Tre-Situazioni">¶</a></h2><h3 id="1.-Pi%C3%B9-Curve-nello-Stesso-Plot">1. Più Curve nello Stesso Plot<a class="anchor-link" href="#1.-Pi%C3%B9-Curve-nello-Stesso-Plot">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'curva 1'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'curva 2'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+<h3 id="2.-Subplot-Affiancati">2. Subplot Affiancati<a class="anchor-link" href="#2.-Subplot-Affiancati">¶</a></h3><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+</pre></div>
+<h3 id="3.-Subplot-in-Griglia">3. Subplot in Griglia<a class="anchor-link" href="#3.-Subplot-in-Griglia">¶</a></h3><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># Alto sinistra</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>  <span class="c1"># Alto destra</span>
+</pre></div>
+<h2 id="Scale-Logaritmiche:-Quando-e-Come">Scale Logaritmiche: Quando e Come<a class="anchor-link" href="#Scale-Logaritmiche:-Quando-e-Come">¶</a></h2><h3 id="Quando-Usarle">Quando Usarle<a class="anchor-link" href="#Quando-Usarle">¶</a></h3><ul>
+<li>Dati che variano su ordini di grandezza</li>
+<li>Decadimenti esponenziali</li>
+<li>Leggi di potenza</li>
 </ul>
-<h2 id="Estremi-degli-Assi">Estremi degli Assi<a class="anchor-link" href="#Estremi-degli-Assi">¶</a></h2><ul>
-<li>Impostazione manuale dei limiti degli assi con <code>set_xlim</code> e <code>set_ylim</code>.</li>
+<h3 id="Come-Applicarle">Come Applicarle<a class="anchor-link" href="#Come-Applicarle">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>  <span class="c1"># Solo x logaritmico</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>  <span class="c1"># Solo y logaritmico</span>
+<span class="c1"># Entrambi logaritmici = log-log plot</span>
+</pre></div>
+<h2 id="Grafici-Specializzati">Grafici Specializzati<a class="anchor-link" href="#Grafici-Specializzati">¶</a></h2><h3 id="Istogrammi">Istogrammi<a class="anchor-link" href="#Istogrammi">¶</a></h3><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dati</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">n_bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="p">))</span>
+</pre></div>
+<p><strong>Uso</strong>: Distribuzione di dati sperimentali</p>
+<h3 id="Plot-Parametrici">Plot Parametrici<a class="anchor-link" href="#Plot-Parametrici">¶</a></h3><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+<p><strong>Uso</strong>: Traiettorie, orbite, curve complesse</p>
+<h2 id="Pattern-Utili-per-la-Fisica">Pattern Utili per la Fisica<a class="anchor-link" href="#Pattern-Utili-per-la-Fisica">¶</a></h2><h3 id="Confronto-Teoria-Esperimento">Confronto Teoria-Esperimento<a class="anchor-link" href="#Confronto-Teoria-Esperimento">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_exp</span><span class="p">,</span> <span class="n">y_exp</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Sperimentale'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_teo</span><span class="p">,</span> <span class="n">y_teo</span><span class="p">,</span> <span class="s1">'r-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Teorico'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+<h3 id="Oscillazioni-Smorzate">Oscillazioni Smorzate<a class="anchor-link" href="#Oscillazioni-Smorzate">¶</a></h3><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">gamma</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">omega</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">gamma</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="s1">'r--'</span><span class="p">)</span>  <span class="c1"># Inviluppo</span>
+</pre></div>
+<h2 id="Errori-Comuni-e-Soluzioni">Errori Comuni e Soluzioni<a class="anchor-link" href="#Errori-Comuni-e-Soluzioni">¶</a></h2><table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Sintomo</th>
+<th>Soluzione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output <code>[&lt;matplotlib...&gt;]</code></td>
+<td>Manca <code>;</code> alla fine</td>
+<td>Aggiungi <code>;</code> dopo plot</td>
+</tr>
+<tr>
+<td>Grafico vuoto</td>
+<td>Dati fuori scala</td>
+<td>Controlla <code>xlim</code>, <code>ylim</code></td>
+</tr>
+<tr>
+<td>Legenda error</td>
+<td>Nessun <code>label</code></td>
+<td>Aggiungi <code>label='nome'</code></td>
+</tr>
+<tr>
+<td>Testo LaTeX non funziona</td>
+<td><code>\</code> interpretato male</td>
+<td>Usa <code>r'stringa'</code></td>
+</tr>
+<tr>
+<td>Plot sovrapposti</td>
+<td><code>subplots</code> errato</td>
+<td>Verifica <code>nrows</code>, <code>ncols</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Best-Practices">Best Practices<a class="anchor-link" href="#Best-Practices">¶</a></h2><h3 id="1.-Sempre-Etichettare-gli-Assi">1. Sempre Etichettare gli Assi<a class="anchor-link" href="#1.-Sempre-Etichettare-gli-Assi">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Grandezza (unità)'</span><span class="p">)</span>
+</pre></div>
+<h3 id="2.-Griglia-per-Leggibilit%C3%A0">2. Griglia per Leggibilità<a class="anchor-link" href="#2.-Griglia-per-Leggibilit%C3%A0">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+<h3 id="3.-Legende-per-Plot-Multipli">3. Legende per Plot Multipli<a class="anchor-link" href="#3.-Legende-per-Plot-Multipli">¶</a></h3><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'descrizione'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'best'</span><span class="p">)</span>
+</pre></div>
+<h3 id="4.-Figure-di-Dimensioni-Appropriate">4. Figure di Dimensioni Appropriate<a class="anchor-link" href="#4.-Figure-di-Dimensioni-Appropriate">¶</a></h3><ul>
+<li>Schermo: <code>figsize=(10, 6)</code></li>
+<li>Paper: <code>figsize=(8, 6)</code></li>
+<li>Presentazione: <code>figsize=(12, 8)</code></li>
 </ul>
-<h2 id="Griglie-e-Linee-di-Riferimento**">Griglie e Linee di Riferimento**<a class="anchor-link" href="#Griglie-e-Linee-di-Riferimento**">¶</a></h2><ul>
-<li>Aggiunta di griglie ai grafici con <code>grid()</code> per facilitare la lettura.</li>
-<li>Inserimento di linee orizzontali e verticali usando <code>hlines</code> e <code>vlines</code>.</li>
+<h2 id="Checklist-Pre-Consegna">Checklist Pre-Consegna<a class="anchor-link" href="#Checklist-Pre-Consegna">¶</a></h2><ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Assi etichettati con unità di misura?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Titolo descrittivo?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Legenda se ci sono più curve?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Font leggibili (non troppo piccoli)?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Colori distinguibili?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Scala appropriata (lineare vs log)?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Griglia se aiuta la lettura?</li>
 </ul>
-<h2 id="Grafico-di-Funzioni-Note">Grafico di Funzioni Note<a class="anchor-link" href="#Grafico-di-Funzioni-Note">¶</a></h2><ul>
-<li>Uso di <code>linspace</code> o <code>arange</code> per generare set di valori x.</li>
-<li>Definizione di funzioni personalizzate e loro rappresentazione grafica.</li>
-</ul>
-<h2 id="Plot-Multipli">Plot Multipli<a class="anchor-link" href="#Plot-Multipli">¶</a></h2><ul>
-<li>Rappresentazione di più curve all'interno dello stesso plot.</li>
-<li>Creazione di grafici multipli in una singola figura con l'uso di più oggetti <code>ax</code>.</li>
-</ul>
-<h2 id="Salvare-una-Figura">Salvare una Figura<a class="anchor-link" href="#Salvare-una-Figura">¶</a></h2><ul>
-<li>Salvataggio dei grafici in diversi formati di file (<code>.pdf</code>, <code>.jpg</code>) utilizzando il metodo <code>savefig</code>.</li>
-</ul>
-<h2 id="Plot-Logaritmici">Plot Logaritmici<a class="anchor-link" href="#Plot-Logaritmici">¶</a></h2><ul>
-<li>Introduzione ai grafici con scala logaritmica per rappresentare meglio dati che variano esponenzialmente.</li>
-</ul>
-<h2 id="Altri-elementi-dei-plot">Altri elementi dei plot<a class="anchor-link" href="#Altri-elementi-dei-plot">¶</a></h2><h3 id="Legende">Legende<a class="anchor-link" href="#Legende">¶</a></h3><ul>
-<li>Le legende vengono disegnate invocando il metodo <code>legend()</code></li>
-<li>La legenda di ciascuna curva in un plot viene definita utilizzando il parametro <code>label</code> nella chiamata a <code>plot</code>.</li>
-<li>Curve senza etichetta <code>label</code> non appaiono nella legenda. Se nessuna curva ha un <code>label</code>, si verifica un errore.</li>
-</ul>
-<h3 id="Testo">Testo<a class="anchor-link" href="#Testo">¶</a></h3><ul>
-<li>Si usa <code>plt.text</code></li>
-<li>L'uso del prefisso <code>r</code> prima delle stringhe impedisce l'interpretazione dei caratteri di escape, utile per i comandi LaTeX.</li>
-</ul>
-<h3 id="Subplots">Subplots<a class="anchor-link" href="#Subplots">¶</a></h3><ul>
-<li>Creazione di un subplot all'interno di un grafico principale usando <code>plt.axes()</code> per posizionare un secondo plot.</li>
-</ul>
-<h2 id="Plot-parametrici">Plot parametrici<a class="anchor-link" href="#Plot-parametrici">¶</a></h2><ul>
-<li>Definizione di curve usando parametri invece delle coordinate tradizionali <code>x</code> e <code>y</code>.</li>
-</ul>
-<h2 id="Suggerimento-finale">Suggerimento finale<a class="anchor-link" href="#Suggerimento-finale">¶</a></h2><ul>
-<li>È consigliato fare un grafico preliminare di una funzione prima di procedere con ulteriori manipolazioni per avere una comprensione visiva iniziale del suo comportamento.</li>
-</ul>
+<h2 id="Il-Consiglio-Pi%C3%B9-Importante">Il Consiglio Più Importante<a class="anchor-link" href="#Il-Consiglio-Pi%C3%B9-Importante">¶</a></h2><p><strong>PRIMA grafica, POI analizza</strong>: Fare sempre un plot esplorativo prima di qualsiasi manipolazione matematica. Un grafico vale più di mille calcoli per capire il comportamento di una funzione o di un dataset.</p>
 </div>
 </div>
 </div>

@@ -9073,30 +9073,17 @@ per avere una lista di frasi complete si potrebbe usare il punto "." come separa
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'duck'</span><span class="p">,</span> <span class="o">-</span><span class="mf">42.5</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="s1">'elephant'</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[123, 'duck', -42.5, 17, 1j, 'elephant']
-</pre>
 </div>
 </div>
 </div>
@@ -9112,30 +9099,17 @@ per avere una lista di frasi complete si potrebbe usare il punto "." come separa
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">'Mickey Mouse'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['M', 'i', 'c', 'k', 'e', 'y', ' ', 'M', 'o', 'u', 's', 'e']
-</pre>
 </div>
 </div>
 </div>
@@ -9572,7 +9546,7 @@ per avere una lista di frasi complete si potrebbe usare il punto "." come separa
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Il metodo <code>sort</code> modifica la lista su cui opera e NON restituisce una lista risultato.</p>
+<p>Il metodo <code>sort</code> modifica la lista su cui opera e NON restituisce una lista risultato, si dice che agisce <code>in place</code>.</p>
 </div>
 </div>
 </div>
@@ -9873,7 +9847,7 @@ Notate che il valore corrispondente a <code>start</code> è il primo elemento pr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Ntuples">Ntuples<a class="anchor-link" href="#Ntuples">¶</a></h3><p>Una <em>nntupla</em> (<em>tuple</em>) è una sequenza (immutable) di oggetti. Le ntuple si comportano in modo molto simile alle liste con l'eccezione che non possono essere modificate.</p>
+<h3 id="Ntuples">Ntuples<a class="anchor-link" href="#Ntuples">¶</a></h3><p>Una <em>ntupla</em> (<em>tuple</em>) è una sequenza (immutable) di oggetti. Le ntuple si comportano in modo molto simile alle liste con l'eccezione che non possono essere modificate.</p>
 <p>Per esempio, qualunque tipo di oggetto vi può comparire:</p>
 </div>
 </div>
@@ -9914,7 +9888,7 @@ Notate che il valore corrispondente a <code>start</code> è il primo elemento pr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Le parentesi non sono necessarie per definire una tuple: una sequenza di oggetti separati da virgole è sufficiente a definire una tuple:</p>
+<p>Le parentesi non sono necessarie per definire una tuple: una sequenza di oggetti separati da virgole è interpretata come una tuple:</p>
 </div>
 </div>
 </div>
@@ -10584,6 +10558,168 @@ Notate che il valore corrispondente a <code>start</code> è il primo elemento pr
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="s2">"Python"</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Mutabilit%C3%A0,-Immutabilit%C3%A0-e-metodi-che-modificano-oggetti-immutabili">Mutabilità, Immutabilità e metodi che modificano oggetti immutabili<a class="anchor-link" href="#Mutabilit%C3%A0,-Immutabilit%C3%A0-e-metodi-che-modificano-oggetti-immutabili">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Non posso sostitire una lettera in una stringa:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="s2">"abc"</span>
+<span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'A'</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Esistono però metodi che modificano una stringa, in apparente contaddizione con quanto appena detto:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">st</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>La contaddizione si risolve notando che il metodo upper crea una nuova stringa. Quando la assegno a <code>st</code> distruggo la referenza all'oggetto originale.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="s2">"abc"</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>La stessa cosa succede con le ntuple e i valori numerici:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="mf">1.3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+<span class="n">val</span> <span class="o">=</span> <span class="o">-</span><span class="n">val</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Se modifico un oggetto mutabile la sua locazione in memoria non viene cambiata.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+<span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
+<span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -11491,7 +11627,7 @@ Per eliminare una coppia key-value da un dizionario si può usare <code>del</cod
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Ulteriori dettagli:</p>
 <ul>
-<li><p>La keyword può essere qualsiasi (immutable) oggetto in Python. Questo include:</p>
+<li><p>La keyword può essere qualsiasi oggetto (immutabile) di Python. Questo include:</p>
 <ul>
 <li><p>numeri</p>
 </li>
@@ -12020,151 +12156,6 @@ Se cambiamo il valore di n cambia anche la posizione in memoria:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Mutabilit%C3%A0,-Immutabilit%C3%A0-e-metodi-che-modificano-oggetti-immutabili">Mutabilità, Immutabilità e metodi che modificano oggetti immutabili<a class="anchor-link" href="#Mutabilit%C3%A0,-Immutabilit%C3%A0-e-metodi-che-modificano-oggetti-immutabili">¶</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Non posso sostitire una lettera in una stringa:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="s2">"abc"</span>
-<span class="n">st</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'A'</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Esistono però metodi che modificano una stringa, in apparente contaddizione con quanto appena detto:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<span class="n">st</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>La contaddizione si risolve notando che il metodo upper crea una nuova stringa. Quando la assegno a <code>st</code> distruggo la referenza all'oggetto originale.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="s2">"abc"</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>La stessa cosa succede con ntuple e numpy.array.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Se modifico un oggetto mutabile la sua locazione in memoria non viene cambiata.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
-<span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
-<span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div style="padding:20px 20px 0px 200px;">
 <img align="center" alt="No description has been provided for this image" src="../Humour/Novice_vs_Experienced_Programmer.jpg" width="300"/>
 </div>
@@ -12178,80 +12169,163 @@ Se cambiamo il valore di n cambia anche la posizione in memoria:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sommario-3-:-Tipi-di-Dati-e-Data-Structures-in-Python">Sommario 3 : Tipi di Dati e Data Structures in Python<a class="anchor-link" href="#Sommario-3-:-Tipi-di-Dati-e-Data-Structures-in-Python">¶</a></h1><h2 id="Principali-Tipi-di-Dati">Principali Tipi di Dati<a class="anchor-link" href="#Principali-Tipi-di-Dati">¶</a></h2><ol>
-<li><strong>Tipi numerici</strong>: interi (int), numeri reali (float), numeri complessi (complex)</li>
-<li><strong>Variabili logiche</strong>: <code>True</code> e <code>False</code></li>
-<li><strong>Tipi di dati sequenziali</strong>:<ul>
-<li><strong>Stringhe</strong> (<code>str</code>)</li>
-<li><strong>Liste</strong> (<code>list</code>)</li>
-<li><strong>Ntuple</strong> (<code>tuple</code>)</li>
+<h1 id="Sommario-3:-Tipi-di-Dati-e-Strutture---Guida-Pratica">Sommario 3: Tipi di Dati e Strutture - Guida Pratica<a class="anchor-link" href="#Sommario-3:-Tipi-di-Dati-e-Strutture---Guida-Pratica">¶</a></h1><h2 id="%F0%9F%8E%AF-I-Concetti-Fondamentali">🎯 I Concetti Fondamentali<a class="anchor-link" href="#%F0%9F%8E%AF-I-Concetti-Fondamentali">¶</a></h2><h3 id="La-Grande-Divisione:-Mutabile-vs-Immutabile">La Grande Divisione: Mutabile vs Immutabile<a class="anchor-link" href="#La-Grande-Divisione:-Mutabile-vs-Immutabile">¶</a></h3><p><strong>Il concetto più importante di questo capitolo</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>IMMUTABILI</strong> (non modificabili)</th>
+<th><strong>MUTABILI</strong> (modificabili)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Numeri (<code>int</code>, <code>float</code>, <code>complex</code>)</td>
+<td>Liste <code>[1, 2, 3]</code></td>
+</tr>
+<tr>
+<td>Stringhe <code>"testo"</code></td>
+<td>Dizionari <code>{'a': 1}</code></td>
+</tr>
+<tr>
+<td>Tuple <code>(1, 2, 3)</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conseguenza pratica</strong>:</p>
+<ul>
+<li>Immutabile → ogni "modifica" crea un nuovo oggetto</li>
+<li>Mutabile → le modifiche avvengono sull'oggetto originale</li>
 </ul>
-</li>
-<li><strong>Dizionari</strong>: strutture dati che associano chiavi a valori.</li>
+<h2 id="%F0%9F%93%8A-I-Tipi-di-Dati-Essenziali">📊 I Tipi di Dati Essenziali<a class="anchor-link" href="#%F0%9F%93%8A-I-Tipi-di-Dati-Essenziali">¶</a></h2><h3 id="1.-Numeri---I-mattoni-base">1. <strong>Numeri</strong> - I mattoni base<a class="anchor-link" href="#1.-Numeri---I-mattoni-base">¶</a></h3><ul>
+<li><strong>Interi</strong> (<code>int</code>): Precisione infinita → <code>35**42</code> funziona!</li>
+<li><strong>Reali</strong> (<code>float</code>): ~15 cifre di precisione → <code>0.1 * 3 ≠ 0.3</code> (!)</li>
+<li><strong>Complessi</strong> (<code>complex</code>): Built-in → <code>1+2j</code>, parte reale <code>.real</code>, immaginaria <code>.imag</code></li>
+<li><strong>Notazione scientifica</strong>: <code>1.3e-4</code> = 1.3 × 10⁻⁴</li>
+</ul>
+<h3 id="2.-Booleani---Le-decisioni">2. <strong>Booleani</strong> - Le decisioni<a class="anchor-link" href="#2.-Booleani---Le-decisioni">¶</a></h3><ul>
+<li>Solo due valori: <code>True</code> e <code>False</code></li>
+<li>Operatori di confronto: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li>Operatori logici: <code>and</code>, <code>or</code>, <code>not</code></li>
+<li><strong>Attenzione</strong>: <code>=</code> assegna, <code>==</code> confronta!</li>
+</ul>
+<h3 id="3.-Sequenze---Collezioni-ordinate">3. <strong>Sequenze</strong> - Collezioni ordinate<a class="anchor-link" href="#3.-Sequenze---Collezioni-ordinate">¶</a></h3><h4 id="Operazioni-comuni-a-tutte-le-sequenze:"><strong>Operazioni comuni a tutte le sequenze</strong>:<a class="anchor-link" href="#Operazioni-comuni-a-tutte-le-sequenze:">¶</a></h4><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>        <span class="c1"># elemento i-esimo (parte da 0!)</span>
+<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]</span>      <span class="c1"># slice da i a j-1</span>
+<span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>       <span class="c1"># ultimo elemento</span>
+<span class="n">a</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>     <span class="c1"># sequenza invertita</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>      <span class="c1"># lunghezza</span>
+<span class="n">x</span> <span class="ow">in</span> <span class="n">a</span>      <span class="c1"># verifica presenza</span>
+<span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># restituisce la posizione (indice) di `x` in `a`. Se l'elemento non esiste, genera un errore.</span>
+</pre></div>
+<h4 id="Stringhe-(immutabili)"><strong>Stringhe</strong> (immutabili)<a class="anchor-link" href="#Stringhe-(immutabili)">¶</a></h4><ul>
+<li>Delimitatori: <code>'...'</code>, <code>"..."</code>, <code>'''...'''</code></li>
+<li>Metodi utili: <code>split()</code>, <code>join()</code>, <code>upper()</code>, <code>replace()</code></li>
+<li><code>+</code> concatena due liste</li>
+<li><strong>Non puoi fare</strong>: <code>s[0] = 'A'</code> ❌</li>
+</ul>
+<h4 id="Liste-(mutabili)"><strong>Liste</strong> (mutabili)<a class="anchor-link" href="#Liste-(mutabili)">¶</a></h4><ul>
+<li>Creazione: <code>[1, 2, 3]</code> o <code>list()</code></li>
+<li>Modifica: <code>L[0] = nuovo</code> ✓</li>
+<li>Metodi in-place: <code>append()</code>, <code>sort()</code>, <code>remove()</code></li>
+<li><strong>Attenzione</strong>: <code>b = a</code> crea un alias, non una copia!</li>
+</ul>
+<h4 id="Tuple-(immutabili)"><strong>Tuple</strong> (immutabili)<a class="anchor-link" href="#Tuple-(immutabili)">¶</a></h4><ul>
+<li>Creazione: <code>(1, 2, 3)</code> o solo virgole <code>1, 2, 3</code></li>
+<li><strong>Trappola</strong>: <code>(42)</code> è un numero, <code>(42,)</code> è una tupla!</li>
+<li>Uso tipico: return multipli da funzioni</li>
+</ul>
+<h3 id="4.-Dizionari---Associazioni-chiave-valore">4. <strong>Dizionari</strong> - Associazioni chiave-valore<a class="anchor-link" href="#4.-Dizionari---Associazioni-chiave-valore">¶</a></h3><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'nome'</span><span class="p">:</span> <span class="s1">'Mario'</span><span class="p">,</span> <span class="s1">'età'</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">'nome'</span><span class="p">]</span>           <span class="c1"># accesso</span>
+<span class="n">d</span><span class="p">[</span><span class="s1">'città'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Roma'</span> <span class="c1"># aggiunta</span>
+<span class="s1">'nome'</span> <span class="ow">in</span> <span class="n">d</span>         <span class="c1"># verifica chiave</span>
+</pre></div>
+<ul>
+<li>Chiavi: solo immutabili</li>
+<li>Valori: qualsiasi tipo</li>
+<li>Metodi utili: <code>d.keys()</code>, <code>d.values()</code>, <code>d.items()</code></li>
+</ul>
+<h2 id="%F0%9F%94%84-Conversioni-tra-Tipi">🔄 Conversioni tra Tipi<a class="anchor-link" href="#%F0%9F%94%84-Conversioni-tra-Tipi">¶</a></h2><table>
+<thead>
+<tr>
+<th>Da → A</th>
+<th>Funzione</th>
+<th>Esempio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qualsiasi → Intero</td>
+<td><code>int()</code></td>
+<td><code>int('42')</code> → <code>42</code></td>
+</tr>
+<tr>
+<td>Qualsiasi → Float</td>
+<td><code>float()</code></td>
+<td><code>float('3.14')</code> → <code>3.14</code></td>
+</tr>
+<tr>
+<td>Qualsiasi → Stringa</td>
+<td><code>str()</code></td>
+<td><code>str(42)</code> → <code>'42'</code></td>
+</tr>
+<tr>
+<td>Sequenza → Lista</td>
+<td><code>list()</code></td>
+<td><code>list('abc')</code> → <code>['a','b','c']</code></td>
+</tr>
+<tr>
+<td>Sequenza → Tupla</td>
+<td><code>tuple()</code></td>
+<td><code>tuple([1,2])</code> → <code>(1,2)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%F0%9F%92%BE-Memoria-e-Copie---Il-Concetto-Critico">💾 Memoria e Copie - Il Concetto Critico<a class="anchor-link" href="#%F0%9F%92%BE-Memoria-e-Copie---Il-Concetto-Critico">¶</a></h2><h3 id="Identit%C3%A0-vs-Uguaglianza">Identità vs Uguaglianza<a class="anchor-link" href="#Identit%C3%A0-vs-Uguaglianza">¶</a></h3><ul>
+<li><code>a == b</code>: stesso valore?</li>
+<li><code>a is b</code>: stesso oggetto in memoria?</li>
+<li><code>id(a)</code>: indirizzo di memoria</li>
+</ul>
+<h3 id="Il-Problema-delle-Copie">Il Problema delle Copie<a class="anchor-link" href="#Il-Problema-delle-Copie">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># ALIAS (pericolo con mutabili!)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>  <span class="c1"># b e a puntano allo stesso oggetto</span>
+
+<span class="c1"># COPIA INDIPENDENTE</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>           <span class="c1"># per liste (shallow copy)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># copia profonda</span>
+</pre></div>
+<h2 id="%E2%9A%A0%EF%B8%8F-Le-5-Trappole-Mortali">⚠️ Le 5 Trappole Mortali<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Le-5-Trappole-Mortali">¶</a></h2><ol>
+<li><strong>Indici partono da 0</strong>: <code>a[0]</code> è il primo elemento</li>
+<li><strong>Slice esclude l'ultimo</strong>: <code>a[1:3]</code> prende indici 1 e 2, NON 3</li>
+<li><strong>Tupla singola</strong>: Serve la virgola → <code>(42,)</code> non <code>(42)</code></li>
+<li><strong>Liste come alias</strong>: <code>b = a</code> non crea una copia!</li>
+<li><strong>Float imprecisi</strong>: <code>0.1 + 0.2 ≠ 0.3</code> (errori di arrotondamento)</li>
 </ol>
-<h2 id="Conversione-tra-Tipi">Conversione tra Tipi<a class="anchor-link" href="#Conversione-tra-Tipi">¶</a></h2><p>È possibile convertire una variabile da un tipo all'altro con le funzioni di casting, come <code>int()</code>, <code>float()</code>, <code>str()</code>.</p>
-<h2 id="Mutabilit%C3%A0-e-Immutabilit%C3%A0">Mutabilità e Immutabilità<a class="anchor-link" href="#Mutabilit%C3%A0-e-Immutabilit%C3%A0">¶</a></h2><ul>
-<li><strong>Tipi mutabili</strong>: il valore può essere modificato in loco (ad esempio, le liste).</li>
-<li><strong>Tipi immutabili</strong>: il valore non può essere modificato dopo la creazione (ad esempio, le stringhe, i numeri interi).</li>
+<h2 id="%F0%9F%9A%80-Pattern-Utili-per-la-Fisica">🚀 Pattern Utili per la Fisica<a class="anchor-link" href="#%F0%9F%9A%80-Pattern-Utili-per-la-Fisica">¶</a></h2><h3 id="Vettore-3D">Vettore 3D<a class="anchor-link" href="#Vettore-3D">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Come lista</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>  <span class="c1"># v[0]=x, v[1]=y, v[2]=z</span>
+
+<span class="c1"># Come dizionario (più leggibile)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">}</span>
+</pre></div>
+<h3 id="Dati-sperimentali">Dati sperimentali<a class="anchor-link" href="#Dati-sperimentali">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Misure con incertezze</span>
+<span class="n">misure</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">'valore'</span><span class="p">:</span> <span class="mf">9.81</span><span class="p">,</span> <span class="s1">'errore'</span><span class="p">:</span> <span class="mf">0.02</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">'valore'</span><span class="p">:</span> <span class="mf">9.79</span><span class="p">,</span> <span class="s1">'errore'</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+<h3 id="Costanti-fisiche">Costanti fisiche<a class="anchor-link" href="#Costanti-fisiche">¶</a></h3><div class="highlight"><pre><span></span><span class="n">costanti</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'c'</span><span class="p">:</span> <span class="mf">3e8</span><span class="p">,</span>        <span class="c1"># m/s</span>
+    <span class="s1">'h'</span><span class="p">:</span> <span class="mf">6.626e-34</span><span class="p">,</span>  <span class="c1"># J·s</span>
+    <span class="s1">'e'</span><span class="p">:</span> <span class="mf">1.602e-19</span>   <span class="c1"># C</span>
+<span class="p">}</span>
+</pre></div>
+<h2 id="%F0%9F%93%9D-Checklist-di-Debug">📝 Checklist di Debug<a class="anchor-link" href="#%F0%9F%93%9D-Checklist-di-Debug">¶</a></h2><ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Sto usando l'indice giusto? (Ricorda: parte da 0)</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho bisogno di una copia o un alias?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Il tipo è mutabile o immutabile?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Sto usando <code>=</code> (assegna) o <code>==</code> (confronta)?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>La mia tupla ha la virgola finale se necessario?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Il metodo agisce in-place o restituisce un nuovo oggetto?</li>
 </ul>
-<h2 id="Uguaglianza-e-Identit%C3%A0">Uguaglianza e Identità<a class="anchor-link" href="#Uguaglianza-e-Identit%C3%A0">¶</a></h2><ul>
-<li><strong>Uguaglianza (<code>==</code>)</strong>: verifica se due variabili hanno lo stesso valore.</li>
-<li><strong>Identità (<code>is</code>)</strong>: verifica se due variabili puntano alla stessa area di memoria. <code>id()</code> restituisce l'indirizzo in memoria di un oggetto.</li>
-</ul>
-<hr>
-<h3 id="Valori-Logici-o-Variabili-di-Boole">Valori Logici o Variabili di Boole<a class="anchor-link" href="#Valori-Logici-o-Variabili-di-Boole">¶</a></h3><p>Le variabili booleane vengono utilizzate per esprimere condizioni che possono essere verificate in un programma, come ad esempio controllare se una variabile soddisfa una certa condizione.</p>
-<h3 id="Confronti">Confronti<a class="anchor-link" href="#Confronti">¶</a></h3><p>Gli operatori di confronto permettono di verificare la relazione tra due valori o variabili e restituiscono un valore booleano (<code>True</code> o <code>False</code>):</p>
-<ul>
-<li><code>==</code> : uguaglianza</li>
-<li><code>!=</code> : diversità</li>
-<li><code>&gt;</code> : maggiore</li>
-<li><code>&gt;=</code> : maggiore o uguale</li>
-<li><code>&lt;</code> : minore</li>
-<li><code>&lt;=</code> : minore o uguale</li>
-</ul>
-<h4 id="Operatori-logici">Operatori logici<a class="anchor-link" href="#Operatori-logici">¶</a></h4><p>Gli operatori logici <code>and</code>, <code>or</code> e <code>not</code> permettono di combinare più espressioni booleane.</p>
-<h3 id="Sequenze">Sequenze<a class="anchor-link" href="#Sequenze">¶</a></h3><p>Stringhe, liste e ntuple sono tipi di dati sequenziali. Le sequenze condividono operazioni come:</p>
-<ul>
-<li><code>a[i]</code>: restituisce l'<em>i</em>-esimo elemento di <code>a</code>. Un indice negativo conta li elementi a partire dalla fine della sequenza.</li>
-<li><code>a[i:j]</code>: restituisce gli elementi da <em>i</em> a <em>j</em>-1 (slicing).</li>
-<li><code>len(a)</code>: restituisce la lunghezza della sequenza.</li>
-<li><code>min(a)</code>, <code>max(a)</code>: restituiscono rispettivamente il valore minimo e massimo della sequenza.</li>
-<li><code>a.count(x)</code>: conta quante volte <code>x</code> appare nella sequenza.</li>
-<li><code>x in a</code>: verifica se <code>x</code> è presente in <code>a</code>.</li>
-<li><code>index</code>: restituisce la posizione (indice) di un elemento in una sequenza. Se l'elemento non esiste, genera un errore.</li>
-</ul>
-<h4 id="Stringhe">Stringhe<a class="anchor-link" href="#Stringhe">¶</a></h4><p>Le stringhe sono sequenze immutabili di caratteri.</p>
-<h3 id="Metodi-Utili-sulle-Stringhe">Metodi Utili sulle Stringhe<a class="anchor-link" href="#Metodi-Utili-sulle-Stringhe">¶</a></h3><ul>
-<li><code>split()</code>: divide una stringa in una lista di parole.</li>
-<li><code>join()</code>: unisce una lista di stringhe in una singola stringa.</li>
-<li><code>upper()</code>: restituisce la stringa con tutti i caratteri maiuscoli.</li>
-<li><code>replace()</code>: sostituisce una sottostringa con un'altra.</li>
-</ul>
-<h2 id="Liste">Liste<a class="anchor-link" href="#Liste">¶</a></h2><p>Una <strong>lista</strong> è una sequenza mutabile di oggetti. Gli oggetti all'interno di una lista possono essere di qualsiasi tipo: numeri interi, stringhe, o anche altre liste.</p>
-<h3 id="Metodi-Utili-sulle-liste">Metodi Utili sulle liste<a class="anchor-link" href="#Metodi-Utili-sulle-liste">¶</a></h3><ul>
-<li><code>+</code>: concatena due liste.</li>
-<li><code>append()</code>: aggiunge elementi alla fine della lista.</li>
-<li><code>insert()</code>: inserisce elementi in una posizione specifica.</li>
-<li><code>remove()</code>: rimuove elementi dalla lista.</li>
-</ul>
-<h3 id="Ordinare-una-Lista">Ordinare una Lista<a class="anchor-link" href="#Ordinare-una-Lista">¶</a></h3><ul>
-<li><code>sort()</code>: modifica la lista in modo permanente.</li>
-<li><code>sorted()</code>: restituisce una nuova lista ordinata senza modificare l'originale.</li>
-</ul>
-<h3 id="Il-comando-range()">Il comando <code>range()</code><a class="anchor-link" href="#Il-comando-range()">¶</a></h3><p>Il comando <code>range(n)</code> genera una sequenza di numeri interi da <code>0</code> a <code>n-1</code>. È utile nei cicli <code>for</code> per iterare su una sequenza di numeri.</p>
-<h2 id="Ntuple">Ntuple<a class="anchor-link" href="#Ntuple">¶</a></h2><p>Una <em>ntupla</em> è una sequenza <strong>immutabile</strong> di oggetti. Le ntuple sono simili alle liste, ma non possono essere modificate dopo la loro creazione.
-Le ntuple sono utili quando non si vuole che il contenuto venga modificato, come per i valori di ritorno di una funzione.</p>
-<h2 id="Dizionari">Dizionari<a class="anchor-link" href="#Dizionari">¶</a></h2><p>I dizionari sono strutture dati in Python conosciute anche come “associative arrays” o “hash tables”. Un dizionario è un insieme <strong>non ordinato</strong> di coppie <strong>chiave-valore</strong>. Le <strong>chiavi</strong> devono essere oggetti immutabili, come numeri, stringhe o ntuple, mentre i <strong>valori</strong> possono essere di qualsiasi tipo e i dizionari stessi sono mutabili.
-I valori possono essere estratti usando la chiave come indice:</p>
-<h3 id="Metodi-utili-per-i-dizionari">Metodi utili per i dizionari<a class="anchor-link" href="#Metodi-utili-per-i-dizionari">¶</a></h3><ul>
-<li><code>keys()</code>: restituisce tutte le chiavi.</li>
-<li><code>values()</code>: restituisce tutti i valori.</li>
-<li><code>items()</code>: restituisce le coppie chiave-valore.</li>
-<li><code>get(key, default)</code>: restituisce il valore di <code>key</code>, o <code>default</code> se la chiave non esiste.</li>
-<li><code>del()</code>: elimina una coppia chiave-valore</li>
-</ul>
-<h3 id="Controllare-la-presenza-di-una-chiave-o-un-valore">Controllare la presenza di una chiave o un valore<a class="anchor-link" href="#Controllare-la-presenza-di-una-chiave-o-un-valore">¶</a></h3><p>Per verificare la presenza di una chiave o un valore in un dizionario usare l'operatore <code>in</code>.</p>
-</hr></div>
+</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">

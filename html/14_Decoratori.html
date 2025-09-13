@@ -8867,6 +8867,309 @@ La funzione ha restituito: Hi Paperino
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Il notebook sui decoratori è ben strutturato ma potrebbe beneficiare di alcuni miglioramenti per renderlo più accessibile a studenti principianti. Ecco i miei suggerimenti:</p>
+<h2 id="Suggerimenti-di-miglioramento">Suggerimenti di miglioramento<a class="anchor-link" href="#Suggerimenti-di-miglioramento">¶</a></h2><h3 id="1.-Correzioni-necessarie">1. <strong>Correzioni necessarie</strong><a class="anchor-link" href="#1.-Correzioni-necessarie">¶</a></h3><ul>
+<li>Negli esempi finali c'è un errore con <code>cone1 = Cone(-1,3)</code> che accetta un raggio negativo senza sollevare errore. Il controllo dovrebbe essere fatto nel <code>__init__</code> di Circle, non solo nel setter.</li>
+<li>Il commento finale "Parlare di @dataclass" dovrebbe essere rimosso o sviluppato.</li>
+</ul>
+<h3 id="2.-Semplificazione-per-principianti">2. <strong>Semplificazione per principianti</strong><a class="anchor-link" href="#2.-Semplificazione-per-principianti">¶</a></h3><ul>
+<li>L'esempio iniziale con <code>parent()</code> che restituisce funzioni potrebbe confondere. Suggerirei di iniziare con un esempio più semplice di funzione che accetta una funzione come parametro.</li>
+<li>Prima di <code>*args, **kwargs</code>, aggiungere una breve spiegazione o rimandare a una lezione precedente.</li>
+</ul>
+<h3 id="3.-Chiarimenti-concettuali">3. <strong>Chiarimenti concettuali</strong><a class="anchor-link" href="#3.-Chiarimenti-concettuali">¶</a></h3><ul>
+<li>Aggiungere un diagramma o schema visuale che mostri come il decoratore "avvolge" la funzione originale.</li>
+<li>Spiegare meglio la differenza tra <code>@classmethod</code> e <code>@staticmethod</code> con esempi più chiari:<div class="highlight"><pre><span></span><span class="c1"># @staticmethod: non accede né alla classe né all'istanza</span>
+<span class="c1"># @classmethod: accede alla classe ma non all'istanza specifica</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="4.-Esempi-pratici-aggiuntivi">4. <strong>Esempi pratici aggiuntivi</strong><a class="anchor-link" href="#4.-Esempi-pratici-aggiuntivi">¶</a></h3><ul>
+<li>Aggiungere un decoratore utile per la fisica, come un timer per misurare il tempo di esecuzione:<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> ha impiegato </span><span class="si">{</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> secondi"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="5.-Esercizi-graduali">5. <strong>Esercizi graduali</strong><a class="anchor-link" href="#5.-Esercizi-graduali">¶</a></h3><p>Aggiungere esercizi alla fine:</p>
+<ul>
+<li>Creare un decoratore che conta quante volte viene chiamata una funzione</li>
+<li>Creare un decoratore che verifica che gli input siano positivi</li>
+<li>Modificare la classe Circle aggiungendo un decoratore per validare gli input</li>
+</ul>
+<h3 id="6.-Note-sulla-convenzione-underscore">6. <strong>Note sulla convenzione underscore</strong><a class="anchor-link" href="#6.-Note-sulla-convenzione-underscore">¶</a></h3><p>Espandere il commento su <code>_radius</code>:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Convenzioni Python per attributi:</span>
+<span class="c1"># _nome: attributo "privato" (convenzione, non enforced)</span>
+<span class="c1"># __nome: name mangling (Python modifica il nome internamente)</span>
+<span class="c1"># nome_: usato quando nome è una keyword riservata</span>
+</pre></div>
+<h2 id="Sommario-dei-concetti-principali">Sommario dei concetti principali<a class="anchor-link" href="#Sommario-dei-concetti-principali">¶</a></h2><h3 id="Concetti-Fondamentali-dei-Decoratori"><strong>Concetti Fondamentali dei Decoratori</strong><a class="anchor-link" href="#Concetti-Fondamentali-dei-Decoratori">¶</a></h3><ol>
+<li><p><strong>Funzioni come oggetti di prima classe</strong> (Sezione 1.1)</p>
+<ul>
+<li>Le funzioni possono essere passate come argomenti</li>
+<li>Le funzioni possono essere restituite da altre funzioni</li>
+<li>Le funzioni possono essere definite dentro altre funzioni</li>
+<li>Questo permette la programmazione funzionale in Python</li>
+</ul>
+</li>
+<li><p><strong>Decoratori base</strong> (Sezione 1.1.1)</p>
+<ul>
+<li>Un decoratore è una funzione che modifica il comportamento di un'altra funzione</li>
+<li>Pattern base: funzione esterna che definisce e restituisce una funzione interna (wrapper)</li>
+<li>Il wrapper "avvolge" la funzione originale aggiungendo funzionalità</li>
+</ul>
+</li>
+<li><p><strong>Sintassi @</strong> (Sezione 1.1.2)</p>
+<ul>
+<li><code>@decoratore</code> prima di una funzione equivale a <code>funzione = decoratore(funzione)</code></li>
+<li>Sintassi più pulita e leggibile</li>
+<li>Può essere applicata a funzioni e metodi</li>
+</ul>
+</li>
+<li><p><strong>Decoratori con argomenti</strong> (Sezione 1.3)</p>
+<ul>
+<li>Uso di <code>*args, **kwargs</code> per accettare qualsiasi argomento</li>
+<li>Il wrapper passa gli argomenti alla funzione decorata</li>
+<li>Permette decoratori generici utilizzabili con qualsiasi funzione</li>
+</ul>
+</li>
+<li><p><strong>Gestione dei valori di ritorno</strong> (Sezione 1.4)</p>
+<ul>
+<li>Il wrapper deve restituire il risultato della funzione decorata</li>
+<li><code>@functools.wraps</code> preserva i metadati della funzione originale</li>
+<li>Importante per mantenere documentazione e nome della funzione</li>
+</ul>
+</li>
+<li><p><strong>Decoratori built-in per classi</strong> (Sezione 1.5)</p>
+<ul>
+<li><strong>@property</strong>: trasforma un metodo in attributo read-only</li>
+<li><strong>@nome.setter</strong>: definisce come modificare una property</li>
+<li><strong>@classmethod</strong>: metodo che riceve la classe come primo argomento</li>
+<li><strong>@staticmethod</strong>: metodo che non riceve né self né cls</li>
+</ul>
+</li>
+</ol>
+<h3 id="Applicazioni-pratiche"><strong>Applicazioni pratiche</strong><a class="anchor-link" href="#Applicazioni-pratiche">¶</a></h3><ul>
+<li><strong>Validazione</strong>: controllare input prima dell'esecuzione</li>
+<li><strong>Logging</strong>: registrare chiamate alle funzioni</li>
+<li><strong>Timing</strong>: misurare performance</li>
+<li><strong>Caching</strong>: memorizzare risultati di funzioni costose</li>
+<li><strong>Access control</strong>: limitare accesso a certe funzioni</li>
+</ul>
+<h3 id="Best-Practices"><strong>Best Practices</strong><a class="anchor-link" href="#Best-Practices">¶</a></h3><ul>
+<li>Usare <code>functools.wraps</code> per preservare metadati</li>
+<li>Documentare chiaramente cosa fa il decoratore</li>
+<li>Mantenere i decoratori semplici e con singola responsabilità</li>
+<li>Considerare l'ordine quando si applicano decoratori multipli</li>
+</ul>
+<p>I decoratori sono uno strumento potente che permette di separare concerns trasversali (logging, validazione, etc.) dalla logica principale, rendendo il codice più modulare e manutenibile.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p> 
+<br/>
+ 
+<br/>
+ </p>
+<h2 id="Sommario-alternativo">Sommario alternativo<a class="anchor-link" href="#Sommario-alternativo">¶</a></h2><br/>
+ 
+<br/>
+ 
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Il notebook sui decoratori è ben strutturato ma necessita di alcuni miglioramenti per renderlo più accessibile a studenti senza esperienza di programmazione.</p>
+<h2 id="Suggerimenti-di-miglioramento">Suggerimenti di miglioramento<a class="anchor-link" href="#Suggerimenti-di-miglioramento">¶</a></h2><h3 id="1.-Correzioni-critiche">1. <strong>Correzioni critiche</strong><a class="anchor-link" href="#1.-Correzioni-critiche">¶</a></h3><ul>
+<li><strong>Bug nel controllo del raggio</strong>: Nell'esempio <code>cone1 = Cone(-1,3)</code> il raggio negativo viene accettato. La validazione dovrebbe essere nell'<code>__init__</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">radius</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Radius must be positive"</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_radius</span> <span class="o">=</span> <span class="n">radius</span>
+</pre></div>
+<h3 id="2.-Semplificazioni-per-principianti">2. <strong>Semplificazioni per principianti</strong><a class="anchor-link" href="#2.-Semplificazioni-per-principianti">¶</a></h3><ul>
+<li>L'esempio iniziale con <code>parent()</code> che restituisce funzioni è troppo astratto. Iniziare con:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1"># Esempio più semplice: una funzione che modifica un'altra</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">aggiungi_saluto</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Ciao!"</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Arrivederci!"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+<h3 id="3.-Spiegazioni-mancanti">3. <strong>Spiegazioni mancanti</strong><a class="anchor-link" href="#3.-Spiegazioni-mancanti">¶</a></h3><ul>
+<li>Prima di usare <code>*args, **kwargs</code>, aggiungere una breve spiegazione o un box informativo</li>
+<li>Chiarire meglio la differenza tra <code>@classmethod</code> e <code>@staticmethod</code> con esempi concreti</li>
+</ul>
+<h3 id="4.-Esempi-pratici-per-fisici">4. <strong>Esempi pratici per fisici</strong><a class="anchor-link" href="#4.-Esempi-pratici-per-fisici">¶</a></h3><p>Aggiungere decoratori utili per applicazioni scientifiche:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cronometra</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Misura il tempo di esecuzione di una funzione"""</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">inizio</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">risultato</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">fine</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tempo di esecuzione: </span><span class="si">{</span><span class="n">fine</span><span class="o">-</span><span class="n">inizio</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> secondi"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">risultato</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">valida_positivo</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Verifica che tutti gli argomenti siano positivi"""</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">arg</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Tutti i parametri devono essere positivi"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+<h3 id="5.-Visualizzazione-del-concetto">5. <strong>Visualizzazione del concetto</strong><a class="anchor-link" href="#5.-Visualizzazione-del-concetto">¶</a></h3><p>Aggiungere uno schema che mostri come il decoratore "avvolge" la funzione:</p>
+<pre><code>Funzione originale:  [   func()   ]
+                          ↓
+Decoratore:        [ pre | func() | post ]
+</code></pre>
+<h3 id="6.-Esercizi-graduali">6. <strong>Esercizi graduali</strong><a class="anchor-link" href="#6.-Esercizi-graduali">¶</a></h3><p>Aggiungere esercizi progressivi:</p>
+<ol>
+<li>Creare un decoratore che stampa "Inizio" e "Fine"</li>
+<li>Modificare per contare quante volte viene chiamata una funzione</li>
+<li>Creare un decoratore che memorizza i risultati (memoization)</li>
+</ol>
+<h2 id="Sommario-dei-concetti-principali">Sommario dei concetti principali<a class="anchor-link" href="#Sommario-dei-concetti-principali">¶</a></h2><h3 id="Fondamenti-dei-Decoratori"><strong>Fondamenti dei Decoratori</strong><a class="anchor-link" href="#Fondamenti-dei-Decoratori">¶</a></h3><h4 id="1.-Funzioni-come-First-Class-Objects-(%C2%A71.1)"><strong>1. Funzioni come First-Class Objects</strong> (§1.1)<a class="anchor-link" href="#1.-Funzioni-come-First-Class-Objects-(%C2%A71.1)">¶</a></h4><ul>
+<li>Le funzioni sono oggetti che possono essere:<ul>
+<li>Passati come argomenti</li>
+<li>Restituiti da altre funzioni</li>
+<li>Assegnati a variabili</li>
+<li>Definiti dentro altre funzioni</li>
+</ul>
+</li>
+<li>Questo permette la programmazione funzionale e i pattern avanzati</li>
+</ul>
+<h4 id="2.-Meccanismo-dei-Decoratori-(%C2%A71.1.1)"><strong>2. Meccanismo dei Decoratori</strong> (§1.1.1)<a class="anchor-link" href="#2.-Meccanismo-dei-Decoratori-(%C2%A71.1.1)">¶</a></h4><ul>
+<li><strong>Definizione</strong>: Funzione che modifica il comportamento di un'altra funzione senza modificarne il codice</li>
+<li><strong>Pattern base</strong>:<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">decoratore</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">():</span>
+        <span class="c1"># codice prima</span>
+        <span class="n">risultato</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
+        <span class="c1"># codice dopo</span>
+        <span class="k">return</span> <span class="n">risultato</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+</pre></div>
+</li>
+<li>Il wrapper "avvolge" la funzione originale aggiungendo funzionalità</li>
+</ul>
+<h4 id="3.-Sintassi-@-(%C2%A71.1.2)"><strong>3. Sintassi @</strong> (§1.1.2)<a class="anchor-link" href="#3.-Sintassi-@-(%C2%A71.1.2)">¶</a></h4><ul>
+<li><code>@decoratore</code> è equivalente a <code>funzione = decoratore(funzione)</code></li>
+<li>Più leggibile e pythonico</li>
+<li>Può essere concatenato (decoratori multipli)</li>
+</ul>
+<h4 id="4.-Decoratori-Parametrizzati-(%C2%A71.3-1.4)"><strong>4. Decoratori Parametrizzati</strong> (§1.3-1.4)<a class="anchor-link" href="#4.-Decoratori-Parametrizzati-(%C2%A71.3-1.4)">¶</a></h4><ul>
+<li><strong>Con argomenti</strong>: uso di <code>*args, **kwargs</code> per funzioni generiche</li>
+<li><strong>Con return</strong>: il wrapper deve restituire il risultato</li>
+<li><strong>@functools.wraps</strong>: preserva metadati (nome, docstring)</li>
+</ul>
+<h4 id="5.-Decoratori-per-Classi-(%C2%A71.5)"><strong>5. Decoratori per Classi</strong> (§1.5)<a class="anchor-link" href="#5.-Decoratori-per-Classi-(%C2%A71.5)">¶</a></h4><table>
+<thead>
+<tr>
+<th>Decoratore</th>
+<th>Scopo</th>
+<th>Primo parametro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@property</td>
+<td>Attributo calcolato</td>
+<td>self</td>
+</tr>
+<tr>
+<td>@nome.setter</td>
+<td>Modifica property</td>
+<td>self</td>
+</tr>
+<tr>
+<td>@classmethod</td>
+<td>Metodo di classe</td>
+<td>cls</td>
+</tr>
+<tr>
+<td>@staticmethod</td>
+<td>Metodo indipendente</td>
+<td>nessuno</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Applicazioni-Pratiche"><strong>Applicazioni Pratiche</strong><a class="anchor-link" href="#Applicazioni-Pratiche">¶</a></h3><ol>
+<li><strong>Validazione Input</strong>: Controllare parametri prima dell'esecuzione</li>
+<li><strong>Logging/Debug</strong>: Tracciare esecuzione del codice</li>
+<li><strong>Performance</strong>: Misurare tempi di esecuzione</li>
+<li><strong>Caching</strong>: Memorizzare risultati costosi</li>
+<li><strong>Access Control</strong>: Limitare accesso a funzioni</li>
+</ol>
+<h3 id="Pattern-Avanzati"><strong>Pattern Avanzati</strong><a class="anchor-link" href="#Pattern-Avanzati">¶</a></h3><ul>
+<li><strong>Decoratori con stato</strong>: Usare classi come decoratori</li>
+<li><strong>Decoratori parametrizzati</strong>: Decoratori che accettano argomenti</li>
+<li><strong>Chaining</strong>: Applicare più decoratori in sequenza</li>
+</ul>
+<h3 id="Best-Practices"><strong>Best Practices</strong><a class="anchor-link" href="#Best-Practices">¶</a></h3><ol>
+<li>Sempre usare <code>@functools.wraps</code> per preservare metadati</li>
+<li>Mantenere i decoratori semplici (single responsibility)</li>
+<li>Documentare chiaramente il comportamento</li>
+<li>Testare separatamente decoratore e funzione decorata</li>
+<li>Considerare l'ordine quando si usano decoratori multipli</li>
+</ol>
+<h3 id="Vantaggi-nell'uso-dei-Decoratori"><strong>Vantaggi nell'uso dei Decoratori</strong><a class="anchor-link" href="#Vantaggi-nell'uso-dei-Decoratori">¶</a></h3><ul>
+<li><strong>Separazione delle responsabilità</strong>: Logica principale vs. concerns trasversali</li>
+<li><strong>Riusabilità</strong>: Un decoratore può essere applicato a molte funzioni</li>
+<li><strong>Leggibilità</strong>: Il codice principale rimane pulito</li>
+<li><strong>Manutenibilità</strong>: Modifiche centralizzate nel decoratore</li>
+</ul>
+<p>I decoratori rappresentano un pattern potente per estendere funzionalità in modo modulare e riutilizzabile, fondamentale per scrivere codice Python idiomatico e mantenibile.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </main>
 </body>
 </html>

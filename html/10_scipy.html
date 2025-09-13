@@ -7539,7 +7539,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -8184,12 +8184,12 @@ Un invito alla prudenza:
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">237</span><span class="p">)</span>
@@ -8197,18 +8197,6 @@ Un invito alla prudenza:
 <span class="n">res</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">res</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>2.737381134298694</pre>
 </div>
 </div>
 </div>
@@ -8728,7 +8716,7 @@ si chiama <em>ricerca delle radici</em> di $f$. Si noti che un problema del tipo
 <h4> Imparare Facendo</h4>
 <p>Scrivete un programma chiamato <code>sqrttwo.py</code> per cercare la radice <em>x</em> della funzione $f(x)=2 − x^2$ usando il metodo di bisezione. Scegliete come tolleranza per l'approssimazione alla radice 10<sup>−8</sup>.</p>
 <ol>
-<li>Giustificate la scelta dell'intervallo iniziale $[a, b]$ per la ricerca: che valori evte scelto per *a* e *b*? Perchè?
+<li>Giustificate la scelta dell'intervallo iniziale $[a, b]$ per la ricerca: che valori evte scelto per *a* e *b*? Perché?
 <li>Esaminate i risultati:
     <ol>
 <li>Che valore restituisce l'algoritmo di bisezione per la radice *x*?
@@ -8992,7 +8980,8 @@ che dipende dai parametri $\vec{p}=(a,b,c)$, che devono essere determinati usand
 <span class="c1">#create fake data</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="c1">#add noise</span>
+<span class="c1">#add noise. Typically, noise is already present in the data</span>
+<span class="c1">#and there is no need to add it. </span>
 <span class="n">yi</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
 <span class="c1">#call curve fit function</span>
@@ -9023,7 +9012,7 @@ che dipende dai parametri $\vec{p}=(a,b,c)$, che devono essere determinati usand
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Si noti che nell'esempio precedente abbiamo definito la funzione da utilizzare per il fit $y = f(x)$ usando del codice Python. Quindi possiamo utilizzare una funzione (quasi) arbitraria nel metodo <code>curve_fit</code>.</p>
+<p>Si noti che nell'esempio precedente abbiamo definito la funzione da utilizzare per il fit $y = f(x,\vec{p})$ usando del codice Python. Quindi possiamo utilizzare una funzione (quasi) arbitraria nel metodo <code>curve_fit</code>.</p>
 <p>La funzione <code>curve_fit</code> restituisce una tuple <code>popt, pcov</code>. Il primo elemento, <code>popt</code>, contiene l'ntupla dei parametri ottimali (OPTimal Parameters), cioè i parametri che minimizzano la somma degli scarti quadratici. Il secondo elemento, <code>pcov</code>, contiene la matrice di covarianza di tutti i parametri (Sperimentazioni di Fisica). La diagonale fornisce la varianza della stima dei parametri. La standard deviation sulla stima dei parametri può quindi essere calcolata come</p>
 <pre><code>perr = np.sqrt(np.diag(pcov)).
 </code></pre>
@@ -9117,16 +9106,126 @@ Fate un plot dei dati e della curva ottenuta.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sommario-10:-Metodi-Numerici-in-Python-(SciPy)">Sommario 10: Metodi Numerici in Python (SciPy)<a class="anchor-link" href="#Sommario-10:-Metodi-Numerici-in-Python-(SciPy)">¶</a></h1><p>La libreria <strong>SciPy</strong>, basata su <strong>NumPy</strong>, fornisce numerosi algoritmi per l'elaborazione scientifica.</p>
-<h2 id="Integrazione-numerica">Integrazione numerica<a class="anchor-link" href="#Integrazione-numerica">¶</a></h2><p><code>scipy.integrate.quad()</code> è la routine base per calcolare integrali definiti in una variabile su intervalli finiti o infiniti.</p>
-<h2 id="Integrazione-con-parametri">Integrazione con parametri<a class="anchor-link" href="#Integrazione-con-parametri">¶</a></h2><p>Le funzioni che dipendono da parametri possono essere integrate passando i parametri come argomenti extra a <code>quad()</code> con la keyword <code>args</code>.</p>
-<h2 id="Metodi-dei-trapezi-e-di-Simpson">Metodi dei trapezi e di Simpson<a class="anchor-link" href="#Metodi-dei-trapezi-e-di-Simpson">¶</a></h2><p>Sono disponibili routines che implementano specifici metodi di integrazione come  il metodo dei trapezi (<code>trapezoid()</code>) e il metodo di Simpson (<code>simpson()</code>).</p>
-<h2 id="Risoluzione-di-Equazioni-Differenziali-Ordinarie-(ODE)">Risoluzione di Equazioni Differenziali Ordinarie (ODE)<a class="anchor-link" href="#Risoluzione-di-Equazioni-Differenziali-Ordinarie-(ODE)">¶</a></h2><p>Le equazioni differenziali ordinarie (ODE) di ordine <code>n</code> possono essere riscritte come un sistema di equazioni differenziali di primo ordine. La libreria <code>scipy</code> fornisce una funzione chiamata <code>odeint</code> per risolvere queste equazioni.</p>
-<h2 id="Ricerca-delle-radici">Ricerca delle radici<a class="anchor-link" href="#Ricerca-delle-radici">¶</a></h2><p>Sono disponibili diversi metodi per la ricerca delle radici di una funzione nel modulo <code>scipy.optimize</code>.</p>
-<h4 id="Metodo-di-Bisezione">Metodo di Bisezione<a class="anchor-link" href="#Metodo-di-Bisezione">¶</a></h4><p>L'algoritmo <code>bisect</code> è robusto e semplice, anche se non molto veloce.  Il metodo richiede che la funzione abbia segni opposti ai due estremi dell'intervallo in cui la radice viene cercata.</p>
-<h4 id="Metodo-fsolve">Metodo <code>fsolve</code><a class="anchor-link" href="#Metodo-fsolve">¶</a></h4><p>Un metodo alternativo, spesso più efficiente, è <code>fsolve</code>. Richiede solo un punto di partenza vicino alla radice attesa e funziona anche con problemi multi-dimensionali.</p>
-<h2 id="Ottimizzazione:-trovare-massimi-e-minimi">Ottimizzazione: trovare massimi e minimi<a class="anchor-link" href="#Ottimizzazione:-trovare-massimi-e-minimi">¶</a></h2><p>La routine <code>scipy.optimize.fmin</code> permette di minimizzare una funzione <code>f(x)</code>. Per massimizzare una funzione, è sufficiente minimizzare <code>-f(x)</code>.</p>
-<h2 id="Fit-di-un-set-di-dati">Fit di un set di dati<a class="anchor-link" href="#Fit-di-un-set-di-dati">¶</a></h2><p>SciPy fornisce la funzione <code>curve_fit</code> per effettuare il fit di un set di dati basato su un modello ipotizzato. Questo approccio minimizza la somma degli scarti quadratici tra i dati e la curva.</p>
+<h1 id="Sommario-10:-Metodi-Numerici-con-SciPy---Concetti-Essenziali">Sommario 10: Metodi Numerici con SciPy - Concetti Essenziali<a class="anchor-link" href="#Sommario-10:-Metodi-Numerici-con-SciPy---Concetti-Essenziali">¶</a></h1><h2 id="%F0%9F%8E%AF-Il-Problema-Centrale">🎯 Il Problema Centrale<a class="anchor-link" href="#%F0%9F%8E%AF-Il-Problema-Centrale">¶</a></h2><p><strong>Quando le soluzioni analitiche non esistono o sono troppo complesse</strong>, usiamo metodi numerici per:</p>
+<ul>
+<li>Calcolare integrali "impossibili"</li>
+<li>Risolvere equazioni differenziali non lineari</li>
+<li>Trovare zeri di funzioni complicate</li>
+<li>Interpolare ed estrapolare da dati sperimentali</li>
+</ul>
+<h2 id="%F0%9F%93%90-I-Cinque-Pilastri-del-Calcolo-Numerico">📐 I Cinque Pilastri del Calcolo Numerico<a class="anchor-link" href="#%F0%9F%93%90-I-Cinque-Pilastri-del-Calcolo-Numerico">¶</a></h2><h3 id="1.-Integrazione-Numerica-(scipy.integrate)">1. <strong>Integrazione Numerica</strong> (<code>scipy.integrate</code>)<a class="anchor-link" href="#1.-Integrazione-Numerica-(scipy.integrate)">¶</a></h3><p><strong>Concetto chiave</strong>: Approssimare l'area sotto una curva suddividendola in piccoli pezzi</p>
+<ul>
+<li><strong><code>quad(f, a, b)</code></strong>: Metodo generale per integrali definiti<ul>
+<li>Restituisce: (risultato, errore stimato)</li>
+<li>Gestisce anche limiti infiniti: <code>quad(f, 0, np.inf)</code></li>
+</ul>
+</li>
+<li><strong><code>trapezoid</code>, <code>simpson</code></strong>: Per dati discreti (array di punti)</li>
+<li><strong>Parametri extra</strong>: Passati con <code>args=(param1, param2)</code></li>
+</ul>
+<p>⚠️ <strong>Attenzione</strong>: Sempre plottare la funzione prima di integrarla per identificare singolarità!</p>
+<h3 id="2.-Equazioni-Differenziali-(odeint)">2. <strong>Equazioni Differenziali</strong> (<code>odeint</code>)<a class="anchor-link" href="#2.-Equazioni-Differenziali-(odeint)">¶</a></h3><p><strong>Concetto chiave</strong>: Trasformare equazioni di ordine <code>n</code> in <code>n</code> equazioni del primo ordine</p>
+<ul>
+<li><strong>Input essenziali</strong>:<ol>
+<li>Funzione <code>f(y, t)</code> che definisce <code>dy/dt</code></li>
+<li>Condizione iniziale <code>y0</code></li>
+<li>Array di tempi <code>t</code> dove calcolare la soluzione</li>
+</ol>
+</li>
+<li><strong>Output</strong>: Array con i valori di y(t)</li>
+</ul>
+<p><strong>Pattern fisico tipico</strong>: Oscillatore armonico, decadimento radioattivo, circuiti RC</p>
+<h3 id="3.-Ricerca-di-Zeri-(scipy.optimize)">3. <strong>Ricerca di Zeri</strong> (<code>scipy.optimize</code>)<a class="anchor-link" href="#3.-Ricerca-di-Zeri-(scipy.optimize)">¶</a></h3><p><strong>Concetto chiave</strong>: Trovare x tale che f(x) = 0</p>
+<ul>
+<li><strong><code>bisect(f, a, b)</code></strong>: Robusto ma lento<ul>
+<li>Richiede f(a) e f(b) di segno opposto</li>
+<li>Garantisce convergenza se f è continua</li>
+</ul>
+</li>
+<li><strong><code>fsolve(f, x0)</code></strong>: Veloce ma richiede buon punto iniziale<ul>
+<li>Può non convergere</li>
+<li>Restituisce array numpy</li>
+</ul>
+</li>
+</ul>
+<p>🔍 <strong>Strategia</strong>: Plot → identificare intervalli → scegliere metodo</p>
+<h3 id="4.-Ottimizzazione-(Massimi-e-Minimi)">4. <strong>Ottimizzazione</strong> (Massimi e Minimi)<a class="anchor-link" href="#4.-Ottimizzazione-(Massimi-e-Minimi)">¶</a></h3><p><strong>Concetto chiave</strong>: I minimi sono locali, dipendono dal punto di partenza</p>
+<ul>
+<li><strong><code>fmin(f, x0)</code></strong>: Trova minimo locale partendo da x0</li>
+<li><strong>Per massimi</strong>: Minimizzare <code>-f(x)</code></li>
+<li><strong>Output</strong>: Array con coordinate del minimo</li>
+</ul>
+<p>⚡ <strong>Ricorda</strong>: Diversi punti iniziali → diversi minimi!</p>
+<h3 id="5.-Fit-di-Dati-(curve_fit)">5. <strong>Fit di Dati</strong> (<code>curve_fit</code>)<a class="anchor-link" href="#5.-Fit-di-Dati-(curve_fit)">¶</a></h3><p><strong>Concetto chiave</strong>: Minimizzare la somma degli scarti quadratici</p>
+<ul>
+<li><strong>Input necessari</strong>:<ol>
+<li>Funzione modello <code>f(x, param1, param2, ...)</code></li>
+<li>Dati <code>x, y</code></li>
+<li>(Opzionale) Stima iniziale parametri <code>p0</code></li>
+</ol>
+</li>
+<li><strong>Output</strong>:<ul>
+<li><code>popt</code>: parametri ottimali</li>
+<li><code>pcov</code>: matrice di covarianza (errori su parametri)</li>
+</ul>
+</li>
+</ul>
+<h2 id="%F0%9F%92%A1-Workflow-Universale-per-Problemi-Numerici">💡 Workflow Universale per Problemi Numerici<a class="anchor-link" href="#%F0%9F%92%A1-Workflow-Universale-per-Problemi-Numerici">¶</a></h2><ol>
+<li><strong>VISUALIZZA</strong> sempre prima di calcolare</li>
+<li><strong>IDENTIFICA</strong> singolarità, intervalli, punti iniziali dal grafico</li>
+<li><strong>SCEGLI</strong> il metodo appropriato</li>
+<li><strong>VERIFICA</strong> il risultato con un plot</li>
+<li><strong>CONTROLLA</strong> l'errore stimato</li>
+</ol>
+<h2 id="%E2%9A%A0%EF%B8%8F-Trappole-Comuni-da-Evitare">⚠️ Trappole Comuni da Evitare<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Trappole-Comuni-da-Evitare">¶</a></h2><ol>
+<li><strong>Mai fidarsi ciecamente</strong>: Un algoritmo può convergere a risultati sbagliati</li>
+<li><strong>Singolarità nascoste</strong>: <code>f(x) = sin(1/x)</code> vicino a <code>x=0</code> è un incubo numerico</li>
+<li><strong>Condizioni iniziali sbagliate</strong>: In ottimizzazione e ODE determinano tutto</li>
+<li><strong>Dimenticare l'errore</strong>: <code>quad</code> restituisce (risultato, <strong>errore</strong>)</li>
+<li><strong>Scale inappropriate</strong>: Lavorare con numeri molto grandi o piccoli richiede attenzione</li>
+</ol>
+<h2 id="%F0%9F%94%AC-Applicazioni-Fisiche-Immediate">🔬 Applicazioni Fisiche Immediate<a class="anchor-link" href="#%F0%9F%94%AC-Applicazioni-Fisiche-Immediate">¶</a></h2><ul>
+<li><strong>Meccanica</strong>: Traiettorie con resistenza dell'aria (ODE non lineari)</li>
+<li><strong>Ottica</strong>: Minimi per principio di Fermat</li>
+<li><strong>Laboratorio</strong>: Fit di dati sperimentali con modelli teorici</li>
+<li><strong>Quantistica</strong>: Ricerca autovalori (zeri del determinante)</li>
+</ul>
+<h2 id="%F0%9F%93%8A-Scegliere-il-Metodo-Giusto">📊 Scegliere il Metodo Giusto<a class="anchor-link" href="#%F0%9F%93%8A-Scegliere-il-Metodo-Giusto">¶</a></h2><table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Metodo Robusto</th>
+<th>Metodo Veloce</th>
+<th>Quando Usarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integrale</td>
+<td><code>quad</code></td>
+<td><code>simpson</code></td>
+<td>quad per funzioni, simpson per dati</td>
+</tr>
+<tr>
+<td>Zero</td>
+<td><code>bisect</code></td>
+<td><code>fsolve</code></td>
+<td>bisect se conosci intervallo, fsolve se hai buona stima</td>
+</tr>
+<tr>
+<td>Minimo</td>
+<td>-</td>
+<td><code>fmin</code></td>
+<td>Sempre con multiple partenze</td>
+</tr>
+<tr>
+<td>ODE</td>
+<td><code>odeint</code></td>
+<td>Eulero (custom)</td>
+<td>odeint sempre, Eulero solo per didattica</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

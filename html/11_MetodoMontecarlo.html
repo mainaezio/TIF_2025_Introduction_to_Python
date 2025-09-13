@@ -8525,6 +8525,72 @@ Le probabilità dei punteggi nel lancio di due dadi sono:</p>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Il notebook è ben strutturato e copre concetti importanti del metodo Monte Carlo. Ecco alcuni suggerimenti per migliorarlo:</p>
+<h2 id="Suggerimenti-di-miglioramento">Suggerimenti di miglioramento<a class="anchor-link" href="#Suggerimenti-di-miglioramento">¶</a></h2><h3 id="1.-Documentazione-e-spiegazioni">1. <strong>Documentazione e spiegazioni</strong><a class="anchor-link" href="#1.-Documentazione-e-spiegazioni">¶</a></h3><ul>
+<li>Nella sezione 1.3.1, dopo aver spiegato il metodo hit-and-miss, sarebbe utile aggiungere un commento che spieghi perché il codice separa i valori in <code>x1val</code> e <code>x2val</code> prima di applicare il test di accettazione.</li>
+<li>Aggiungere più commenti inline nel codice, specialmente nelle funzioni più complesse come <code>craps_once()</code>.</li>
+</ul>
+<h3 id="2.-Visualizzazioni">2. <strong>Visualizzazioni</strong><a class="anchor-link" href="#2.-Visualizzazioni">¶</a></h3><ul>
+<li>Nella sezione 1.3.1, aggiungere un grafico che mostri visivamente il metodo hit-and-miss con i punti accettati e rifiutati.</li>
+<li>Per la sezione del Craps, considerare un grafico che mostri la convergenza della probabilità stimata al valore teorico all'aumentare del numero di simulazioni.</li>
+</ul>
+<h3 id="3.-Correzioni-e-chiarimenti">3. <strong>Correzioni e chiarimenti</strong><a class="anchor-link" href="#3.-Correzioni-e-chiarimenti">¶</a></h3><ul>
+<li>Nel codice della sezione 1.2, c'è un commento "Confrontate il risultato con quello fornito dal metodo dei trapezi" ma non viene mostrato questo confronto.</li>
+<li>Nella funzione <code>generate_f</code>, il parametro <code>max</code> dovrebbe essere rinominato per evitare conflitti con la funzione built-in <code>max()</code>.</li>
+</ul>
+<h3 id="4.-Esempi-didattici-aggiuntivi">4. <strong>Esempi didattici aggiuntivi</strong><a class="anchor-link" href="#4.-Esempi-didattici-aggiuntivi">¶</a></h3><ul>
+<li>Aggiungere un esempio più semplice prima del Craps (es. lancio di una moneta) per introdurre gradualmente la simulazione di processi stocastici.</li>
+<li>Mostrare esplicitamente il calcolo teorico della probabilità di vincita al Craps per confronto.</li>
+</ul>
+<h3 id="5.-Gestione-degli-errori">5. <strong>Gestione degli errori</strong><a class="anchor-link" href="#5.-Gestione-degli-errori">¶</a></h3><ul>
+<li>Aggiungere validazione degli input nelle funzioni (es. verificare che <code>n</code> sia positivo in <code>craps_probability</code>).</li>
+</ul>
+<h2 id="Sommario-dei-concetti-principali">Sommario dei concetti principali<a class="anchor-link" href="#Sommario-dei-concetti-principali">¶</a></h2><h3 id="Concetti-Fondamentali-del-Metodo-Monte-Carlo"><strong>Concetti Fondamentali del Metodo Monte Carlo</strong><a class="anchor-link" href="#Concetti-Fondamentali-del-Metodo-Monte-Carlo">¶</a></h3><ol>
+<li><p><strong>Integrazione numerica Monte Carlo</strong> (Sezione 1.2)</p>
+<ul>
+<li>Basata sul teorema del valor medio: l'integrale equivale al prodotto dell'intervallo per il valor medio della funzione</li>
+<li>La precisione aumenta con il numero di punti casuali utilizzati</li>
+<li>Vantaggi: facilmente estendibile a dimensioni multiple dove altri metodi diventano impraticabili</li>
+</ul>
+</li>
+<li><p><strong>Generazione di distribuzioni di probabilità</strong> (Sezione 1.3)</p>
+<ul>
+<li><strong>Metodo hit-and-miss</strong>: genera punti casuali uniformi e li accetta/rifiuta in base alla distribuzione desiderata</li>
+<li>Principio: la probabilità di accettazione in una regione è proporzionale al valore della funzione di densità</li>
+</ul>
+</li>
+<li><p><strong>Propagazione degli errori</strong> (Sezione 1.4)</p>
+<ul>
+<li>Monte Carlo permette di stimare l'incertezza su grandezze derivate senza calcoli analitici complessi</li>
+<li>Si generano campioni dalle distribuzioni delle variabili di input e si calcola la distribuzione dell'output</li>
+<li>Il metodo cattura automaticamente correlazioni e non-linearità</li>
+</ul>
+</li>
+<li><p><strong>Simulazione di processi stocastici</strong> (Sezione 1.5)</p>
+<ul>
+<li>Esempio del gioco Craps: simulazione di eventi sequenziali con regole probabilistiche</li>
+<li>La legge dei grandi numeri garantisce la convergenza delle stime alle probabilità teoriche</li>
+<li>Permette di studiare sistemi complessi difficili da analizzare analiticamente</li>
+</ul>
+</li>
+</ol>
+<h3 id="Principi-chiave"><strong>Principi chiave</strong><a class="anchor-link" href="#Principi-chiave">¶</a></h3><ul>
+<li><strong>Casualità controllata</strong>: uso di generatori pseudo-casuali per risultati riproducibili</li>
+<li><strong>Convergenza statistica</strong>: l'accuratezza migliora con $\sqrt{n}$ ($n$ = numero di campioni)</li>
+<li><strong>Versatilità</strong>: applicabile a problemi di integrazione, ottimizzazione, e simulazione</li>
+<li><strong>Trade-off</strong>: richiede molte iterazioni per alta precisione, ma gestisce facilmente problemi multidimensionali</li>
+</ul>
+<p>Il notebook fornisce una solida introduzione pratica al metodo Monte Carlo, con esempi progressivamente più complessi che mostrano la potenza e versatilità di questo approccio computazionale.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">

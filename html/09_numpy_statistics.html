@@ -7526,7 +7526,7 @@ a.anchor-link {
 </li></li></li></ul>
 </div>
 <hr/>
-<h2 id="Nozioni-fondamentali">Nozioni fondamentali<a class="anchor-link" href="#Nozioni-fondamentali">¶</a></h2><p>La statistica ha un ruolo fondamentale in Fisica e in ogni campo scientifico a base sperimentale. Numpy fornisce tutti i metodi necessari per la manipolazione statistica dei dati. Affrontiamo questo argomento dopo aver introdotto Matplotlib perchè
+<h2 id="Nozioni-fondamentali">Nozioni fondamentali<a class="anchor-link" href="#Nozioni-fondamentali">¶</a></h2><p>La statistica ha un ruolo fondamentale in Fisica e in ogni campo scientifico a base sperimentale. Numpy fornisce tutti i metodi necessari per la manipolazione statistica dei dati. Affrontiamo questo argomento dopo aver introdotto Matplotlib perché
 la rappresentazione grafica dei dati è uno strumento estremamente utile.</p>
 <div style="padding:20px 20px 0px 150px;">
 <img align="center" alt="No description has been provided for this image" src="../Humour/extrapolating1.png" width="500"/>
@@ -7712,7 +7712,7 @@ Numpy fornisce il metodo <code>var</code> per calcolarla:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Talvolta è utile estrarre i dati più vicini di un numero dato di deviazioni standard al valor medio, oppure quelli che distano pipiù
+<p>Talvolta è utile estrarre i dati più vicini di un numero dato di deviazioni standard al valor medio, oppure quelli che distano più
 di un numero dato di deviazioni standard dal valor medio. Nell'esempio selezioniamo i dati all'interno di una deviazione standard:</p>
 </div>
 </div>
@@ -7877,7 +7877,7 @@ Calcolate media e deviazione standard di <code>my_arr</code> usando i metodi <b>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Nell'esempio seguente vengono inserite tre linee verticali per segnalare il valor medio e i valori della variabile a più e meno una deviazione standard dal valor medio.</p>
+<p>Nell'esempio seguente vengono inserite tre linee verticali per segnalare il valor medio e i valori della variabile a più e meno una deviazione standard dal valor medio (Non è necessario farlo sempre).</p>
 </div>
 </div>
 </div>
@@ -8681,20 +8681,151 @@ $\,\,C(x) = \int_{-\infty}^x N(y)\, dy$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sommario-9:-Statistica-Elementare-con-Numpy-e-Matplotlib">Sommario 9: Statistica Elementare con Numpy e Matplotlib<a class="anchor-link" href="#Sommario-9:-Statistica-Elementare-con-Numpy-e-Matplotlib">¶</a></h1><h2 id="Operazioni-di-Base-sui-Dati">Operazioni di Base sui Dati<a class="anchor-link" href="#Operazioni-di-Base-sui-Dati">¶</a></h2><ul>
-<li>Creazione di array di dati con Numpy.</li>
-<li>Calcolo della media, varianza e deviazione standard tramite le funzioni <code>mean</code>, <code>var</code> e <code>std</code> di Numpy.</li>
+<h1 id="Sommario-9:-Statistica-per-la-Fisica-Sperimentale">Sommario 9: Statistica per la Fisica Sperimentale<a class="anchor-link" href="#Sommario-9:-Statistica-per-la-Fisica-Sperimentale">¶</a></h1><h2 id="%F0%9F%8E%AF-Il-Messaggio-Centrale">🎯 Il Messaggio Centrale<a class="anchor-link" href="#%F0%9F%8E%AF-Il-Messaggio-Centrale">¶</a></h2><p><strong>La statistica non è matematica astratta, è lo strumento per estrarre informazione dal rumore nelle misure sperimentali</strong></p>
+<p>Tre pilastri fondamentali:</p>
+<ol>
+<li><strong>Caratterizzare</strong> i dati (media, deviazione standard)</li>
+<li><strong>Visualizzare</strong> le distribuzioni (istogrammi)</li>
+<li><strong>Modellare</strong> con distribuzioni teoriche (Gauss, Poisson)</li>
+</ol>
+<h2 id="%F0%9F%93%8A-Parametri-Statistici:-Cosa-Misurano-Davvero">📊 Parametri Statistici: Cosa Misurano Davvero<a class="anchor-link" href="#%F0%9F%93%8A-Parametri-Statistici:-Cosa-Misurano-Davvero">¶</a></h2><h3 id="I-Magnifici-Tre">I Magnifici Tre<a class="anchor-link" href="#I-Magnifici-Tre">¶</a></h3><div class="highlight"><pre><span></span><span class="n">media</span> <span class="o">=</span> <span class="n">dati</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>     <span class="c1"># Valore centrale</span>
+<span class="n">std</span> <span class="o">=</span> <span class="n">dati</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>        <span class="c1"># Dispersione</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">dati</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>        <span class="c1"># std²</span>
+</pre></div>
+<h3 id="Quando-Usarli-e-Quando-NO">Quando Usarli e Quando NO<a class="anchor-link" href="#Quando-Usarli-e-Quando-NO">¶</a></h3><table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Utile quando</th>
+<th>Ingannevole quando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Media</td>
+<td>Distribuzione simmetrica</td>
+<td>Outliers presenti</td>
+</tr>
+<tr>
+<td>Std</td>
+<td>Distribuzione unimodale</td>
+<td>Distribuzioni bimodali</td>
+</tr>
+<tr>
+<td>Min/Max</td>
+<td>Sempre</td>
+<td>Mai sufficienti da soli</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regola d'oro</strong>: I parametri numerici senza visualizzazione sono pericolosi (vedi Anscombe)</p>
+<h2 id="%F0%9F%93%88-Istogrammi:-La-Finestra-sui-Dati">📈 Istogrammi: La Finestra sui Dati<a class="anchor-link" href="#%F0%9F%93%88-Istogrammi:-La-Finestra-sui-Dati">¶</a></h2><h3 id="Il-Pattern-Standard">Il Pattern Standard<a class="anchor-link" href="#Il-Pattern-Standard">¶</a></h3><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dati</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">nbins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">))</span>
+</pre></div>
+<h3 id="Scelta-Critica-dei-Bin">Scelta Critica dei Bin<a class="anchor-link" href="#Scelta-Critica-dei-Bin">¶</a></h3><ul>
+<li><strong>Troppo pochi</strong> (&lt; 10): Perdi struttura</li>
+<li><strong>Troppi</strong> (&gt; √n): Rumore domina</li>
+<li><strong>Regola empirica</strong>: bins ≈ √(numero_dati)</li>
 </ul>
-<h2 id="Istogrammi-delle-Frequenze">Istogrammi delle Frequenze<a class="anchor-link" href="#Istogrammi-delle-Frequenze">¶</a></h2><ul>
-<li>Creazione di un istogramma delle frequenze per visualizzare la distribuzione dei dati con <code>hist</code>.</li>
-<li>Aggiunta di linee che rappresentano la media e le deviazioni standard.</li>
+<h3 id="Normalizzazione-per-Confronto">Normalizzazione per Confronto<a class="anchor-link" href="#Normalizzazione-per-Confronto">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Per confrontare con teoria</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dati</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Area = 1</span>
+</pre></div>
+<h2 id="%F0%9F%8E%B2-Generazione-Numeri-Casuali">🎲 Generazione Numeri Casuali<a class="anchor-link" href="#%F0%9F%8E%B2-Generazione-Numeri-Casuali">¶</a></h2><h3 id="Il-Nuovo-Standard-(NumPy-%3E-1.17)">Il Nuovo Standard (NumPy &gt; 1.17)<a class="anchor-link" href="#Il-Nuovo-Standard-(NumPy-%3E-1.17)">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_rng</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># seed per riproducibilità</span>
+
+<span class="c1"># Distribuzioni principali</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">μ</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">σ</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>    <span class="c1"># Gaussiana</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>        <span class="c1"># Uniforme</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="n">λ</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>            <span class="c1"># Poisson</span>
+<span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>       <span class="c1"># Interi uniformi</span>
+</pre></div>
+<h3 id="Perch%C3%A8-Generare-Dati-Casuali?">Perchè Generare Dati Casuali?<a class="anchor-link" href="#Perch%C3%A8-Generare-Dati-Casuali?">¶</a></h3><ol>
+<li><strong>Test algoritmi</strong>: Prima di dati reali</li>
+<li><strong>Monte Carlo</strong>: Simulazioni complesse</li>
+<li><strong>Bootstrap</strong>: Stima incertezze</li>
+<li><strong>Validazione</strong>: Confronto teoria-esperimento</li>
+</ol>
+<h2 id="%F0%9F%93%89-Distribuzioni-Fondamentali-per-la-Fisica">📉 Distribuzioni Fondamentali per la Fisica<a class="anchor-link" href="#%F0%9F%93%89-Distribuzioni-Fondamentali-per-la-Fisica">¶</a></h2><h3 id="Gaussiana-(Normale)">Gaussiana (Normale)<a class="anchor-link" href="#Gaussiana-(Normale)">¶</a></h3><p><strong>Quando</strong>: Errori di misura, teorema limite centrale</p>
+<div class="highlight"><pre><span></span><span class="c1"># Media μ, deviazione σ</span>
+<span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">μ</span><span class="p">)</span><span class="err">²</span><span class="o">/</span><span class="mi">2</span><span class="n">σ</span><span class="err">²</span><span class="p">)</span> <span class="o">/</span> <span class="err">√</span><span class="p">(</span><span class="mi">2</span><span class="n">πσ</span><span class="err">²</span><span class="p">)</span>
+</pre></div>
+<p><strong>Proprietà chiave</strong>: 68% dati in ±σ, 95% in ±2σ</p>
+<h3 id="Poisson">Poisson<a class="anchor-link" href="#Poisson">¶</a></h3><p><strong>Quando</strong>: Eventi rari, decadimenti radioattivi</p>
+<div class="highlight"><pre><span></span><span class="c1"># Parametro λ (rate)</span>
+<span class="n">P</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">λᵏ</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">λ</span><span class="p">)</span> <span class="o">/</span> <span class="n">k</span><span class="err">!</span>
+</pre></div>
+<p><strong>Proprietà chiave</strong>: Media = Varianza = λ</p>
+<h3 id="Uniforme">Uniforme<a class="anchor-link" href="#Uniforme">¶</a></h3><p><strong>Quando</strong>: Errori di digitalizzazione, fase casuale</p>
+<div class="highlight"><pre><span></span><span class="n">P</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="n">per</span> <span class="n">a</span> <span class="err">≤</span> <span class="n">x</span> <span class="err">≤</span> <span class="n">b</span>
+</pre></div>
+<h2 id="%E2%9A%A0%EF%B8%8F-I-Pericoli-della-Statistica-Ingenua">⚠️ I Pericoli della Statistica Ingenua<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-I-Pericoli-della-Statistica-Ingenua">¶</a></h2><h3 id="1.-Il-Paradosso-di-Anscombe">1. Il Paradosso di Anscombe<a class="anchor-link" href="#1.-Il-Paradosso-di-Anscombe">¶</a></h3><p>Quattro dataset con:</p>
+<ul>
+<li>Stessa media ✓</li>
+<li>Stessa deviazione standard ✓</li>
+<li>Stessa retta di fit ✓</li>
+<li><strong>Completamente diversi visivamente!</strong></li>
 </ul>
-<h2 id="Generazione-di-numeri-casuali">Generazione di numeri casuali<a class="anchor-link" href="#Generazione-di-numeri-casuali">¶</a></h2><ul>
-<li>Numpy permette di generare numeri casuali in accordo con tutte le più comuni distribuzioni di probabilità usando i metodi di numpy.random.default_rng.</li>
-<li>scipy.stats contiene le principali distribuzioni di probabilità</li>
-<li>Riferimento al "paradosso di Anscombe" per evidenziare i pericoli di affidarsi esclusivamente ai parametri statistici senza analizzare i dati visivamente.</li>
+<h3 id="2.-Outliers-Nascosti">2. Outliers Nascosti<a class="anchor-link" href="#2.-Outliers-Nascosti">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Un outlier può spostare la media</span>
+<span class="n">dati</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>  <span class="c1"># media = 22!</span>
+<span class="c1"># Usa la mediana per robustezza</span>
+</pre></div>
+<h3 id="3.-Distribuzioni-Bimodali">3. Distribuzioni Bimodali<a class="anchor-link" href="#3.-Distribuzioni-Bimodali">¶</a></h3><p>Due picchi nascosti da media e std singole</p>
+<h2 id="%F0%9F%94%AC-Pattern-per-Analisi-Dati-Sperimentali">🔬 Pattern per Analisi Dati Sperimentali<a class="anchor-link" href="#%F0%9F%94%AC-Pattern-per-Analisi-Dati-Sperimentali">¶</a></h2><h3 id="Workflow-Standard">Workflow Standard<a class="anchor-link" href="#Workflow-Standard">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># 1. Carica dati</span>
+<span class="n">dati</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'misure.txt'</span><span class="p">)</span>
+
+<span class="c1"># 2. Esplora visivamente</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dati</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">dati</span><span class="p">)</span>
+
+<span class="c1"># 3. Calcola parametri</span>
+<span class="n">μ</span><span class="p">,</span> <span class="n">σ</span> <span class="o">=</span> <span class="n">dati</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">dati</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># 4. Identifica outliers</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">dati</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dati</span> <span class="o">-</span> <span class="n">μ</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">*</span><span class="n">σ</span><span class="p">]</span>
+
+<span class="c1"># 5. Confronta con teoria</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">dati</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">dati</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">teoria</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">μ</span><span class="p">,</span> <span class="n">σ</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">teoria</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">bin_width</span><span class="p">)</span>
+</pre></div>
+<h3 id="Test-di-Normalit%C3%A0">Test di Normalità<a class="anchor-link" href="#Test-di-Normalit%C3%A0">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Shapiro-Wilk test</span>
+<span class="n">statistic</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">dati</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Non gaussiano!"</span><span class="p">)</span>
+</pre></div>
+<h2 id="%F0%9F%92%A1-Best-Practices">💡 Best Practices<a class="anchor-link" href="#%F0%9F%92%A1-Best-Practices">¶</a></h2><ol>
+<li><strong>Sempre visualizzare prima</strong>: Grafico → Parametri → Conclusioni</li>
+<li><strong>Controllare outliers</strong>: 3σ rule o metodo IQR</li>
+<li><strong>Seed per riproducibilità</strong>: <code>rng = default_rng(12345)</code></li>
+<li><strong>Bin appropriati</strong>: Non troppi, non troppo pochi</li>
+<li><strong>Confrontare con teoria</strong>: Sovrapporre curve teoriche</li>
+</ol>
+<h2 id="%F0%9F%93%8A-Checklist-Analisi-Statistica">📊 Checklist Analisi Statistica<a class="anchor-link" href="#%F0%9F%93%8A-Checklist-Analisi-Statistica">¶</a></h2><ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho fatto l'istogramma dei dati?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho controllato presenza di outliers?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>La distribuzione è unimodale?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Media e mediana sono simili?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho scelto bins appropriati?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho confrontato con distribuzione teorica?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho verificato le assunzioni statistiche?</li>
 </ul>
-<h3 id="Conclusione:">Conclusione:<a class="anchor-link" href="#Conclusione:">¶</a></h3><p>L'analisi grafica e statistica sono strumenti complementari fondamentali per una corretta interpretazione dei dati in fisica sperimentale.</p>
+<h2 id="%F0%9F%8E%93-Il-Concetto-Chiave">🎓 Il Concetto Chiave<a class="anchor-link" href="#%F0%9F%8E%93-Il-Concetto-Chiave">¶</a></h2><p><strong>"Tutti i modelli sono sbagliati, ma alcuni sono utili"</strong> - George Box</p>
+<p>La statistica non dà verità assolute ma strumenti per quantificare l'incertezza. In fisica sperimentale, l'onestà nell'analisi statistica è fondamentale: mostrare sempre i dati grezzi, dichiarare le assunzioni, quantificare le incertezze.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
 </div>
 </div>
 </div>

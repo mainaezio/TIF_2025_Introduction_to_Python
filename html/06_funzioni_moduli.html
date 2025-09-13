@@ -7670,7 +7670,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Keywords,-valori-di-default-e-parametri-opzionali-nella-definizione-di-funzioni">Keywords, valori di default e parametri opzionali nella definizione di funzioni<a class="anchor-link" href="#Keywords,-valori-di-default-e-parametri-opzionali-nella-definizione-di-funzioni">¶</a></h2><p>Python permette di definire valori di <em>default</em> per gli argomenti di una funzione.
 Questi argomenti vengono definiti argomenti con keyword o con nome.
-Ecco un esempio per chiarire: la funzione <code>myfunc</code> prende tre argomenti: <code>x</code>, <code>p</code> e <code>debug</code>. Il primo argomento <code>x</code> è una variabile “posizionale”; deve essere presente nella chiamata alla funzione. Il secondo argomento <code>p</code> ha il valore di default 2, il terzo <code>debug</code> ha come valore di default False. Questi argomenti sono opzionali: se l'utente chiama questa funzione con un solo argomento, l'argomento viene assegnato a <code>x</code> mentre <code>p</code> e <code>debug</code> assumeranno i valori di default. Se vengono forniti due argomenti (senza nome) il primo viene assegnato a <code>x</code> e il secondo a <code>p</code> mentre <code>debug</code> assumera il valore di default e così via. Quindi è possibile passare un parametro opzionale senza utilizzare la keyword, tuttavia il modo migliore e più comprensibile di usare i parametri di default è quello di utilizzare espicitamente la keyword che li individua. In questo modo non è necessario ripettare l'ordine degli argomenti.</p>
+Ecco un esempio per chiarire: la funzione <code>myfunc</code> prende tre argomenti: <code>x</code>, <code>p</code> e <code>debug</code>. Il primo argomento <code>x</code> è una variabile “posizionale”; deve essere presente nella chiamata alla funzione. Il secondo argomento <code>p</code> ha il valore di default 2, il terzo <code>debug</code> ha come valore di default <code>False</code>. Questi argomenti sono opzionali: se l'utente chiama questa funzione con un solo argomento, l'argomento viene assegnato a <code>x</code> mentre <code>p</code> e <code>debug</code> assumeranno i valori di default. Se vengono forniti due argomenti (senza nome) il primo viene assegnato a <code>x</code> e il secondo a <code>p</code> mentre <code>debug</code> assumera il valore di default e così via. Quindi è possibile passare un parametro opzionale senza utilizzare la keyword, tuttavia il modo migliore e più comprensibile di usare i parametri di default è quello di utilizzare espicitamente la keyword che li individua. In questo modo non è necessario ripettare l'ordine degli argomenti.</p>
 </div>
 </div>
 </div>
@@ -8541,7 +8541,7 @@ i valori saranno quelli dell'ultimo dizionario. Un esempio per chiarire:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Cosa-succeede-quando-si-passano-argomenti-a-una-funzione-in-Python">Cosa succeede quando si passano argomenti a una funzione in Python<a class="anchor-link" href="#Cosa-succeede-quando-si-passano-argomenti-a-una-funzione-in-Python">¶</a></h2><p>In Python, gli oggetti sono passati per referenza (tipo pointer) all'oggetto. A seconda di come la referenza viene usate nella funzione e del tipo di oggetto che viene referenziato, questo può significare che qualsiasi modifica, all'interno della funzione, dell'oggetto passato si riflette immediatamente all'esterno.</p>
+<h2 id="Cosa-succede-quando-si-passano-argomenti-a-una-funzione-in-Python">Cosa succede quando si passano argomenti a una funzione in Python<a class="anchor-link" href="#Cosa-succede-quando-si-passano-argomenti-a-una-funzione-in-Python">¶</a></h2><p>In Python, gli oggetti sono passati per referenza (tipo pointer) all'oggetto. A seconda di come la referenza viene usate nella funzione e del tipo di oggetto che viene referenziato, questo può significare che qualsiasi modifica, all'interno della funzione, dell'oggetto passato si riflette immediatamente all'esterno.</p>
 <p>Tre esempi per chiarire. Iniziamo passando una lista a una funzione che itera sugli elementi della sequenza raddoppiando il valore di ciascuno:</p>
 </div>
 </div>
@@ -8580,8 +8580,7 @@ i valori saranno quelli dell'ultimo dizionario. Un esempio per chiarire:</p>
 <p>Quando la funzione viene chiamata con argomento <code>pippo</code>, le viene passata una referenza all'oggetto <code>pippo</code> che deve essere definito all'esterno della funzione. <code>l</code> diventa sinonimo di <code>pippo</code>. La linea <code>l[i] = l[i] * 2</code> calcola il membro di destra leggendo l'elemento di indice <code>i</code>e poi moltiplicandolo per due. Una referenza a questo nuovo oggetto viene immagazzinata
 nell'oggetto lista <code>l</code> alla posizione di indice <code>i</code>. È stato quindi modificato l'oggetto lista, che è referenziato attraverso il nome <code>l</code>.</p>
 <p>La referenza all'oggetto lista non cambia mai: la linea <code>l[i] = l[i] * 2</code> cambia l'elemento <code>l[i]</code> della lista <code>l</code> ma non cambia mai la referenza <code>l</code> per la lista. Quindi sia la funzione che il programma che la chiama operano sullo stesso oggetto, rispettivamente attraverso la referenza <code>l</code> e <code>global_l</code>.</p>
-<p>Al contrario, nell'esempio seguente la lista globale non viene modificata
-all'interno della funzione:</p>
+<p>Al contrario, nell'esempio seguente la lista globale non viene modificata all'interno della funzione:</p>
 </div>
 </div>
 </div>
@@ -8862,20 +8861,6 @@ in ogni caso con lo stesso ragionamento.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mathematics</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8883,7 +8868,7 @@ in ogni caso con lo stesso ragionamento.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Questo comando importa la funzione <code>sin</code> dal modulo <code>math</code>, ma non introduce il nome <code>math</code> nel namespace. Introduce solo il nome <code>sin</code>. È possibile importare più funzioni con un solo comando:</p>
+<p>Il comando seguente importa la funzione <code>sin</code> dal modulo <code>math</code>, ma non introduce il nome <code>math</code> nel namespace. Introduce solo il nome <code>sin</code>. È possibile importare più funzioni con un solo comando:</p>
 </div>
 </div>
 </div>
@@ -8922,7 +8907,7 @@ in ogni caso con lo stesso ragionamento.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Dopo questo <code>import</code> la funzione <code>sin</code> può essere chiamata nel modo seguente, senza che sia preceduta da nome del modulo:</p>
+<p>Dopo questo <code>import</code> la funzione <code>sin</code> può essere chiamata direttamente senza farla precedere dal nome del modulo:</p>
 </div>
 </div>
 </div>
@@ -8947,7 +8932,7 @@ in ogni caso con lo stesso ragionamento.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In genere si evita di importare singole funzioni da un modulo per evitare possibili conflitti. Per esempio una funzione <code>sin</code> esiste anche in <code>numpy</code>. Se questa venisse importata con <code>from numpy import sin</code> maschererebbe la funzione importata in precedenza da <code>math</code>. Provate a farlo e poi eseguite <code>help(sin)</code>.</p>
+<p>In genere si evita di importare singole funzioni da un modulo per evitare possibili conflitti. Per esempio, una funzione <code>sin</code> esiste anche in <code>numpy</code>. Se questa venisse importata con <code>from numpy import sin</code> maschererebbe la funzione importata in precedenza da <code>math</code>. Provate a farlo e poi eseguite <code>help(sin)</code>.</p>
 </div>
 </div>
 </div>
@@ -9252,7 +9237,7 @@ file contenente un modulo contenga anche un programma principale all'interno del
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Se il file viene importato (cioè usato come un modulo) in un altro file python, allora <code>__name__==__main__</code> è falso, e i comandi all'interno dell'<code>if</code> non viene eseguito (e nessun output viene prodotto).</p>
+<p>Se il file viene importato (cioè usato come un modulo) in un altro file python, allora <code>__name__==__main__</code> è falso, e i comandi all'interno dell'<code>if</code> non vengono eseguito (e nessun output viene prodotto).</p>
 </div>
 </div>
 </div>
@@ -9283,7 +9268,7 @@ file contenente un modulo contenga anche un programma principale all'interno del
 <li><p>è utile per il "regression testing", il controllo che modifiche ad un codice funzionante non introducano errori. Si effettua eseguendo dei programmi di test che in precedenza funzionavano correttamente</p>
 </li>
 </ul>
-<p>Supponiamo di dover scrivere una funzione che restituisca i cinque più piccoli numeri primi, e che inoltre, li stampi. (Il compito in questo caso è banale, ma possiamo immaginare situazioni più complesse). Si potrebbe essere tentati di scrivere:</p>
+<p>Supponiamo di dover scrivere una funzione che restituisca i cinque piè piccoli numeri primi, e che inoltre, li stampi. (Il compito in questo caso è banale, ma possiamo immaginare situazioni più complesse). Si potrebbe essere tentati di scrivere:</p>
 </div>
 </div>
 </div>
@@ -9437,46 +9422,144 @@ Eseguite il comando <b>python</b> per lanciare lo shell di python. Eseguite lo s
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sommario-6:-Funzioni-e-Moduli">Sommario 6: Funzioni e Moduli<a class="anchor-link" href="#Sommario-6:-Funzioni-e-Moduli">¶</a></h1><h2 id="Le-Funzioni">Le Funzioni<a class="anchor-link" href="#Le-Funzioni">¶</a></h2><p>Le funzioni in Python permettono di raggruppare una sequenza di comandi in un blocco logico, identificato da un nome, e interagire con esso tramite un'interfaccia ben definita. I moduli consentono di organizzare le funzioni in librerie riutilizzabili.</p>
-<h3 id="Definizione-di-una-Funzione">Definizione di una Funzione<a class="anchor-link" href="#Definizione-di-una-Funzione">¶</a></h3><ul>
-<li>La struttura di base di una funzione in Python include il nome della funzione, i parametri, il corpo della funzione e il valore di ritorno opzionale.</li>
-<li>È buona pratica includere una docstring per documentare lo scopo e l'uso della funzione.</li>
+<h1 id="Sommario-6:-Funzioni-e-Moduli---Concetti-Chiave">Sommario 6: Funzioni e Moduli - Concetti Chiave<a class="anchor-link" href="#Sommario-6:-Funzioni-e-Moduli---Concetti-Chiave">¶</a></h1><h2 id="%F0%9F%8E%AF-I-Quattro-Pilastri-Fondamentali">🎯 I Quattro Pilastri Fondamentali<a class="anchor-link" href="#%F0%9F%8E%AF-I-Quattro-Pilastri-Fondamentali">¶</a></h2><h3 id="1.-Funzioni-come-Astrazione">1. <strong>Funzioni come Astrazione</strong><a class="anchor-link" href="#1.-Funzioni-come-Astrazione">¶</a></h3><p><strong>Concetto chiave</strong>: Le funzioni nascondono la complessità dietro un'interfaccia semplice</p>
+<ul>
+<li>Input → Elaborazione → Output</li>
+<li>Una funzione = una responsabilità specifica</li>
+<li>Documentazione obbligatoria con docstring</li>
 </ul>
-<h3 id="Valori-di-Default-e-Parametri-Opzionali">Valori di Default e Parametri Opzionali<a class="anchor-link" href="#Valori-di-Default-e-Parametri-Opzionali">¶</a></h3><ul>
-<li>Python consente di definire valori di default per i parametri, rendendo alcuni argomenti opzionali.</li>
-<li>Gli argomenti posizionali possono essere passati per nome, migliorando la leggibilità del codice.</li>
+<h3 id="2.-Flessibilit%C3%A0-dei-Parametri">2. <strong>Flessibilità dei Parametri</strong><a class="anchor-link" href="#2.-Flessibilit%C3%A0-dei-Parametri">¶</a></h3><p><strong>Concetto chiave</strong>: Python offre massima flessibilità nel passaggio di argomenti</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Sintassi</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Posizionali</td>
+<td><code>def f(x, y)</code></td>
+<td>Sempre richiesti</td>
+</tr>
+<tr>
+<td>Con default</td>
+<td><code>def f(x, y=2)</code></td>
+<td>Opzionali</td>
+</tr>
+<tr>
+<td>Variabili</td>
+<td><code>def f(*args)</code></td>
+<td>Numero arbitrario</td>
+</tr>
+<tr>
+<td>Con nome</td>
+<td><code>def f(**kwargs)</code></td>
+<td>Dizionario di opzioni</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regola d'oro</strong>: Posizionali → Default → *args → **kwargs</p>
+<h3 id="3.-Passaggio-per-Riferimento">3. <strong>Passaggio per Riferimento</strong><a class="anchor-link" href="#3.-Passaggio-per-Riferimento">¶</a></h3><p><strong>Concetto chiave</strong>: Python passa sempre riferimenti, ma l'effetto dipende dal tipo</p>
+<div class="highlight"><pre><span></span><span class="c1"># MUTABILI (liste, dict): modifiche visibili fuori</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">modifica</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+    <span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>  <span class="c1"># Modifica l'originale!</span>
+
+<span class="c1"># IMMUTABILI o RIASSEGNAZIONE: no effetti esterni  </span>
+<span class="k">def</span><span class="w"> </span><span class="nf">non_modifica</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">99</span>  <span class="c1"># Crea nuovo oggetto locale</span>
+</pre></div>
+<h3 id="4.-Moduli-come-Organizzazione">4. <strong>Moduli come Organizzazione</strong><a class="anchor-link" href="#4.-Moduli-come-Organizzazione">¶</a></h3><p><strong>Concetto chiave</strong>: I moduli sono file .py che raggruppano funzionalità correlate</p>
+<div class="highlight"><pre><span></span><span class="c1"># TRE modi di importare (dal migliore al peggiore)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>           <span class="c1"># ✓ Namespace pulito</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sin</span>  <span class="c1"># ⚠ OK se poche funzioni</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>    <span class="c1"># ✗ EVITARE!</span>
+</pre></div>
+<h2 id="%F0%9F%94%84-Il-Pattern-if-__name__-==-%22__main__%22">🔄 Il Pattern <code>if __name__ == "__main__"</code><a class="anchor-link" href="#%F0%9F%94%84-Il-Pattern-if-__name__-==-%22__main__%22">¶</a></h2><p><strong>Il trucco più importante per moduli riutilizzabili</strong>:</p>
+<div class="highlight"><pre><span></span><span class="c1"># mio_modulo.py</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">funzione_utile</span><span class="p">():</span>
+    <span class="c1"># codice della funzione</span>
+    <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="c1"># Codice di test/esempio</span>
+    <span class="c1"># Eseguito SOLO se file lanciato direttamente</span>
+    <span class="c1"># NON eseguito se importato</span>
+    <span class="n">test_funzione_utile</span><span class="p">()</span>
+</pre></div>
+<p><strong>Perché?</strong> Permette al file di essere sia modulo che programma</p>
+<h2 id="%F0%9F%92%A1-Pattern-Pratici-per-la-Fisica">💡 Pattern Pratici per la Fisica<a class="anchor-link" href="#%F0%9F%92%A1-Pattern-Pratici-per-la-Fisica">¶</a></h2><h3 id="Funzione-con-Parametri-Fisici">Funzione con Parametri Fisici<a class="anchor-link" href="#Funzione-con-Parametri-Fisici">¶</a></h3><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">traiettoria</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.81</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Calcola posizione proiettile.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        t: tempo (s)</span>
+<span class="sd">        v0: velocità iniziale (m/s) </span>
+<span class="sd">        theta: angolo lancio (gradi)</span>
+<span class="sd">        g: accelerazione gravità (m/s²)</span>
+<span class="sd">    """</span>
+    <span class="c1"># Usa parametri con default per costanti fisiche</span>
+</pre></div>
+<h3 id="Modulo-di-Costanti">Modulo di Costanti<a class="anchor-link" href="#Modulo-di-Costanti">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># costanti_fisiche.py</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">299792458</span>  <span class="c1"># m/s</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.62607015e-34</span>  <span class="c1"># J⋅s</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">1.602176634e-19</span>  <span class="c1"># C</span>
+
+<span class="c1"># Nel programma principale</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">costanti_fisiche</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cf</span>
+<span class="n">energia</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">h</span> <span class="o">*</span> <span class="n">frequenza</span>
+</pre></div>
+<h2 id="%E2%9A%A0%EF%B8%8F-Le-5-Trappole-Mortali">⚠️ Le 5 Trappole Mortali<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Le-5-Trappole-Mortali">¶</a></h2><ol>
+<li><p><strong>Lista modificata inaspettatamente</strong></p>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sbagliato</span><span class="p">(</span><span class="n">lista</span><span class="o">=</span><span class="p">[]):</span>  <span class="c1"># MAI default mutabile!</span>
+    <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lista</span>
+</pre></div>
+</li>
+<li><p><strong>Namespace inquinato</strong></p>
+<div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>  <span class="c1"># sin() di math o numpy?</span>
+</pre></div>
+</li>
+<li><p><strong>Documentazione assente</strong></p>
+<ul>
+<li>"Me lo ricorderò" → Non te lo ricorderai</li>
 </ul>
-<h3 id="Funzioni-con-Numero-Variabile-di-Argomenti">Funzioni con Numero Variabile di Argomenti<a class="anchor-link" href="#Funzioni-con-Numero-Variabile-di-Argomenti">¶</a></h3><ul>
-<li>Gli operatori <code>*args</code> e <code>**kwargs</code> permettono di definire funzioni che accettano un numero variabile di argomenti posizionali e con nome.</li>
-<li>L'operatore <code>*</code> può essere usato per spacchettare sequenze di argomenti durante la chiamata a una funzione.</li>
-<li>L'operatore <code>**</code> viene utilizzato per spacchettare dizionari in argomenti con nome.</li>
+</li>
+<li><p><strong>Ordine parametri errato</strong></p>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>  <span class="c1"># ERRORE! Default dopo posizionali</span>
+</pre></div>
+</li>
+<li><p><strong>Modifica involontaria</strong></p>
+<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">process</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  <span class="c1"># Modifica l'originale!</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</li>
+</ol>
+<h2 id="%F0%9F%9A%80-Best-Practices-Essenziali">🚀 Best Practices Essenziali<a class="anchor-link" href="#%F0%9F%9A%80-Best-Practices-Essenziali">¶</a></h2><h3 id="Design-di-Funzioni">Design di Funzioni<a class="anchor-link" href="#Design-di-Funzioni">¶</a></h3><ul>
+<li><strong>Una funzione = un compito</strong></li>
+<li><strong>Nome descrittivo</strong>: <code>calcola_energia_cinetica</code> non <code>calc</code></li>
+<li><strong>Return esplicito</strong>: sempre restituire qualcosa o None</li>
+<li><strong>Docstring sempre</strong>: parametri, return, unità di misura</li>
 </ul>
-<h2 id="I-Moduli">I Moduli<a class="anchor-link" href="#I-Moduli">¶</a></h2><ul>
-<li>Raggruppano funzionalità specifiche.</li>
-<li>Forniscono namespaces, ovvero insiemi di simboli riconosciuti dal kernel.</li>
-<li>La libreria standard di Python include numerosi moduli pronti all'uso.</li>
-<li>I moduli estendono le capacità del linguaggio Python.</li>
-</ul>
-<h3 id="Come-importare-moduli">Come importare moduli<a class="anchor-link" href="#Come-importare-moduli">¶</a></h3><ul>
-<li>L'importazione di un modulo introduce il nome del modulo nel namespace corrente.</li>
-<li>È possibile importare più moduli in una sola istruzione, ma la guida di stile Python suggerisce di evitarlo.</li>
-<li>Si possono usare alias per evitare conflitti di nome, ad esempio <code>import math as mathematics</code>.</li>
-<li>È possibile importare specifiche funzioni da un modulo con <code>from math import sin</code>, evitando però di importare troppi nomi per prevenire conflitti.</li>
-<li>Importare tutto da un modulo con <code>from math import *</code> è generalmente sconsigliato perché rende difficile tracciare l'origine dei nomi e potrebbe sovrascrivere nomi esistenti.</li>
-</ul>
-<h3 id="Come-creare-moduli">Come creare moduli<a class="anchor-link" href="#Come-creare-moduli">¶</a></h3><ul>
-<li>Un modulo in Python è semplicemente un file <code>.py</code> che contiene definizioni di funzioni e variabili.</li>
-<li>Quando un modulo viene eseguito direttamente, il valore della variabile speciale <code>__name__</code> è <code>__main__</code>. Se viene importato, <code>__name__</code> assume il nome del modulo.</li>
-</ul>
-<h3 id="Uso-di-__name__">Uso di <code>__name__</code><a class="anchor-link" href="#Uso-di-__name__">¶</a></h3><ul>
-<li>La condizione <code>if __name__ == "__main__":</code> permette di includere un programma di test o esempio nel modulo, che viene eseguito solo quando il modulo è eseguito direttamente, e non quando viene importato.</li>
-<li>Questo approccio è utile per eseguire il "regression testing" e per promuovere la riusabilità delle funzioni.</li>
-</ul>
-<h3 id="Eseguire-un-comando-o-uno-script-dallo-shell-di-Python">Eseguire un comando o uno script dallo shell di Python<a class="anchor-link" href="#Eseguire-un-comando-o-uno-script-dallo-shell-di-Python">¶</a></h3><ul>
-<li>Per lanciare lo shell di Python, si usa il comando <code>python</code>.</li>
-<li>Python è un linguaggio interpretato: esegue i comandi inseriti immediatamente, utile per testare rapidamente funzionalità.</li>
-<li>È possibile eseguire script Python sia dalla linea di comando in modalità interattiva che normale.</li>
-</ul>
+<h3 id="Organizzazione-Codice">Organizzazione Codice<a class="anchor-link" href="#Organizzazione-Codice">¶</a></h3><pre><code>progetto/
+├── main.py           # Programma principale
+├── calcoli.py        # Funzioni di calcolo
+├── costanti.py       # Costanti fisiche
+└── utils.py          # Funzioni di supporto
+</code></pre>
+<h2 id="%F0%9F%93%8A-Schema-Decisionale">📊 Schema Decisionale<a class="anchor-link" href="#%F0%9F%93%8A-Schema-Decisionale">¶</a></h2><pre><code>Ho codice da riutilizzare?
+├─ SÌ; → Crea funzione
+│   ├─ Parametri variabili? → usa *args/**kwargs
+│   └─ Parametri opzionali? → usa default
+└─ NO → Codice inline
+
+Funzioni correlate?
+├─ SÌ → Crea modulo
+│   └─ Aggiungi if __name__ == "__main__"
+└─ NO → Tieni nel file principale
+</code></pre>
+<h2 id="%F0%9F%8E%93-Il-Messaggio-Finale">🎓 Il Messaggio Finale<a class="anchor-link" href="#%F0%9F%8E%93-Il-Messaggio-Finale">¶</a></h2><p><strong>Le funzioni non sono solo per evitare ripetizioni</strong>: sono per creare astrazioni comprensibili. Un buon programma si legge come una storia, non come una lista di istruzioni.</p>
 </div>
 </div>
 </div>

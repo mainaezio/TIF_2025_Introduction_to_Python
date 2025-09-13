@@ -7765,7 +7765,8 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>È anche possibile sostituire una variabile simbolica ad un'altra. Nell'esempio <code>y</code> sostituita da <code>x</code> prima <code>x</code> si sostituita dal numero <code>2</code>.</p>
+<p>È anche possibile sostituire una variabile simbolica ad un'altra. Nell'esempio <code>x</code> è sostituita da <code>y</code>. Nel secondo passaggio
+dopo questa sostituzione <code>y</code> viene sostituita dal numero <code>2</code>.</p>
 </div>
 </div>
 </div>
@@ -7819,7 +7820,7 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Nel seguito tutti gli esempi assumeranno che i simboli necessari siano già stati definiti. Se provate ad eseguire un esempio e SymPy vi dà un messaggio del tipo <code>NameError: name ’x’ is not defined</code> è probabilmente perchè dovete definire il simbolo <code>x</code> usando uno dei metodi citati all'inizio.</p>
+<p>Nel seguito tutti gli esempi assumeranno che i simboli necessari siano già stati definiti. Se provate ad eseguire un esempio e SymPy vi dà un messaggio del tipo <code>NameError: name ’x’ is not defined</code> è probabilmente perché dovete definire il simbolo <code>x</code> usando uno dei metodi citati all'inizio.</p>
 </div>
 </div>
 </div>
@@ -8477,7 +8478,7 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Equazioni--differenziali-ordinarie-(ODE)">Equazioni  differenziali ordinarie (ODE)<a class="anchor-link" href="#Equazioni--differenziali-ordinarie-(ODE)">¶</a></h2><p>SymPy può risolvere diversi tipi di equazioni  differenziali ordinarie con il comando <code>dsolve</code>. L'equazione viene passata come primo argomento, <code>eq</code>. Il secondo argomento è la funzione <code>f(x)</code> rispetto a cui risolvere l'equazione. Un terzo argomento opzionale, <code>hint</code>, influenza il metodo che <code>dsolve</code> usa: alcuni metodi sono più adatti a certe classi di ODE, o esprimono la soluzione in forma più semplice, che altri.</p>
+<h2 id="Equazioni--differenziali-ordinarie-(ODE)">Equazioni  differenziali ordinarie (ODE)<a class="anchor-link" href="#Equazioni--differenziali-ordinarie-(ODE)">¶</a></h2><p>SymPy può risolvere diversi tipi di equazioni differenziali ordinarie con il comando <code>dsolve</code>. L'equazione viene passata come primo argomento, <code>eq</code>. Il secondo argomento è la funzione <code>f(x)</code> rispetto a cui risolvere l'equazione. Un terzo argomento opzionale, <code>hint</code>, influenza il metodo che <code>dsolve</code> usa: alcuni metodi sono più adatti a certe classi di ODE, o esprimono la soluzione in forma più semplice, che altri.</p>
 <p>Per chiamare <code>dsolve</code>, è necessario un modo di indicare la funzione ignota che cerchiamo come soluzione e le sue derivate. Per questo ci sono le classi <code>Function</code> e <code>Derivative</code>:</p>
 </div>
 </div>
@@ -8561,7 +8562,7 @@ nome della variabile e quella del simbolo coincidono.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Il risultato di <code>dsolve</code> è una instance della  classe <code>Equality</code>. Questo ha la conseguenza che quando vogliamo valutare numericamente la funzione e utilizzarla in altri contesti (per esempio se vogliamo fare il grafico di <em>y</em>(<em>x</em>) in funzione di <em>x</em>), anche dopo aver usato <code>subs()</code> e <code>evalf()</code>, abbiamo ancora una <code>Equality</code>, non un oggetto scalare. Per valutare la funzione in un punto e ottenere un numero bisogna usare l'attributo <code>rhs</code>  di <code>Equality</code>.</p>
-<p>Notate che, in questo caso, utilizziamo <code>z</code> per immagazzinare l'<code>Equality</code> ritornata da <code>dsolve</code>, anche se si riferisce all'espressione di una funzion chiamata <code>y(x)</code>, per sottolineare la distinzione fra l'<code>Equality</code> in sè e i dati che contiene.</p>
+<p>Notate che, in questo caso, utilizziamo <code>z</code> per immagazzinare l'<code>Equality</code> ritornata da <code>dsolve</code>, anche se si riferisce all'espressione di una funzion chiamata <code>y(x)</code>, per sottolineare la distinzione fra l'<code>Equality</code> in sé e i dati che contiene.</p>
 </div>
 </div>
 </div>
@@ -8903,11 +8904,11 @@ nome della variabile e quella del simbolo coincidono.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Equazioni-lineari-e--inversione-di-matrici">Equazioni lineari e  inversione di matrici<a class="anchor-link" href="#Equazioni-lineari-e--inversione-di-matrici">¶</a></h2><p>SymPy contiene una classe <code>Matrix</code> e le funzioni associate che permettono di risolvere simbolicamente un sistems di  equazioni lineari (In seguito, ovviamente, possiamo ottenere risultati numerici con <code>subs()</code> e <code>evalf()</code>). Consideriamo il caso seguente di una semplice coppia di equazioni lineari:</p>
+<h2 id="Equazioni-lineari-e--inversione-di-matrici">Equazioni lineari e  inversione di matrici<a class="anchor-link" href="#Equazioni-lineari-e--inversione-di-matrici">¶</a></h2><p>SymPy contiene una classe <code>Matrix</code> e le funzioni associate che permettono di risolvere simbolicamente un sistema di equazioni lineari (In seguito, ovviamente, possiamo ottenere risultati numerici con <code>subs()</code> e <code>evalf()</code>). Consideriamo il caso seguente di una semplice coppia di equazioni lineari:</p>
 <p>$$\begin{aligned}
 3x + 7y&amp;= 12z\\
 4x - 2y&amp;= 5z\end{aligned}$$</p>
-<p>Possiamo scrivere il sistema nella forma $A\vec{x}=\vec{b}$ (moltiplicate <em>A</em> per $\vec{x}$ per riprodurre  l'equazione originale), dove</p>
+<p>Possiamo scrivere il sistema nella forma $A\vec{x}=\vec{b}$ (moltiplicate <em>A</em> per $\vec{x}$ per riprodurre l'equazione originale), dove</p>
 <p>$$A=\left(\begin{array}{cc}
 3 &amp; 7\\
 4 &amp; -2 \end{array} \right),\qquad
@@ -8917,9 +8918,9 @@ y \end{array}\right),\qquad
 \vec{b}=\left( \begin{array}{c}
 12z\\
 5z \end{array}\right).$$</p>
-<p>Qui è stato incluso un simbolo, <em>z</em>, nel membro di destra per mostrare come i simboli compaiono nella soluzione. In molti casi ci interessa <em>z</em> = 1, ma è possibile che sia preferibile usare SymPy invece di risolvere il sistema con metodi numerici, anche quando non le equazioni non contengono quantità simboliche, per la sua capacità di restituire frazioni esatte invece di numeri reali approssimati.</p>
+<p>Qui è stato incluso un simbolo, <em>z</em>, nel membro di destra per mostrare come i simboli compaiono nella soluzione. In molti casi ci interessa <em>z</em> = 1, ma è possibile che sia preferibile usare SymPy invece di risolvere il sistema con metodi numerici, anche quando le equazioni non contengono quantità simboliche, per la sua capacità di restituire frazioni esatte invece di numeri reali approssimati.</p>
 <p>Una strategia per determinare $\vec{x}$ è invertire la matrice <em>A</em> e moltiplicare a sinistra per l'inversa, cioè $A^{-1}A\vec{x}=\vec{x}=A^{-1}\vec{b}$. La class <code>Matrix</code> di SymPy ha un metodo <code>inv()</code> che permette di trovare
-l'inverse, e la moltiplicazione fra matrici viene indicata con il simbolo <code>*</code>:</p>
+l'inversa, e la moltiplicazione fra matrici viene indicata con il simbolo <code>*</code>:</p>
 </div>
 </div>
 </div>
@@ -9309,7 +9310,7 @@ e poi lo passiamo alla funzione solve.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Con vettori di piû variabili:</p>
+<p>Con vettori di più variabili:</p>
 </div>
 </div>
 </div>
@@ -9336,7 +9337,7 @@ e poi lo passiamo alla funzione solve.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Output:-l'interfaccia-a-LaTeX">Output: l'interfaccia a LaTeX<a class="anchor-link" href="#Output:-l'interfaccia-a-LaTeX">¶</a></h2><p>SymPy ha la possibilità di formattare il suo output in LaTeX, in modo che sia facile inserirlo in altri documenti. LaTeX è lo standard per tutte le pubblicazioni che contengano formule di matematica o fisica. Non vi laureerete senza impararlo perchè la tesi la dovrete scrivere in LaTeX.</p>
+<h2 id="Output:-l'interfaccia-a-LaTeX">Output: l'interfaccia a LaTeX<a class="anchor-link" href="#Output:-l'interfaccia-a-LaTeX">¶</a></h2><p>SymPy ha la possibilità di formattare il suo output in LaTeX, in modo che sia facile inserirlo in altri documenti. LaTeX è lo standard per tutte le pubblicazioni che contengano formule di matematica o fisica. Non vi laureerete senza impararlo perché la tesi la dovrete scrivere in LaTeX.</p>
 <p>All'inizio del notebook abbiamo chiamato:</p>
 <div class="highlight"><pre><span></span><span class="n">sympy</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 </pre></div>
@@ -9382,6 +9383,215 @@ e poi lo passiamo alla funzione solve.</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">latex</span><span class="p">(</span><span class="n">series</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">),</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'inline'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Questo notebook su SymPy è ben strutturato ma potrebbe beneficiare di alcuni miglioramenti per studenti del primo anno:</p>
+<h2 id="Suggerimenti-per-il-notebook">Suggerimenti per il notebook<a class="anchor-link" href="#Suggerimenti-per-il-notebook">¶</a></h2><ol>
+<li><p><strong>Più contesto fisico</strong>: Gli esempi sono molto matematici. Aggiungerei esempi di problemi fisici concreti (oscillatore armonico, caduta libera, circuiti RC).</p>
+</li>
+<li><p><strong>Attenzione ai dettagli tecnici</strong>: La sezione su <code>Equality</code> e <code>.rhs</code> è troppo tecnica per principianti. Semplificherei con esempi più diretti.</p>
+</li>
+<li><p><strong>Confronto numerico vs simbolico</strong>: Manca una discussione chiara su quando usare SymPy vs NumPy. Aggiungerei una sezione dedicata.</p>
+</li>
+<li><p><strong>Esercizi progressivi</strong>: Mancano esercizi "Imparare Facendo" che sono presenti negli altri notebook.</p>
+</li>
+<li><p><strong>Avvertimenti su prestazioni</strong>: SymPy è lento - questo va enfatizzato con esempi di timing.</p>
+</li>
+</ol>
+<h2 id="Sommario-proposto">Sommario proposto<a class="anchor-link" href="#Sommario-proposto">¶</a></h2><hr>
+<h1 id="Sommario-12:-Calcolo-Simbolico-con-SymPy">Sommario 12: Calcolo Simbolico con SymPy<a class="anchor-link" href="#Sommario-12:-Calcolo-Simbolico-con-SymPy">¶</a></h1><h2 id="%F0%9F%8E%AF-Il-Concetto-Fondamentale">🎯 Il Concetto Fondamentale<a class="anchor-link" href="#%F0%9F%8E%AF-Il-Concetto-Fondamentale">¶</a></h2><p><strong>SymPy manipola formule, non numeri</strong></p>
+<table>
+<thead>
+<tr>
+<th>NumPy (Numerico)</th>
+<th>SymPy (Simbolico)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sin(3.14159)</code> → <code>0.00000266</code></td>
+<td><code>sin(pi)</code> → <code>0</code> (esatto!)</td>
+</tr>
+<tr>
+<td><code>sqrt(2)</code> → <code>1.41421356...</code></td>
+<td><code>sqrt(2)</code> → <code>√2</code> (simbolo)</td>
+</tr>
+<tr>
+<td>Veloce (compilato)</td>
+<td>Lento (interpretato)</td>
+</tr>
+<tr>
+<td>Approssimato</td>
+<td>Esatto</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%F0%9F%94%A4-Creazione-di-Simboli---Il-Punto-di-Partenza">🔤 Creazione di Simboli - Il Punto di Partenza<a class="anchor-link" href="#%F0%9F%94%A4-Creazione-di-Simboli---Il-Punto-di-Partenza">¶</a></h2><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Symbol</span><span class="p">,</span> <span class="n">symbols</span>
+
+<span class="c1"># Singolo simbolo</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+
+<span class="c1"># Multipli simboli</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x y z'</span><span class="p">)</span>
+
+<span class="c1"># Con proprietà</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+<p><strong>Regola d'oro</strong>: Prima crea i simboli, poi usali nelle espressioni</p>
+<h2 id="%F0%9F%A7%AE-Operazioni-Simboliche-Fondamentali">🧮 Operazioni Simboliche Fondamentali<a class="anchor-link" href="#%F0%9F%A7%AE-Operazioni-Simboliche-Fondamentali">¶</a></h2><h3 id="Manipolazione-Algebrica">Manipolazione Algebrica<a class="anchor-link" href="#Manipolazione-Algebrica">¶</a></h3><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">factor</span><span class="p">()</span>    <span class="c1"># (x + 1)**2</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>    <span class="c1"># x**2 + 2*x + 1</span>
+</pre></div>
+<h3 id="Sostituzione">Sostituzione<a class="anchor-link" href="#Sostituzione">¶</a></h3><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>      <span class="c1"># Sostituisci x con 3</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">({</span><span class="n">x</span><span class="p">:</span> <span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">})</span>  <span class="c1"># Sostituisci x con y+1</span>
+</pre></div>
+<h3 id="Valutazione-Numerica">Valutazione Numerica<a class="anchor-link" href="#Valutazione-Numerica">¶</a></h3><div class="highlight"><pre><span></span><span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>      <span class="c1"># Float standard</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">evalf</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>    <span class="c1"># 50 cifre di precisione</span>
+</pre></div>
+<h2 id="%F0%9F%93%90-Calcolo-Differenziale-e-Integrale">📐 Calcolo Differenziale e Integrale<a class="anchor-link" href="#%F0%9F%93%90-Calcolo-Differenziale-e-Integrale">¶</a></h2><h3 id="Derivate">Derivate<a class="anchor-link" href="#Derivate">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">diff</span>
+<span class="n">diff</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>           <span class="c1"># cos(x)</span>
+<span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>          <span class="c1"># Seconda derivata: 6x</span>
+</pre></div>
+<h3 id="Integrali">Integrali<a class="anchor-link" href="#Integrali">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>              <span class="c1"># x³/3</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>     <span class="c1"># 1/3 (definito)</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">oo</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>  <span class="c1"># √π</span>
+</pre></div>
+<h2 id="%F0%9F%94%A7-Risoluzione-di-Equazioni">🔧 Risoluzione di Equazioni<a class="anchor-link" href="#%F0%9F%94%A7-Risoluzione-di-Equazioni">¶</a></h2><h3 id="Equazioni-Algebriche">Equazioni Algebriche<a class="anchor-link" href="#Equazioni-Algebriche">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve</span>
+<span class="n">solve</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>        <span class="c1"># [1, -1]</span>
+<span class="n">solve</span><span class="p">([</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">],</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>  <span class="c1"># Sistema</span>
+</pre></div>
+<h3 id="Equazioni-Differenziali">Equazioni Differenziali<a class="anchor-link" href="#Equazioni-Differenziali">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Function</span><span class="p">,</span> <span class="n">dsolve</span><span class="p">,</span> <span class="n">Derivative</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="n">Derivative</span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># y(x) = C1*exp(-x)</span>
+</pre></div>
+<h2 id="%F0%9F%94%97-Integrazione-con-NumPy">🔗 Integrazione con NumPy<a class="anchor-link" href="#%F0%9F%94%97-Integrazione-con-NumPy">¶</a></h2><h3 id="Il-Ponte:-lambdify">Il Ponte: lambdify<a class="anchor-link" href="#Il-Ponte:-lambdify">¶</a></h3><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="n">lambdify</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="s1">'numpy'</span><span class="p">)</span>  <span class="c1"># Ora f funziona su array</span>
+<span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">π</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">π</span><span class="p">]))</span>
+</pre></div>
+<h2 id="%E2%9A%A0%EF%B8%8F-Quando-Usare-SymPy-vs-NumPy">⚠️ Quando Usare SymPy vs NumPy<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Quando-Usare-SymPy-vs-NumPy">¶</a></h2><table>
+<thead>
+<tr>
+<th>Usa SymPy quando...</th>
+<th>Usa NumPy quando...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Derivi formule analitiche</td>
+<td>Calcoli su grandi dataset</td>
+</tr>
+<tr>
+<td>Serve precisione infinita</td>
+<td>Serve velocità</td>
+</tr>
+<tr>
+<td>Risolvi equazioni simboliche</td>
+<td>Simuli sistemi fisici</td>
+</tr>
+<tr>
+<td>Sviluppi in serie</td>
+<td>Fai grafici di funzioni</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%F0%9F%93%8A-Pattern-Utili-per-la-Fisica">📊 Pattern Utili per la Fisica<a class="anchor-link" href="#%F0%9F%93%8A-Pattern-Utili-per-la-Fisica">¶</a></h2><h3 id="Analisi-di-un-Sistema-Fisico">Analisi di un Sistema Fisico<a class="anchor-link" href="#Analisi-di-un-Sistema-Fisico">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># 1. Definisci simboli con unità fisiche</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'m k x'</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 2. Scrivi l'energia</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="c1"># 3. Deriva per forza</span>
+<span class="n">F</span> <span class="o">=</span> <span class="o">-</span><span class="n">diff</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># F = -kx</span>
+
+<span class="c1"># 4. Sostituisci valori numerici</span>
+<span class="n">F_num</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">([</span><span class="n">k</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">F</span><span class="p">,</span> <span class="s1">'numpy'</span><span class="p">)</span>
+</pre></div>
+<h3 id="Serie-di-Taylor-per-Approssimazioni">Serie di Taylor per Approssimazioni<a class="anchor-link" href="#Serie-di-Taylor-per-Approssimazioni">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Pendolo: sin(θ) ≈ θ - θ³/6</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s1">'theta'</span><span class="p">)</span>
+<span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+<h2 id="%F0%9F%92%A1-Best-Practices">💡 Best Practices<a class="anchor-link" href="#%F0%9F%92%A1-Best-Practices">¶</a></h2><ol>
+<li><strong>Definisci proprietà dei simboli</strong>: <code>real=True</code>, <code>positive=True</code></li>
+<li><strong>Semplifica quando possibile</strong>: <code>simplify()</code>, <code>factor()</code>, <code>expand()</code></li>
+<li><strong>Converti per numerica</strong>: Usa <code>lambdify</code> per passare a NumPy</li>
+<li><strong>Attenzione alle prestazioni</strong>: SymPy è 100-1000x più lento</li>
+<li><strong>Rational per frazioni esatte</strong>: <code>Rational(1,3)</code> non <code>1/3</code></li>
+</ol>
+<h2 id="%F0%9F%9A%A8-Errori-Comuni">🚨 Errori Comuni<a class="anchor-link" href="#%F0%9F%9A%A8-Errori-Comuni">¶</a></h2><table>
+<thead>
+<tr>
+<th>Errore</th>
+<th>Problema</th>
+<th>Soluzione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NameError: 'x' not defined</code></td>
+<td>Simbolo non creato</td>
+<td><code>x = Symbol('x')</code></td>
+</tr>
+<tr>
+<td>Risultato con <code>C1</code></td>
+<td>Costante integrazione</td>
+<td>Usa <code>.subs(C1, valore)</code></td>
+</tr>
+<tr>
+<td>Output <code>Equality(...)</code></td>
+<td>Oggetto equazione</td>
+<td>Usa <code>.rhs</code> per il valore</td>
+</tr>
+<tr>
+<td>Lentezza estrema</td>
+<td>Loop su simboli</td>
+<td>Passa a NumPy con <code>lambdify</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%F0%9F%93%9D-Workflow-Tipico">📝 Workflow Tipico<a class="anchor-link" href="#%F0%9F%93%9D-Workflow-Tipico">¶</a></h2><div class="highlight"><pre><span></span><span class="c1"># 1. Setup simbolico</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'x a'</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 2. Deriva formula analitica</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 3. Semplifica se necessario</span>
+<span class="n">expr_simple</span> <span class="o">=</span> <span class="n">simplify</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+
+<span class="c1"># 4. Converti per uso numerico</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">lambdify</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">],</span> <span class="n">expr_simple</span><span class="p">,</span> <span class="s1">'numpy'</span><span class="p">)</span>
+
+<span class="c1"># 5. Usa in calcoli numerici</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+<h2 id="%F0%9F%8E%93-Il-Messaggio-Chiave">🎓 Il Messaggio Chiave<a class="anchor-link" href="#%F0%9F%8E%93-Il-Messaggio-Chiave">¶</a></h2><p>SymPy è il <strong>laboratorio delle formule</strong>: usalo per derivare, verificare e semplificare espressioni analitiche. Una volta ottenuta la formula giusta, passa a NumPy per i calcoli numerici. È il ponte tra la fisica teorica (formule) e computazionale (numeri).</p>
+<hr/>
+<p>Questo sommario enfatizza l'uso pratico di SymPy nel contesto della fisica, con chiare indicazioni su quando e come usarlo efficacemente.</p>
+</hr></div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 </div>
 </div>

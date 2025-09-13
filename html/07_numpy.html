@@ -7532,7 +7532,7 @@ a.anchor-link {
 </li></li></li></li></li></li></li></li></li></ul>
 </div>
 <hr/>
-<h2 id="Introduzione">Introduzione<a class="anchor-link" href="#Introduzione">¶</a></h2><p>Il linguaggio Python di base (incluse le librerie standard) fornisce strumenti sufficienti per completare semplici progetti computazionali. Tuttavia, esistono librerie Python dedicate che permettono funzionalità estese che</p>
+<h2 id="Introduzione">Introduzione<a class="anchor-link" href="#Introduzione">¶</a></h2><p>Il linguaggio Python di base (incluse le librerie standard) fornisce strumenti sufficienti per completare semplici progetti computazionali. Tuttavia, esistono librerie Python dedicate che aumentano le funzionalità del linguaggio. Queste</p>
 <ul>
 <li><p>forniscono strumenti numerici per automatizzare operazioni ricorrenti</p>
 </li>
@@ -7543,7 +7543,7 @@ a.anchor-link {
 </ul>
 <p>Citiamo tre librerie in particolare:</p>
 <ul>
-<li><p>Il modulo <code>numpy</code>, introdotto in 07_numpy, che fornisce strumenti numerici. Numpy contiene fra le altre cose molte funzioni per manipolazioni statistiche che vengono presentate in 09_numpy_statistics.</p>
+<li><p>Il modulo <code>numpy</code>, introdotto in questo notebook, che fornisce strumenti numerici. Numpy contiene fra le altre cose molte funzioni per manipolazioni statistiche che vengono presentate in 09_numpy_statistics.</p>
 </li>
 <li><p>Il modulo <code>matplotlib</code>, introdotto in 08_plots, che permette di creare grafici.</p>
 </li>
@@ -7563,7 +7563,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Numpy-e-gli-array">Numpy e gli array<a class="anchor-link" href="#Numpy-e-gli-array">¶</a></h2><p>La librery NumPy (NUMerical PYthon) fornisce un nuovo tipo di struttura dei dati chiamata <code>array</code>s che permette di eseguire in modo efficiente operazioni su vettori e matrici. Fornisce inoltre diverse  operazioni legate all'algebra lineare (come risolvere sistemi di equazioni lineari, calcolo di autovettori e autovalori). Viene tradizionalmente importata come <code>np</code>.<br/></p>
-<p>NumPy introduce un nuovo tipo di dati detto “<code>array</code>”. Un array <em>sembra</em> molto simile a una lista ma può contenere solo elementi di un singolo tipo (mentre una lista può contenere oggetti di tipo diverso). Questo significa che gli array possono essere scritti in memoria in modo più efficiente. Gli array sono la struttura di dati migliore per i calcoli numerici in cui spesso si ha a che fare con vettori e matrici di tipo omogeneo.</p>
+<p>Un Numpy array <em>sembra</em> molto simile a una lista ma può contenere solo elementi di un singolo tipo (mentre una lista può contenere oggetti di tipo diverso). Questo significa che gli array possono essere scritti in memoria in modo più efficiente. Gli array sono la struttura di dati migliore per i calcoli numerici in cui spesso si ha a che fare con vettori e matrici di tipo omogeneo.</p>
 <p>Vettori, matrici bidimensionali e matrici con più di due indici sono tutti chiamati “arrays” in NumPy.</p>
 <h3 id="Vettori-(1d-arrays)">Vettori (1d-arrays)<a class="anchor-link" href="#Vettori-(1d-arrays)">¶</a></h3><p>La struttura dati data che useremo più spesso è il vettore. Qualche esempio di come crearne uno:</p>
 <ul>
@@ -7997,7 +7997,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>La maggior parte delle operazioni (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) agiscono su coppie di array in un solo colpo, elemento per elemento, purchè i due array abbiano la stessa lunghezza:</p>
+<p>La maggior parte delle operazioni (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) agiscono su coppie di array in un solo colpo, elemento per elemento, purché i due array abbiano la stessa lunghezza, oppure se le dimensioni dell'array più piccolo possono essere estese in modo naturale alle dimensioni dell'array più grande con una operazione detta <code>broadcasting</code>.</p>
 </div>
 </div>
 </div>
@@ -8039,6 +8039,68 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y2</span> <span class="o">&gt;</span> <span class="n">y1</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Il caso più semplice di broadcasting sono le operazioni fra scalari e array. Lo scalare viene tacitamente promosso ad un array. ad esempio l'operazione:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>viene riscritta internamente come:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Maggiori informazioni in <a href="https://numpy.org/doc/stable/user/basics.broadcasting.html">https://numpy.org/doc/stable/user/basics.broadcasting.html</a>.</p>
 </div>
 </div>
 </div>
@@ -8230,20 +8292,6 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="width:95%; padding:5px 10px 5px; border-style:solid; border-width:0px 0px 0px 10px; border-color:#ff0000; margin:20px 0px 10px 10px">
-<h4> Attenzione!</h4>
-    È sbagliato e dannoso iterare esplicitamente, per esempio usando un `for` loop, sulle componenti di un array.
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Come estrarre più elementi da un array</li>
 </ul>
@@ -8384,11 +8432,13 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 <li>Estraete il terzultimo elemento di D.
 <li>Create l'array E del quadrato degli elementi di D.
 <li>Calcolate la differenza, elemento per elemento, fra E e D.
+<li>Considerate i due array A = np.array([1,2,3]) e B = np.array([1.,2.,3.]). Sostituite il primo elemento di A e B con 1/3.
+    Perché i due risultati sono diversi?
 <li>Calcolate il valore di <b>sin(2*x)</b> in 201 punti <b>x</b> equidistanziati fra 0 e np.pi  
-<li>Costruite una funzione <b>parabola(a,b,c,xmin,xmax,npoints)</b> che restutuisca un array di <b>npoints</b> valori di <b>y</b>
+<li>Costruite una funzione <b>parabola(a,b,c,xmin,xmax,npoints)</b> che restituisca un array di <b>npoints</b> valori di <b>y</b>
     in <b>npoints</b> punti <b>x</b> equidistanziati fra
     <b>xmin</b> e <b>xmax</b> (compresi) appartenenti alla parabola <b>y = a*x**2 + b*x + c</b>.
-</li></li></li></li></li></li></li></li></li></li></ol>
+</li></li></li></li></li></li></li></li></li></li></li></ol>
 </div>
 </div>
 </div>
@@ -8617,7 +8667,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">arr</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>  <span class="c1"># la costante -1 viene promosso ad un array della lunghezza di arr</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">arr</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>  <span class="c1"># la costante -1 viene promossa ad un array della lunghezza di arr</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
 </pre></div>
@@ -8709,7 +8759,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Le parentesi tonde attorno alle condizioni sono indispensabili perchè l'operatore <code>&amp;</code> ha precedenza più alta degli operatori di confronto. Le parentesi forzano Python a valutare le disuguaglianze prima di combinarle con <code>and</code>.</p>
+<p>Le parentesi tonde attorno alle condizioni sono indispensabili perché l'operatore <code>&amp;</code> ha precedenza più alta degli operatori di confronto. Le parentesi forzano Python a valutare le disuguaglianze prima di combinarle con <code>and</code>.</p>
 </div>
 </div>
 </div>
@@ -9038,8 +9088,10 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div style="padding:20px 20px 0px 150px;">
-<img align="center" alt="No description has been provided for this image" src="../Humour/hip-hip-array.jpg" width="500"/>
+<div style="width:95%; padding:5px 10px 5px; border-style:solid; border-width:0px 0px 0px 10px; border-color:#ff0000; margin:20px 0px 10px 10px">
+<h4> Attenzione!</h4>
+    È sbagliato e dannoso iterare esplicitamente, per esempio usando un `for` loop, sulle componenti di un array. La sezione seguente lo dimostra confrontando i tempi di esecuzione
+    dei due approcci.
 </div>
 </div>
 </div>
@@ -9091,6 +9143,19 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 <span class="o">%</span><span class="k">timeit</span> forloopmethod(N)
 <span class="o">%</span><span class="k">timeit</span> numpymethod(N)
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="padding:20px 20px 0px 150px;">
+<img align="center" alt="No description has been provided for this image" src="../Humour/hip-hip-array.jpg" width="500"/>
 </div>
 </div>
 </div>
@@ -9297,7 +9362,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"colonna 0 :"</span><span class="p">,</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># l'indice della colonna &amp;egrave; fissato</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"colonna 0 :"</span><span class="p">,</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># l'indice della colonna è fissato</span>
 </pre></div>
 </div>
 </div>
@@ -9311,7 +9376,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"riga 1 :"</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>      <span class="c1"># l'indice della riga &amp;egrave; fissato</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"riga 1 :"</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>      <span class="c1"># l'indice della riga è fissato</span>
 </pre></div>
 </div>
 </div>
@@ -9468,7 +9533,7 @@ Estrate da $A$, in forma di array, la prima colonna, la seconda, la prima riga, 
 <li>Create una matrice A con 4 righe e due colonne i cui elementi siano uguali a -2.
 <li>In A sostituite tutti gli elementi della seconda riga con 33.
 <li>Create un array B di numeri interi fra 1 e 18. Trasformate B in un array di <b>shape</b>  (9,2), (2,9), (6,3).<br/>
-    Perchè non è possibile trasformare A in un array di <b>shape</b> (5,4)?
+    Perché non è possibile trasformare A in un array di <b>shape</b> (5,4)?
 </li></li></li></li></ol>
 </div>
 </div>
@@ -9669,7 +9734,35 @@ Estrate da $A$, in forma di array, la prima colonna, la seconda, la prima riga, 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Risolvere-un-sistema-di--equazioni-lineari">Risolvere un sistema di  equazioni lineari<a class="anchor-link" href="#Risolvere-un-sistema-di--equazioni-lineari">¶</a></h4><p>Per risolvere un sistema di  equazioni lineari <code>A*x = b</code>, dato in forma matriciale (cioè <code>A</code> è una matrice e <code>x</code> e <code>b</code> sono vettori, con <code>A</code> e <code>b</code> noti), possiamo usare la libreria di algebra lineare <span><code>linalg</code></span> di <span><code>numpy</code></span>:</p>
+<p>Notate che l'operatore di moltiplicazione <code>*</code> restituisce il prodotto delle matrici elemento per elemento:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">A</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A*B ="</span><span class="p">,</span> <span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A@B ="</span><span class="p">,</span> <span class="n">A</span><span class="nd">@B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Risolvere-un-sistema-di--equazioni-lineari">Risolvere un sistema di  equazioni lineari<a class="anchor-link" href="#Risolvere-un-sistema-di--equazioni-lineari">¶</a></h4><p>Per risolvere un sistema di  equazioni lineari <code>A*x = b</code>, dato in forma matriciale (<code>A</code> è una matrice e <code>x</code> e <code>b</code> sono vettori, con <code>A</code> e <code>b</code> noti), possiamo usare la libreria di algebra lineare <span><code>linalg</code></span> di <span><code>numpy</code></span>:</p>
 </div>
 </div>
 </div>
@@ -9807,6 +9900,17 @@ Estrate da $A$, in forma di array, la prima colonna, la seconda, la prima riga, 
 <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="nd">@Xinv</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Il metodo <code>transpose</code> non si trova in <code>numpy.linalg</code> ma in <code>numpy</code> perché può essere utilizzato per array più generali che matrici bidimensionali.</p>
 </div>
 </div>
 </div>
@@ -10579,7 +10683,7 @@ b : [ 1  2 22]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Esistono metodi ancora più raffinati come genfromtxt. Usate help(np.genfromtxt) oppure una ricerca sul web per ulteriori dettagli ed esempi</p>
+<p>Esistono metodi ancora più raffinati come genfromtxt. Usate help(np.genfromtxt) oppure una ricerca sul web per ulteriori dettagli ed esempi.</p>
 </div>
 </div>
 </div>
@@ -10831,56 +10935,197 @@ Esempi:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sommario-7:-numpy">Sommario 7: numpy<a class="anchor-link" href="#Sommario-7:-numpy">¶</a></h1><h3 id="1.-Introduzione-a-NumPy">1. Introduzione a NumPy<a class="anchor-link" href="#1.-Introduzione-a-NumPy">¶</a></h3><ul>
-<li><strong>NumPy</strong> è una libreria Python per il calcolo numerico che fornisce strumenti più efficienti rispetto al Python base per compiti computazionali.</li>
+<ol start="2">
+<li><strong>Sezione su broadcasting</strong>: Manca una spiegazione del broadcasting, concetto fondamentale per capire come NumPy gestisce operazioni tra array di dimensioni diverse.</li>
+</ol>
+<h1 id="Sommario-7:-NumPy---La-Matematica-Vettorizzata">Sommario 7: NumPy - La Matematica Vettorizzata<a class="anchor-link" href="#Sommario-7:-NumPy---La-Matematica-Vettorizzata">¶</a></h1><h2 id="%F0%9F%8E%AF-Il-Concetto-Fondamentale">🎯 Il Concetto Fondamentale<a class="anchor-link" href="#%F0%9F%8E%AF-Il-Concetto-Fondamentale">¶</a></h2><p><strong>NumPy trasforma Python in un linguaggio per il calcolo scientifico</strong></p>
+<p>La differenza cruciale:</p>
+<ul>
+<li><strong>Python base</strong>: Opera su singoli elementi (lento)</li>
+<li><strong>NumPy</strong>: Opera su interi array simultaneamente (veloce)</li>
 </ul>
-<h3 id="2.-Array">2. Array<a class="anchor-link" href="#2.-Array">¶</a></h3><ul>
-<li>Gli array sono la struttura dati centrale di NumPy, più efficienti delle liste Python per operazioni numeriche e manipolazioni di vettori e matrici.</li>
+<div class="highlight"><pre><span></span><span class="c1"># LENTO (Python)</span>
+<span class="n">risultato</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+    <span class="n">risultato</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># VELOCE (NumPy)  </span>
+<span class="n">risultato</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</pre></div>
+<p>I tempi di esecuzione possono essere misurati con <code>%timeit</code>.</p>
+<h2 id="%F0%9F%93%8A-L'Array:-La-Struttura-Centrale">📊 L'Array: La Struttura Centrale<a class="anchor-link" href="#%F0%9F%93%8A-L'Array:-La-Struttura-Centrale">¶</a></h2><h3 id="Array-vs-Lista:-Le-Differenze-Critiche">Array vs Lista: Le Differenze Critiche<a class="anchor-link" href="#Array-vs-Lista:-Le-Differenze-Critiche">¶</a></h3><table>
+<thead>
+<tr>
+<th>Lista Python</th>
+<th>Array NumPy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipi misti</td>
+<td>Tipo unico</td>
+</tr>
+<tr>
+<td>Flessibile ma lenta</td>
+<td>Rigida ma veloce</td>
+</tr>
+<tr>
+<td>Per dati generici</td>
+<td>Per calcolo numerico</td>
+</tr>
+<tr>
+<td>Memoria frammentata</td>
+<td>Memoria contigua</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Creazione-Array---I-Pattern-Essenziali">Creazione Array - I Pattern Essenziali<a class="anchor-link" href="#Creazione-Array---I-Pattern-Essenziali">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Da dati esistenti</span>
+<span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># Sequenze predefinite</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>    <span class="c1"># Come range()</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>     <span class="c1"># n punti equispaziati</span>
+<span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">log10_start</span><span class="p">,</span> <span class="n">log10_stop</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># Scala log</span>
+
+<span class="c1"># Array speciali</span>
+<span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+<h2 id="%E2%9A%A1-Operazioni-Vettorizzate---Il-Cuore-di-NumPy">⚡ Operazioni Vettorizzate - Il Cuore di NumPy<a class="anchor-link" href="#%E2%9A%A1-Operazioni-Vettorizzate---Il-Cuore-di-NumPy">¶</a></h2><h3 id="La-Regola-d'Oro">La Regola d'Oro<a class="anchor-link" href="#La-Regola-d'Oro">¶</a></h3><p><strong>MAI usare loop espliciti su array NumPy</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># ❌ SBAGLIATO</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># ✅ CORRETTO</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+<h3 id="Broadcasting:-Operazioni-tra-Array">Broadcasting: Operazioni tra Array<a class="anchor-link" href="#Broadcasting:-Operazioni-tra-Array">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Scalare + Array</span>
+<span class="n">arr</span> <span class="o">+</span> <span class="mi">5</span>  <span class="c1"># Aggiunge 5 a ogni elemento</span>
+
+<span class="c1"># Array + Array (stesse dimensioni)</span>
+<span class="n">arr1</span> <span class="o">+</span> <span class="n">arr2</span>  <span class="c1"># Elemento per elemento</span>
+
+<span class="c1"># Broadcasting automatico</span>
+<span class="n">matrice</span> <span class="o">+</span> <span class="n">vettore_colonna</span>  <span class="c1"># NumPy capisce cosa fare</span>
+</pre></div>
+<h2 id="%F0%9F%94%8D-Selezione-e-Filtraggio">🔍 Selezione e Filtraggio<a class="anchor-link" href="#%F0%9F%94%8D-Selezione-e-Filtraggio">¶</a></h2><h3 id="Pattern-Potenti-per-Estrarre-Dati">Pattern Potenti per Estrarre Dati<a class="anchor-link" href="#Pattern-Potenti-per-Estrarre-Dati">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Condizioni booleane</span>
+<span class="n">arr</span><span class="p">[</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Solo positivi</span>
+
+<span class="c1"># Indici multipli</span>
+<span class="n">arr</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>  <span class="c1"># Elementi specifici</span>
+
+<span class="c1"># Where per condizioni complesse</span>
+<span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">arr</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+<h3 id="Funzioni-di-Aggregazione">Funzioni di Aggregazione<a class="anchor-link" href="#Funzioni-di-Aggregazione">¶</a></h3><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>    <span class="c1"># Somma</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>   <span class="c1"># Media</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>    <span class="c1"># Deviazione standard</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>    <span class="c1"># Massimo</span>
+</pre></div>
+<h2 id="%F0%9F%94%A2-Matrici-e-Algebra-Lineare">🔢 Matrici e Algebra Lineare<a class="anchor-link" href="#%F0%9F%94%A2-Matrici-e-Algebra-Lineare">¶</a></h2><h3 id="Operazioni-Fondamentali">Operazioni Fondamentali<a class="anchor-link" href="#Operazioni-Fondamentali">¶</a></h3><table>
+<thead>
+<tr>
+<th>Operazione</th>
+<th>Comando</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prodotto matriciale</td>
+<td><code>A @ B</code></td>
+<td>Usare <code>@</code>, NON <code>*</code></td>
+</tr>
+<tr>
+<td>Prodotto elemento-per-elemento</td>
+<td><code>A * B</code></td>
+<td>Broadcasting</td>
+</tr>
+<tr>
+<td>Trasposta</td>
+<td><code>np.transpose(A)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Inversa</td>
+<td><code>np.linalg.inv(A)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Determinante</td>
+<td><code>np.linalg.det(A)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Autovalori</td>
+<td><code>np.linalg.eig(A)</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Sistema-Lineare-Ax-=-b">Sistema Lineare Ax = b<a class="anchor-link" href="#Sistema-Lineare-Ax-=-b">¶</a></h3><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Più veloce di inv(A) @ b</span>
+</pre></div>
+<h2 id="%E2%9A%A0%EF%B8%8F-Le-Trappole-Mortali">⚠️ Le Trappole Mortali<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Le-Trappole-Mortali">¶</a></h2><h3 id="1.-Il-Problema-delle-Copie">1. Il Problema delle Copie<a class="anchor-link" href="#1.-Il-Problema-delle-Copie">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># ATTENZIONE: Riferimento, non copia!</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>  <span class="c1"># b e a puntano allo stesso array</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>  <span class="c1"># ANCORA un riferimento in NumPy!</span>
+
+<span class="c1"># Copia vera</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># o copy.deepcopy(a)</span>
+</pre></div>
+<h3 id="2.-Tipo-di-Dati-(dtype)">2. Tipo di Dati (dtype)<a class="anchor-link" href="#2.-Tipo-di-Dati-(dtype)">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Interi troncano!</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># dtype=int</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.7</span>  <span class="c1"># Diventa 1!</span>
+
+<span class="c1"># Specificare sempre per sicurezza</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+</pre></div>
+<h3 id="3.-Dimensioni-e-Shape">3. Dimensioni e Shape<a class="anchor-link" href="#3.-Dimensioni-e-Shape">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Vettore riga vs colonna</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>      <span class="c1"># Shape: (3,)</span>
+<span class="n">v_col</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>     <span class="c1"># Shape: (3, 1)</span>
+</pre></div>
+<h2 id="%F0%9F%93%81-I/O-con-File">📁 I/O con File<a class="anchor-link" href="#%F0%9F%93%81-I/O-con-File">¶</a></h2><h3 id="Pattern-Standard">Pattern Standard<a class="anchor-link" href="#Pattern-Standard">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Lettura</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'file.txt'</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Scrittura</span>
+<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">'output.txt'</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">'</span><span class="si">%.3f</span><span class="s1">'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="s1">'# Dati'</span><span class="p">)</span>
+
+<span class="c1"># CSV</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'file.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
+</pre></div>
+<h2 id="%F0%9F%9A%80-Pattern-per-la-Fisica">🚀 Pattern per la Fisica<a class="anchor-link" href="#%F0%9F%9A%80-Pattern-per-la-Fisica">¶</a></h2><h3 id="Calcolo-Vettoriale-su-Griglia">Calcolo Vettoriale su Griglia<a class="anchor-link" href="#Calcolo-Vettoriale-su-Griglia">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Campo di punti</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Funzione su griglia</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+</pre></div>
+<h3 id="Traiettoria-Particella">Traiettoria Particella<a class="anchor-link" href="#Traiettoria-Particella">¶</a></h3><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">v0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+<h3 id="Analisi-Dati-Sperimentali">Analisi Dati Sperimentali<a class="anchor-link" href="#Analisi-Dati-Sperimentali">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Carica dati</span>
+<span class="n">tempo</span><span class="p">,</span> <span class="n">posizione</span><span class="p">,</span> <span class="n">errore</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'misure.txt'</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Media pesata</span>
+<span class="n">pesi</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">errore</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">media_pesata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">posizione</span> <span class="o">*</span> <span class="n">pesi</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pesi</span><span class="p">)</span>
+</pre></div>
+<h2 id="%F0%9F%92%A1-Best-Practices">💡 Best Practices<a class="anchor-link" href="#%F0%9F%92%A1-Best-Practices">¶</a></h2><ol>
+<li><strong>Preallocare array</strong>: <code>np.zeros(n)</code> poi riempire, non <code>append</code></li>
+<li><strong>Evitare loop</strong>: Usare operazioni vettorizzate</li>
+<li><strong>Specificare dtype</strong>: Evita sorprese con conversioni</li>
+<li><strong>Usare @ per matrici</strong>: Mai <code>*</code> per prodotto matriciale</li>
+<li><strong>copy() esplicito</strong>: Quando serve una copia indipendente</li>
+</ol>
+<h2 id="%F0%9F%93%8A-Checklist-Performance">📊 Checklist Performance<a class="anchor-link" href="#%F0%9F%93%8A-Checklist-Performance">¶</a></h2><ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho eliminato tutti i <code>for</code> loop su array?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Sto usando operazioni vettorizzate?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho preallocato gli array di output?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Sto sfruttando il broadcasting?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho specificato il dtype corretto?</li>
 </ul>
-<h3 id="3.-Creazione-di-Array">3. Creazione di Array<a class="anchor-link" href="#3.-Creazione-di-Array">¶</a></h3><ul>
-<li>Metodi per creare array in NumPy:<ul>
-<li>Conversione di liste o tuple in array con <code>numpy.array</code>.</li>
-<li>Funzioni come <code>arange</code>, <code>zeros</code>, <code>ones</code>, <code>linspace</code> e <code>logspace</code>.</li>
-</ul>
-</li>
-</ul>
-<h3 id="4.-Operazioni-sugli-Array">4. Operazioni sugli Array<a class="anchor-link" href="#4.-Operazioni-sugli-Array">¶</a></h3><ul>
-<li>NumPy supporta operazioni elemento per elemento sugli array usando operatori aritmetici standard.</li>
-<li>Applicazione di funzioni matematiche come <code>np.sin</code>, <code>np.cos</code>, e costanti (<code>np.e</code>, <code>np.pi</code>) su tutti gli elementi di un array.</li>
-</ul>
-<h3 id="5.-Indicizzazione-e-Slicing">5. Indicizzazione e Slicing<a class="anchor-link" href="#5.-Indicizzazione-e-Slicing">¶</a></h3><ul>
-<li>Come per le liste Python, anche gli array di NumPy supportano indicizzazione e slicing.</li>
-<li>Funzionalità avanzate includono l'uso di array di indici e condizioni booleane per l'estrazione di elementi.</li>
-</ul>
-<h3 id="6.-Algebra-Lineare">6. Algebra Lineare<a class="anchor-link" href="#6.-Algebra-Lineare">¶</a></h3><ul>
-<li>NumPy offre funzionalità di algebra lineare:<ul>
-<li>Prodotto interno ed esterno.</li>
-<li>Moltiplicazione di matrici con <code>np.dot</code> o l'operatore <code>@</code>.</li>
-<li>Calcolo di determinanti, matrici inverse e risoluzione di sistemi lineari.</li>
-</ul>
-</li>
-</ul>
-<h3 id="7.-Ottimizzazione-delle-Prestazioni">7. Ottimizzazione delle Prestazioni<a class="anchor-link" href="#7.-Ottimizzazione-delle-Prestazioni">¶</a></h3><ul>
-<li>Uso della funzione <code>%timeit</code> in Jupyter per misurare i tempi di esecuzione e dimostrare l'efficienza delle operazioni di NumPy rispetto a Python standard.</li>
-</ul>
-<h3 id="8.-Array-Multidimensionali">8. Array Multidimensionali<a class="anchor-link" href="#8.-Array-Multidimensionali">¶</a></h3><ul>
-<li>Supporto per array multidimensionali (oltre 2D).</li>
-<li>Controllo su come le funzioni operano lungo specifici assi con il parametro <code>axis</code>.</li>
-</ul>
-<h3 id="9.-Input/Output-su-File">9. Input/Output su File<a class="anchor-link" href="#9.-Input/Output-su-File">¶</a></h3><ul>
-<li>Funzioni per leggere da e scrivere su file di testo:<ul>
-<li><code>np.loadtxt</code> per caricare dati.</li>
-<li><code>np.savetxt</code> per salvare array su file di testo.</li>
-<li>Supporto per vari formati, incluso CSV.</li>
-</ul>
-</li>
-</ul>
-<h3 id="10.-Vettorizzazione">10. Vettorizzazione<a class="anchor-link" href="#10.-Vettorizzazione">¶</a></h3><ul>
-<li>Miglioramento delle prestazioni vettorizzando le funzioni scalari per operare su array utilizzando <code>np.vectorize</code>.</li>
-</ul>
-<h3 id="11.-Copia-Shallow-vs.-Copia-Deep">11. Copia Shallow vs. Copia Deep<a class="anchor-link" href="#11.-Copia-Shallow-vs.-Copia-Deep">¶</a></h3><ul>
-<li>Differenza tra la copia di riferimenti di array (copia shallow) e la creazione di copie indipendenti (copia deep). Uso di <code>copy.deepcopy</code>.</li>
-</ul>
+<h2 id="%F0%9F%8E%93-Il-Messaggio-Chiave">🎓 Il Messaggio Chiave<a class="anchor-link" href="#%F0%9F%8E%93-Il-Messaggio-Chiave">¶</a></h2><p><strong>NumPy non è solo "Python con array"</strong>: è un cambio di paradigma da programmazione iterativa a programmazione vettoriale. Pensare in termini di operazioni su interi array, non su singoli elementi, è la chiave per codice scientifico efficiente.</p>
 </div>
 </div>
 </div>

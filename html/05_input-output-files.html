@@ -7979,16 +7979,16 @@ più semplice è usare <code>"""</code> per delimitare la stringa</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Separando più chiaramente le colonne</p>
+<p>Separando più chiaramente le colonne con linee verticali</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">Table</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
@@ -8004,6 +8004,25 @@ più semplice è usare <code>"""</code> per delimitare la stringa</p>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>----------------------------------
+|   dato 1 |   dato 2 |   dato 3 |
+----------------------------------
+|        1 |        2 |        3 |
+|        5 |        6 |        7 |
+|        8 |        9 |       10 |
+----------------------------------
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8011,7 +8030,7 @@ più semplice è usare <code>"""</code> per delimitare la stringa</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Effetto di allineamenti diversi:</p>
+<p>Esempio dell'utilizzo di allineamenti diversi nelle diverse colonne:</p>
 </div>
 </div>
 </div>
@@ -8352,7 +8371,7 @@ Third line!!!!!!!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Più in dettaglio, il file viene aperto con il comando <code>open</code>. L'oggetto file aperto viene assegnato alla variabile <code>out_file</code>. Il testo viene scritto nel file usando il metodo <code>out_file.write</code>. Si noti che nell'esempio più sopra, al metodo <code>write</code> è stata passata una stringa. Si possono usare, ovviamente, tutte specificazioni di formato discusse in precedenza — si veda <a href="#Formatted-printing">formatted printing</a> e <a href="#New-style-string-formatting">new style formatting</a>. È buona pratica usare <code>close()</code> su tutti i files in cui si è finito di leggere e scrivere. Se un programma Python finisce in modo controllato (cioè non per una caduta di tensione o un improbabile bug del linguaggio o del sistema operativo) tutti i files aperti vengono chiusi non appena i file objects vengono distrutti. Tuttavia, chiuderli esplicitamente non appena possibile è uno stile migliore di programmazione.</p>
+<p>Più in dettaglio, il file viene aperto con il comando <code>open</code>. L'oggetto file aperto viene assegnato alla variabile <code>out_file</code>. Il testo viene scritto nel file usando il metodo <code>out_file.write</code>. Si noti che nell'esempio più sopra, al metodo <code>write</code> è stata passata una stringa. Si possono usare, ovviamente, tutte le specificazioni di formato discusse in precedenza — si veda <a href="#Formatted-printing">formatted printing</a> e <a href="#New-style-string-formatting">new style formatting</a>. È buona pratica usare <code>close()</code> su tutti i files in cui si è finito di leggere e scrivere. Se un programma Python finisce in modo controllato (cioè non per una caduta di tensione o un improbabile bug del linguaggio o del sistema operativo) tutti i files aperti vengono chiusi non appena i file objects vengono distrutti. Tuttavia, chiuderli esplicitamente non appena possibile è uno stile migliore di programmazione.</p>
 <h3 id="Metodi-ed-esempi-di-lettura-e-scrittura-su-file">Metodi ed esempi di lettura e scrittura su file<a class="anchor-link" href="#Metodi-ed-esempi-di-lettura-e-scrittura-su-file">¶</a></h3><p>Creiamo un file chiamato <code>myfile.txt</code> che contiene le tre linee di testo seguenti:</p>
 <pre><code>This is the first line.
 This is the second line.
@@ -8367,7 +8386,7 @@ This is a third and last line.</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Il metodo <code>write</code> non aggiunge il carattere <code>newline (\n)</code> alla fine di ogni operazione di scrittura</p>
+<p>Il metodo <code>write</code> non aggiunge il carattere <code>newline (\n)</code> alla fine di ogni operazione di scrittura. È necessario inserirlo esplicitamente.</p>
 </div>
 </div>
 </div>
@@ -8439,7 +8458,7 @@ This is a third and last line.</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>È sbagliato passare a <code>write</code> più stringhe separate da virgole. <code>write</code> accetta un solo argomento.</p>
+<p>È un errore passare a <code>write</code> più stringhe separate da virgole. <code>write</code> accetta un solo argomento.</p>
 </div>
 </div>
 </div>
@@ -8453,6 +8472,33 @@ This is a third and last line.</code></pre>
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">f3</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile3.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
 <span class="n">f3</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'This is the first line.</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span><span class="s1">'This is the second line.</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span><span class="s1">'This is the third and last line.'</span><span class="p">)</span>
+<span class="n">f3</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Un metodo corretto è, per esempio:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">f3</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile3.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">f3</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'This is the first line.</span><span class="se">\n</span><span class="s1">'</span><span class="o">+</span><span class="s1">'This is the second line.</span><span class="se">\n</span><span class="s1">'</span><span class="o">+</span><span class="s1">'This is the third and last line.'</span><span class="p">)</span>
 <span class="n">f3</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8897,46 +8943,235 @@ This is a third and last line.</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sommario-5:-Input-e-Output">Sommario 5: Input e Output<a class="anchor-link" href="#Sommario-5:-Input-e-Output">¶</a></h1><h2 id="5.1-Stampare-sullo-standard-output">5.1 Stampare sullo standard output<a class="anchor-link" href="#5.1-Stampare-sullo-standard-output">¶</a></h2><h3 id="print-semplice"><code>print</code> semplice<a class="anchor-link" href="#print-semplice">¶</a></h3><ul>
-<li>La funzione <code>print</code> stampa informazioni sullo standard output, solitamente lo schermo.</li>
-<li>Gli oggetti da stampare sono separati da una virgola e automaticamente separati da uno spazio.</li>
-<li><code>print</code> va a capo alla fine di ogni chiamata, ma questo comportamento può essere modificato usando il parametro <code>end=</code>.</li>
-</ul>
-<h3 id="f-strings">f-strings<a class="anchor-link" href="#f-strings">¶</a></h3><ul>
-<li>Le f-strings sono un metodo recente e semplice per specificare il formato di stampa.</li>
-<li>Si inserisce <code>f</code> prima della stringa, e le variabili con formato sono racchiuse tra parentesi graffe <code>{}</code>.</li>
-<li>Specificatori di formato:<ul>
-<li>{nome_var}:W.DF per i numeri reali ({ }:W.F per gli interi) dove W (width, opzionale) è il numero minimo di caratteri; D (digits, necessaria) è il numero di cifre dopo il punto decimale; F definisce lo stile. Per esempio<ul>
-<li><p><code>f</code>: punto mobile</p>
-</li>
-<li><p><code>e</code>: notazione esponenziale</p>
-</li>
-<li><p><code>d</code>: intero</p>
-</li>
-<li><p><code>s</code>: stringa</p>
-</li>
-<li><p>Allineamento</p>
-<ul>
-<li>Allineamento con <code>&gt;</code>, <code>&lt;</code>, <code>^</code> per destra, sinistra e centro.</li>
-<li>Stampa di tabelle con allineamento specifico.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Scrittura-su-file">Scrittura su file<a class="anchor-link" href="#Scrittura-su-file">¶</a></h3><ol>
-<li>Aprire un file in modalità scrittura con <code>open("nomefile", "w")</code>.</li>
-<li>Usare <code>write()</code> per scrivere nel file.</li>
-<li>Chiudere il file con <code>close()</code>.</li>
+<h1 id="Sommario-5:-Input/Output---Comunicare-con-il-Mondo-Esterno">Sommario 5: Input/Output - Comunicare con il Mondo Esterno<a class="anchor-link" href="#Sommario-5:-Input/Output---Comunicare-con-il-Mondo-Esterno">¶</a></h1><h2 id="%F0%9F%8E%AF-I-Tre-Pilastri-dell'I/O">🎯 I Tre Pilastri dell'I/O<a class="anchor-link" href="#%F0%9F%8E%AF-I-Tre-Pilastri-dell'I/O">¶</a></h2><ol>
+<li><strong>OUTPUT su schermo</strong> - Comunicare con l'utente</li>
+<li><strong>FILES</strong> - Salvare e recuperare dati</li>
+<li><strong>FORMATTAZIONE</strong> - Presentare i dati in modo leggibile</li>
 </ol>
-<h3 id="Lettura-da-file">Lettura da file<a class="anchor-link" href="#Lettura-da-file">¶</a></h3><ol>
-<li>Aprire un file in modalità lettura con <code>open("nomefile", "r")</code>.</li>
-<li>Usare <code>read()</code> oppure <code>readlines()</code> per leggere il contenuto del file.</li>
-<li>Usare la <code>list comprehension</code> per leggere il contenuto del file una riga alla volta.</li>
-<li>Chiudere il file con <code>close()</code>.</li>
-</ol>
+<h2 id="%F0%9F%93%BA-Output-su-Schermo">📺 Output su Schermo<a class="anchor-link" href="#%F0%9F%93%BA-Output-su-Schermo">¶</a></h2><h3 id="Print-Base">Print Base<a class="anchor-link" href="#Print-Base">¶</a></h3><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>  <span class="c1"># Separa con spazi, va a capo</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>      <span class="c1"># Non va a capo</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">)</span>     <span class="c1"># Cambia separatore</span>
+</pre></div>
+<h3 id="F-strings:-Il-Metodo-Moderno">F-strings: Il Metodo Moderno<a class="anchor-link" href="#F-strings:-Il-Metodo-Moderno">¶</a></h3><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">variabile</span><span class="si">:</span><span class="s2">formato</span><span class="si">}</span><span class="s2">"</span>
+</pre></div>
+<h4 id="Formati-Essenziali">Formati Essenziali<a class="anchor-link" href="#Formati-Essenziali">¶</a></h4><table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Formato</th>
+<th>Esempio</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Float</td>
+<td><code>:.2f</code></td>
+<td><code>f"{3.14159:.2f}"</code></td>
+<td><code>3.14</code></td>
+</tr>
+<tr>
+<td>Esponenziale</td>
+<td><code>:.2e</code></td>
+<td><code>f"{1000:.2e}"</code></td>
+<td><code>1.00e+03</code></td>
+</tr>
+<tr>
+<td>Intero</td>
+<td><code>:d</code></td>
+<td><code>f"{42:d}"</code></td>
+<td><code>42</code></td>
+</tr>
+<tr>
+<td>Stringa</td>
+<td><code>:s</code></td>
+<td><code>f"{'test':s}"</code></td>
+<td><code>test</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="Controllo-Spazio-e-Allineamento">Controllo Spazio e Allineamento<a class="anchor-link" href="#Controllo-Spazio-e-Allineamento">¶</a></h4><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">valore</span><span class="si">:</span><span class="s2">larghezza.precisione_tipo</span><span class="si">}</span><span class="s2">"</span>
+<span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="mf">3.14</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2">"</span>   <span class="c1"># ______3.14 (10 caratteri totali)</span>
+<span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">testo</span><span class="si">:</span><span class="s2">&gt;10</span><span class="si">}</span><span class="s2">"</span>    <span class="c1"># Allinea a destra</span>
+<span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">testo</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2">"</span>    <span class="c1"># Allinea a sinistra  </span>
+<span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">testo</span><span class="si">:</span><span class="s2">^10</span><span class="si">}</span><span class="s2">"</span>    <span class="c1"># Centra</span>
+</pre></div>
+<h2 id="%F0%9F%93%81-Lavorare-con-i-File">📁 Lavorare con i File<a class="anchor-link" href="#%F0%9F%93%81-Lavorare-con-i-File">¶</a></h2><h3 id="Il-Ciclo-Fondamentale">Il Ciclo Fondamentale<a class="anchor-link" href="#Il-Ciclo-Fondamentale">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># 1. APRI</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"nome.txt"</span><span class="p">,</span> <span class="n">modo</span><span class="p">)</span>
+
+<span class="c1"># 2. USA</span>
+<span class="n">contenuto</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># o write()</span>
+
+<span class="c1"># 3. CHIUDI</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+<h3 id="Modi-di-Apertura">Modi di Apertura<a class="anchor-link" href="#Modi-di-Apertura">¶</a></h3><table>
+<thead>
+<tr>
+<th>Modo</th>
+<th>Significato</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"r"</code></td>
+<td>Read (lettura)</td>
+<td>File esistente</td>
+</tr>
+<tr>
+<td><code>"w"</code></td>
+<td>Write (scrittura)</td>
+<td>Crea/sovrascrive</td>
+</tr>
+<tr>
+<td><code>"a"</code></td>
+<td>Append (aggiunta)</td>
+<td>Aggiunge in fondo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Metodi-di-Lettura">Metodi di Lettura<a class="anchor-link" href="#Metodi-di-Lettura">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># TUTTO in una stringa</span>
+<span class="n">testo</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># Lista di righe</span>
+<span class="n">righe</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="c1"># Riga per riga (efficiente)</span>
+<span class="k">for</span> <span class="n">riga</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">processa</span><span class="p">(</span><span class="n">riga</span><span class="p">)</span>
+</pre></div>
+<h3 id="Pattern-Sicuro-con-with">Pattern Sicuro con <code>with</code><a class="anchor-link" href="#Pattern-Sicuro-con-with">¶</a></h3><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenuto</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># File chiuso automaticamente!</span>
+</pre></div>
+<h2 id="%F0%9F%94%A7-Pattern-Pratici-per-la-Fisica">🔧 Pattern Pratici per la Fisica<a class="anchor-link" href="#%F0%9F%94%A7-Pattern-Pratici-per-la-Fisica">¶</a></h2><h3 id="Salvare-Dati-Sperimentali">Salvare Dati Sperimentali<a class="anchor-link" href="#Salvare-Dati-Sperimentali">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Scrivere misure con errori</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"dati.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"# Tempo(s) Posizione(m) Errore(m)</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">err</span> <span class="ow">in</span> <span class="n">misure</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">8.3f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">12.6f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">10.6f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<h3 id="Leggere-Dati-Numerici">Leggere Dati Numerici<a class="anchor-link" href="#Leggere-Dati-Numerici">¶</a></h3><div class="highlight"><pre><span></span><span class="n">dati</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"misure.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">linea</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"#"</span><span class="p">):</span>  <span class="c1"># Salta commenti</span>
+            <span class="n">valori</span> <span class="o">=</span> <span class="n">linea</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">dati</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">valori</span><span class="p">])</span>
+</pre></div>
+<h3 id="Creare-Tabelle-Formattate">Creare Tabelle Formattate<a class="anchor-link" href="#Creare-Tabelle-Formattate">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Intestazione</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">'Massa(kg)'</span><span class="si">:</span><span class="s2">&gt;10</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">'Velocità(m/s)'</span><span class="si">:</span><span class="s2">&gt;15</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">'Energia(J)'</span><span class="si">:</span><span class="s2">&gt;12</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="c1"># Dati</span>
+<span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dati</span><span class="p">:</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">m</span> <span class="o">*</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">15.3f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">E</span><span class="si">:</span><span class="s2">12.2e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<h2 id="%E2%9A%A0%EF%B8%8F-Errori-Comuni-e-Soluzioni">⚠️ Errori Comuni e Soluzioni<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-Errori-Comuni-e-Soluzioni">¶</a></h2><table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Causa</th>
+<th>Soluzione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FileNotFoundError</code></td>
+<td>File non esiste</td>
+<td>Controlla path e nome</td>
+</tr>
+<tr>
+<td>Caratteri strani</td>
+<td>Encoding errato</td>
+<td>Usa <code>encoding='utf-8'</code></td>
+</tr>
+<tr>
+<td>File vuoto dopo scrittura</td>
+<td>Manca <code>close()</code></td>
+<td>Usa <code>with</code> o chiudi manualmente</td>
+</tr>
+<tr>
+<td><code>\n</code> visibile</td>
+<td>Print di <code>readlines()</code></td>
+<td>Usa <code>strip()</code> per rimuovere</td>
+</tr>
+<tr>
+<td>Percorsi Windows</td>
+<td>Backslash <code>\</code></td>
+<td>Usa raw string <code>r"C:\path"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%F0%9F%93%90-Scelta-del-Formato">📐 Scelta del Formato<a class="anchor-link" href="#%F0%9F%93%90-Scelta-del-Formato">¶</a></h2><h3 id="Quando-Usare-Quale-Metodo?">Quando Usare Quale Metodo?<a class="anchor-link" href="#Quando-Usare-Quale-Metodo?">¶</a></h3><table>
+<thead>
+<tr>
+<th>Situazione</th>
+<th>Metodo</th>
+<th>Perché</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output semplice</td>
+<td><code>print(a, b)</code></td>
+<td>Veloce, debug</td>
+</tr>
+<tr>
+<td>Dati formattati</td>
+<td>f-strings</td>
+<td>Moderno, leggibile</td>
+</tr>
+<tr>
+<td>Template complessi</td>
+<td><code>.format()</code></td>
+<td>Riutilizzabile</td>
+</tr>
+<tr>
+<td>File piccoli</td>
+<td><code>read()</code></td>
+<td>Semplice</td>
+</tr>
+<tr>
+<td>File grandi</td>
+<td><code>for line in file</code></td>
+<td>Efficiente</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%F0%9F%92%A1-Best-Practices">💡 Best Practices<a class="anchor-link" href="#%F0%9F%92%A1-Best-Practices">¶</a></h2><h3 id="1.-Sempre-Usare-with-per-i-File">1. Sempre Usare <code>with</code> per i File<a class="anchor-link" href="#1.-Sempre-Usare-with-per-i-File">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># SÌ</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file.txt"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">dati</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># NO</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"file.txt"</span><span class="p">)</span>
+<span class="n">dati</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># Rischio: file non chiuso se c'è errore</span>
+</pre></div>
+<h3 id="2.-Commenti-nei-File-di-Dati">2. Commenti nei File di Dati<a class="anchor-link" href="#2.-Commenti-nei-File-di-Dati">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># Scrivi metadati</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"# Data: 2024-01-15</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"# Unità: SI</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"# Colonne: tempo(s) posizione(m)</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<h2 id="%F0%9F%94%8D-Checklist-Debug-I/O">🔍 Checklist Debug I/O<a class="anchor-link" href="#%F0%9F%94%8D-Checklist-Debug-I/O">¶</a></h2><ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Il file esiste nel percorso specificato?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho i permessi di lettura/scrittura?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Sto usando l'encoding corretto?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Ho chiuso il file dopo l'uso?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Le righe hanno <code>\n</code> alla fine?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I percorsi usano <code>/</code> o raw strings?</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Il formato è appropriato per i dati?</li>
+</ul>
+<h2 id="%F0%9F%93%8A-Schema-Decisionale">📊 Schema Decisionale<a class="anchor-link" href="#%F0%9F%93%8A-Schema-Decisionale">¶</a></h2><pre><code>Devo salvare dati?
+├─ Pochi e semplici → print su schermo
+├─ Da riusare → scrivi su file
+└─ Strutturati → considera CSV/JSON
+
+Devo leggere dati?
+├─ File piccolo → read() tutto
+├─ File grande → leggi riga per riga
+└─ Dati numerici → considera NumPy
+</code></pre>
 </div>
 </div>
 </div>
