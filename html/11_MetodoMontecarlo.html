@@ -7541,7 +7541,7 @@ Esempio: $\int_1^2 x^2 dx = \frac{7}{3}$<br/></p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -7569,7 +7569,7 @@ Esempio: $\int_1^2 x^2 dx = \frac{7}{3}$<br/></p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Stima dell'integrale: 2.398983709271334
+<pre>Stima dell'integrale: 2.6155133014439764
 Risultato esatto: 2.3333333333333335
 </pre>
 </div>
@@ -7675,7 +7675,12 @@ Risultato esatto: 2.3333333333333335
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Confrontate il risultato con quello fornito dal metodo dei trapezi e da <code>quad</code> nel notebook 10_scipy.</p>
+<div style="width:95%; padding:5px 10px 5px; border-style:solid; border-width:0px 0px 0px 10px; border-color:#b8d0d0; margin:20px 0px 10px 10px">
+<h4> Imparare Facendo</h4>
+<ol>
+<li>Confrontate il risultato con quello fornito dal metodo dei trapezi e da `quad` nel notebook 10_scipy.</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -7793,19 +7798,23 @@ $$ R = \frac{P_{sx}}{P_{dx}} = \frac{0.6}{1.4}$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">npoints</span><span class="o">=</span><span class="mi">1000</span>
-<span class="c1"># npoints = 1000000</span>
+<span class="c1">#npoints = 1000000</span>
 <span class="n">xval</span><span class="o">=</span><span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">npoints</span><span class="p">)</span>
-<span class="c1"># Separo i valori minori/maggiori di 0.5</span>
+<span class="c1"># Separo i valori della coordinata x che cadono nel primo bin da quelli che cadono nel secondo (minori/maggiori di 0.5).</span>
 <span class="n">x1val</span><span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xval</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">]</span>
 <span class="n">x2val</span><span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xval</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">]</span>
 
+<span class="c1"># Altezza della distribuzione nei due bin</span>
 <span class="n">y1</span><span class="o">=</span><span class="mf">0.6</span>
 <span class="n">y2</span><span class="o">=</span><span class="mf">1.4</span>
 
+<span class="c1"># Per ogni coordinata x genero un numero casuale in [0,2] che rappresenta la corrispondente coordinata y.</span>
+<span class="c1"># Tengo il punto se cade al di sotto della curva della distribuzione, altrimenti lo scarto.</span>
+<span class="c1"># Il numero di punto accettati nei due bin, nel limite di un numero molto grande di punti,sono y1/2 e y2/2.</span>
 <span class="n">x1val</span><span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x1val</span> <span class="k">if</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">x2val</span><span class="o">=</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x2val</span> <span class="k">if</span> <span class="n">y2</span> <span class="o">&gt;</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span>
 
@@ -7824,9 +7833,9 @@ $$ R = \frac{P_{sx}}{P_{dx}} = \frac{0.6}{1.4}$$</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Numero di punti in [0,0.5]: 136
-Numero di punti in [0.5,1]: 362
-rapporto fra i numeri di punti: 2.661764705882353 rapporto atteso=7/3: 2.3333333333333335
+<pre>Numero di punti in [0,0.5]: 156
+Numero di punti in [0.5,1]: 347
+rapporto fra i numeri di punti: 2.2243589743589745 rapporto atteso=7/3: 2.3333333333333335
 </pre>
 </div>
 </div>
@@ -7848,25 +7857,25 @@ rapporto fra i numeri di punti: 2.661764705882353 rapporto atteso=7/3: 2.3333333
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">generate_f</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="nb">max</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_f</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">max_f</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">'''</span>
 <span class="sd">    Generate random points distributed according to an input distribution</span>
 <span class="sd">    Input:</span>
 <span class="sd">    f: the probability distribution</span>
 <span class="sd">    a,b: extrema of the range for the desired random number</span>
-<span class="sd">    max: a real number such that f(x) &lt; max for each x</span>
+<span class="sd">    max_f: a real number such that f(x) &lt; max_f for each x</span>
 <span class="sd">    Returns:</span>
 <span class="sd">    ranval: random number</span>
 <span class="sd">    '''</span>
     <span class="n">not_found</span><span class="o">=</span><span class="kc">True</span>
     <span class="k">while</span> <span class="n">not_found</span><span class="p">:</span>
         <span class="n">x</span><span class="o">=</span><span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">)</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">max_f</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">&gt;</span><span class="n">y</span><span class="p">:</span>
             <span class="n">not_found</span><span class="o">=</span><span class="kc">False</span>
     
@@ -8313,7 +8322,7 @@ Le probabilità dei punteggi nel lancio di due dadi sono:</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -8343,6 +8352,7 @@ Le probabilità dei punteggi nel lancio di due dadi sono:</p>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># Lanci successivi. Il loop infinito è interrotto dal return</span>
+        <span class="c1"># se il lancio totalizza il valore del primo lancio (True -&gt; vincita) oppure 7 (False -&gt; perdita)</span>
         <span class="k">while</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
             <span class="n">roll</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">high</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
             <span class="c1">#print('++',roll,'++')</span>
@@ -8363,9 +8373,9 @@ Le probabilità dei punteggi nel lancio di due dadi sono:</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>True</pre>
+<pre>False</pre>
 </div>
 </div>
 </div>
@@ -8533,24 +8543,9 @@ Le probabilità dei punteggi nel lancio di due dadi sono:</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Il notebook è ben strutturato e copre concetti importanti del metodo Monte Carlo. Ecco alcuni suggerimenti per migliorarlo:</p>
-<h2 id="Suggerimenti-di-miglioramento">Suggerimenti di miglioramento<a class="anchor-link" href="#Suggerimenti-di-miglioramento">¶</a></h2><h3 id="1.-Documentazione-e-spiegazioni">1. <strong>Documentazione e spiegazioni</strong><a class="anchor-link" href="#1.-Documentazione-e-spiegazioni">¶</a></h3><ul>
-<li>Nella sezione 1.3.1, dopo aver spiegato il metodo hit-and-miss, sarebbe utile aggiungere un commento che spieghi perché il codice separa i valori in <code>x1val</code> e <code>x2val</code> prima di applicare il test di accettazione.</li>
-<li>Aggiungere più commenti inline nel codice, specialmente nelle funzioni più complesse come <code>craps_once()</code>.</li>
-</ul>
-<h3 id="2.-Visualizzazioni">2. <strong>Visualizzazioni</strong><a class="anchor-link" href="#2.-Visualizzazioni">¶</a></h3><ul>
-<li>Nella sezione 1.3.1, aggiungere un grafico che mostri visivamente il metodo hit-and-miss con i punti accettati e rifiutati.</li>
-<li>Per la sezione del Craps, considerare un grafico che mostri la convergenza della probabilità stimata al valore teorico all'aumentare del numero di simulazioni.</li>
-</ul>
-<h3 id="3.-Correzioni-e-chiarimenti">3. <strong>Correzioni e chiarimenti</strong><a class="anchor-link" href="#3.-Correzioni-e-chiarimenti">¶</a></h3><ul>
-<li>Nel codice della sezione 1.2, c'è un commento "Confrontate il risultato con quello fornito dal metodo dei trapezi" ma non viene mostrato questo confronto.</li>
-<li>Nella funzione <code>generate_f</code>, il parametro <code>max</code> dovrebbe essere rinominato per evitare conflitti con la funzione built-in <code>max()</code>.</li>
-</ul>
-<h3 id="4.-Esempi-didattici-aggiuntivi">4. <strong>Esempi didattici aggiuntivi</strong><a class="anchor-link" href="#4.-Esempi-didattici-aggiuntivi">¶</a></h3><ul>
+<h2 id="Suggerimenti-di-miglioramento">Suggerimenti di miglioramento<a class="anchor-link" href="#Suggerimenti-di-miglioramento">¶</a></h2><h3 id="4.-Esempi-didattici-aggiuntivi">4. <strong>Esempi didattici aggiuntivi</strong><a class="anchor-link" href="#4.-Esempi-didattici-aggiuntivi">¶</a></h3><ul>
 <li>Aggiungere un esempio più semplice prima del Craps (es. lancio di una moneta) per introdurre gradualmente la simulazione di processi stocastici.</li>
 <li>Mostrare esplicitamente il calcolo teorico della probabilità di vincita al Craps per confronto.</li>
-</ul>
-<h3 id="5.-Gestione-degli-errori">5. <strong>Gestione degli errori</strong><a class="anchor-link" href="#5.-Gestione-degli-errori">¶</a></h3><ul>
-<li>Aggiungere validazione degli input nelle funzioni (es. verificare che <code>n</code> sia positivo in <code>craps_probability</code>).</li>
 </ul>
 <h2 id="Sommario-dei-concetti-principali">Sommario dei concetti principali<a class="anchor-link" href="#Sommario-dei-concetti-principali">¶</a></h2><h3 id="Concetti-Fondamentali-del-Metodo-Monte-Carlo"><strong>Concetti Fondamentali del Metodo Monte Carlo</strong><a class="anchor-link" href="#Concetti-Fondamentali-del-Metodo-Monte-Carlo">¶</a></h3><ol>
 <li><p><strong>Integrazione numerica Monte Carlo</strong> (Sezione 1.2)</p>
@@ -8583,7 +8578,7 @@ Le probabilità dei punteggi nel lancio di due dadi sono:</p>
 </ol>
 <h3 id="Principi-chiave"><strong>Principi chiave</strong><a class="anchor-link" href="#Principi-chiave">¶</a></h3><ul>
 <li><strong>Casualità controllata</strong>: uso di generatori pseudo-casuali per risultati riproducibili</li>
-<li><strong>Convergenza statistica</strong>: l'accuratezza migliora con $\sqrt{n}$ ($n$ = numero di campioni)</li>
+<li><strong>Convergenza statistica</strong>: l'accuratezza migliora proporzionalmente a $\sqrt{n}$ ($n$ = numero di campioni)</li>
 <li><strong>Versatilità</strong>: applicabile a problemi di integrazione, ottimizzazione, e simulazione</li>
 <li><strong>Trade-off</strong>: richiede molte iterazioni per alta precisione, ma gestisce facilmente problemi multidimensionali</li>
 </ul>
