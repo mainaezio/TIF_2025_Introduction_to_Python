@@ -36,29 +36,31 @@ Per gli utenti Windows "Aprire un terminale" deve essere inteso come aprire un t
     <LI> Aprite un terminale
     <LI> Date il comando <B>cd</B> per essere sicuri di essere nella vostra cartella home
     <LI> Verificate con <B>pwd</B> l'indirizzo della cartella home
-    <LI> Digitate  in un browser http://www.to.infn.it/~maina/test_FileSystem/
-    <LI> Cliccate con il tasto destro del mouse sul nome del file
-    <LI> Scegliete ''Salva con nome''. Il sistema vi propone una cartella in cui scaricare il file. Prendete nota di dove il file viene scaricato.
-    <LI> Andate nella cartella home
-    <LI> Create una nuova directory con il comando <B>mkdir precorso</B>
-    <LI> copiate il file test_FileSystem.tar.gz dalla cartella in cui &egrave; stato scaricato alla cartella precorso. Pu&ograve; essere utile usare indirizzi assoluti.
-    <LI> Nella directory precorso, date il comando<BR>
-     <B>tar -ztvf test_FileSystem.tar.gz</B><BR>
-     Il sistema vi mostra i file contenuti nell'archivio test_FileSystem.tar.gz
-    <LI> Date il comando (in cosa differisce dal comando precedente?)<BR>
-     <B>tar -zxvf test_FileSystem.tar.gz</B><BR>
-     I file contenuti nell'archivio test_FileSystem.tar.gz vengono estratti dall'archivio e salvati localmente
-    <LI> Verificate con <B>ls -al</B> quali file sia presenti nella .<BR>
-        La risposta attesa &egrave;:
+    <LI> Scaricate il file <A HREF="http://www.to.infn.it/~maina/test_FileSystem/">http://www.to.infn.it/~maina/test_FileSystem/</A>
+        nel modo seguente
+        <UL>
+            <LI> Si apre una pagine che contiene un singolo link al file <B>test_FileSystem.tar.gz</B>
+            <LI> Cliccate con il tasto destro del mouse sul nome del file
+            <LI> Scegliete ''Salva con nome''. Il sistema vi propone una cartella in cui scaricare il file. Prendete nota di dove il file viene scaricato.
+            <LI> Andate nella cartella home (<B>cd</B>)
+            <LI> Create una nuova directory con il comando <B>mkdir precorso</B>
+            <LI> copiate il file test_FileSystem.tar.gz dalla cartella in cui &egrave; stato scaricato alla cartella <B>precorso</B> (<B>mv</B>. Pu&ograve; essere utile usare indirizzi assoluti.
+            <LI> Nella directory precorso, date il comando <B>tar -ztvf test_FileSystem.tar.gz</B><BR>
+                 Il sistema vi mostra i file contenuti nell'archivio test_FileSystem.tar.gz
+            <LI> Date il comando (in cosa differisce dal comando precedente?) <B>tar -zxvf test_FileSystem.tar.gz</B><BR>
+                 I file contenuti nell'archivio test_FileSystem.tar.gz vengono estratti dall'archivio e salvati localmente
+            <LI> Verificate con <B>ls -al</B> quali file sia presenti nella .<BR>
+                 La risposta attesa &egrave;:
         <PRE>
-total 99936
-drwxr-xr-x    6 maina  staff       192 Sep 21 09:42 .
-drwxr-xr-x+ 240 maina  staff      7680 Sep 21 09:41 ..
--rw-r--r--    1 maina  staff  51141795 Sep 21 09:24 test_FileSystem.tar.gz
-drwxr-xr-x   45 maina  staff      1440 Aug  9 11:52 Humour
-drwxr-xr-x   42 maina  staff      1344 Aug 10 19:08 bin
-drwxr-xr-x    7 maina  staff       224 Aug 10 19:09 phantom
+total 100056
+drwxr-xr-x   6 maina  staff       192 Sep 23 08:19 .
+drwxr-xr-x  22 maina  staff       704 Sep 23 08:19 ..
+drwxr-xr-x@ 45 maina  staff      1440 Aug  9  2023 Humour
+drwxr-xr-x@ 42 maina  staff      1344 Aug 10  2023 bin
+drwxr-xr-x@  7 maina  staff       224 Aug 10  2023 phantom
+-rw-r--r--   1 maina  staff  51225147 Sep 22 15:16 test_FileSystem.tar.gz
        </PRE>
+       </UL>
 </UL>
 Congratulazioni!<BR>
 <UL>
