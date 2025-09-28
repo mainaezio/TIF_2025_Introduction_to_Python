@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>01b_Programma</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>01c_AI</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7511,115 +7511,147 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0786a2f4-4230-41bf-aa45-48cbce703fe3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 style="font-size:50px">Che cos'è un programma</h1>
-<div style="width:95%; padding:5px 10px 5px;  margin:50px 0px 10px 10px; font-size:18px">
-<ul>
-<li> Un programma è una successione di comandi che possono essere eseguiti (generalmente da un calcolatore)
-    <li> Un programma è l'implementazione di un <b>Algoritmo</b>
-<li> La struttura base di un algoritmo, e quindi di un programma, è:
-        <ul>
-<li> Input
-            <li> Procedimento
-            <li> Output
-        </li></li></li></ul>
-<li> In ultima istanza un calcolatore agisce su numeri binari. 
-    <li> Oltre ai numeri interi, reali, complessi, si possono, per esempio, rappresentare in modo numerico:
-        <ul>
-<li> un punto nel piano (oppure sullo schermo di un terminale, ovvero in una stampante)
-            <li> i risultati di una misurazione
-            <li> un testo: codice ASCII, Unicode
-            <li> un colore: RGB(127, 220, 180)
-        </li></li></li></li></ul>
-<li> Un programma normalmente viene scritto in un file e poi eseguito
-    <li> Richiede un editor da programmazione
-</li></li></li></li></li></li></li></ul>
-</div>
-<hr/>
+<h1 style="font-size:50px"> The elephant in the room</h1>
+<h2 id="Perch%C3%A9-imparare-a-programmare-nell'era-dell'IA">Perché imparare a programmare nell'era dell'IA<a class="anchor-link" href="#Perch%C3%A9-imparare-a-programmare-nell'era-dell'IA">¶</a></h2>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1dc1197d-93de-46af-ae5c-53dfbae75ec5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Esempi">Esempi<a class="anchor-link" href="#Esempi">¶</a></h2>
+<div style="padding:20px 20px 0px 150px;">
+<img align="center" alt="No description has been provided for this image" src="../Images/elefante_maxresdefault-e1521627142360.webp" width="600"/>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4b8a3d74-325c-4f0f-9317-48209d3cfe44">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Programma-Branzino_al_Cartoccio">Programma Branzino_al_Cartoccio<a class="anchor-link" href="#Programma-Branzino_al_Cartoccio">¶</a></h3><p>INGREDIENTI</p>
+<h3 id="L'illusione-del-%22pilota-automatico%22">L'illusione del "pilota automatico"<a class="anchor-link" href="#L'illusione-del-%22pilota-automatico%22">¶</a></h3><p>Immaginate di essere su un'auto a guida autonoma che vi porta perfettamente a destinazione. Fantastico, vero? Ma cosa succede quando:</p>
 <ul>
-<li>2 branzini da porzione</li>
-<li>4 rametti di rosmarino</li>
-<li>2 spicchi di aglio</li>
-<li>Sale grosso</li>
-<li>Olio extravergine di oliva</li>
-<li>Pepe nero macinato al momento</li>
-<li>Sale fino</li>
+<li>Dovete andare in un posto non mappato?</li>
+<li>Il sistema fa un errore e dovete correggere la rotta?</li>
+<li>Volete capire PERCHÉ ha scelto quella strada?</li>
 </ul>
-<p>PREPARAZIONE</p>
+<p>Lo stesso vale per l'IA nella programmazione. Sì, può generare codice e risolvere problemi semplici come quelli proposti nei notebook del corso, ma...</p>
+<h3 id="Il-fisico-come-problem-solver">Il fisico come problem solver<a class="anchor-link" href="#Il-fisico-come-problem-solver">¶</a></h3><p><strong>1. L'IA non capisce la fisica</strong></p>
+<div class="highlight"><pre><span></span><span class="c1"># L'IA potrebbe scrivere:</span>
+<span class="n">velocità</span> <span class="o">=</span> <span class="n">distanza</span> <span class="o">*</span> <span class="n">tempo</span>  <span class="c1"># SBAGLIATO!</span>
+
+<span class="c1"># Voi sapete che deve essere:</span>
+<span class="n">velocità</span> <span class="o">=</span> <span class="n">distanza</span> <span class="o">/</span> <span class="n">tempo</span>
+</pre></div>
+<p>Senza capire il codice, non potete correggere errori concettuali.</p>
+<p><strong>2. Il debugging è inevitabile</strong></p>
 <ul>
-<li>Lavare accuratamente il branzino, squamarlo e praticare una apertura sulla pancia per rimuovere le viscere.</li>
-<li>Mettere nella pancia un rametto di rosmarino, uno spicchio di aglio affettato, un pizzico di sale grosso ed un filo d'olio di oliva.</li>
-<li>Tagliare un foglio di carta stagnola lungo una decina di centimetri in più del branzino.</li>
-<li>Disporre sul foglio di carta stagnola un filo d'olio, spennellarlo accuratamente, quindi disporvi il pesce.</li>
-<li>Cospargere il pesce con un filo di olio di oliva, una macinata di pepe, un pizzico di sale e decorare con un rametto di rosmarino.</li>
-<li>Chiudere il cartoccio sovrapponendo un altro foglio di alluminio e sigillare accuratamente lungo i bordi.</li>
-<li>Infornare nel forno preriscaldato a 200°C per 30 minuti.</li>
-<li>Servire immediatamente.</li>
+<li>Il 70% del tempo di sviluppo è dedicato a trovare e correggere errori</li>
+<li>L'IA può generare codice con bug sottili</li>
+<li>Se non capite cosa sta succedendo, siete bloccati</li>
 </ul>
+<h3 id="Esempi-concreti-dalla-fisica">Esempi concreti dalla fisica<a class="anchor-link" href="#Esempi-concreti-dalla-fisica">¶</a></h3><p><strong>Simulazione di un pendolo:</strong>
+L'IA potrebbe darvi un codice funzionante, ma:</p>
+<ul>
+<li>Come verificate che rispetti la conservazione dell'energia?</li>
+<li>Come modificate il modello per aggiungere attrito?</li>
+<li>Come interpretate risultati anomali?</li>
+</ul>
+<p><strong>Analisi dati sperimentali:</strong></p>
+<ul>
+<li>I vostri dati hanno caratteristiche uniche</li>
+<li>Servono approcci specifici per il vostro esperimento</li>
+<li>L'IA non conosce il contesto del vostro laboratorio</li>
+</ul>
+<h3 id="Il-paradosso-del-%22vibe-coding%22">Il paradosso del "vibe coding"<a class="anchor-link" href="#Il-paradosso-del-%22vibe-coding%22">¶</a></h3><p>Il "vibe coding" (programmare a sensazione con l'IA) funziona per:</p>
+<ul>
+<li>Task semplici e standardizzati</li>
+<li>Prototipi veloci</li>
+<li>Codice boilerplate (codice che viene ripetuto più volte all'interno derl programma con piccole variazioni. Necessario ma di basso livello)</li>
+</ul>
+<p>NON funziona per:</p>
+<ul>
+<li>Ricerca originale</li>
+<li>Ottimizzazione di performance</li>
+<li>Debug di problemi complessi</li>
+<li>Comprensione profonda dei risultati</li>
+</ul>
+<h3 id="Competenze-che-l'IA-non-pu%C3%B2-sostituire">Competenze che l'IA non può sostituire<a class="anchor-link" href="#Competenze-che-l'IA-non-pu%C3%B2-sostituire">¶</a></h3><ol>
+<li><strong>Pensiero algoritmico</strong>: Scomporre problemi complessi</li>
+<li><strong>Intuizione numerica</strong>: Capire quando un risultato è sbagliato</li>
+<li><strong>Design di esperimenti computazionali</strong>: Cosa testare e come</li>
+<li><strong>Interpretazione critica</strong>: I numeri hanno senso fisico?</li>
+</ol>
+<h3 id="Un'analogia-dal-laboratorio">Un'analogia dal laboratorio<a class="anchor-link" href="#Un'analogia-dal-laboratorio">¶</a></h3><p>Non usereste uno strumento di misura senza capire:</p>
+<ul>
+<li>Come funziona</li>
+<li>Quali sono i suoi limiti</li>
+<li>Come interpretare le letture</li>
+</ul>
+<p>Il codice è il vostro "strumento di misura computazionale". L'IA può aiutarvi a costruirlo più velocemente, ma dovete capire cosa state costruendo.</p>
+<h3 id="Il-valore-aggiunto-del-fisico-programmatore">Il valore aggiunto del fisico programmatore<a class="anchor-link" href="#Il-valore-aggiunto-del-fisico-programmatore">¶</a></h3><div class="highlight"><pre><span></span><span class="c1"># L'IA genera codice generico</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_particle</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random_position</span><span class="p">()</span>
+
+<span class="c1"># Il fisico sa che serve:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_particle</span><span class="p">(</span><span class="n">temperature</span><span class="p">,</span> <span class="n">mass</span><span class="p">):</span>
+    <span class="c1"># Distribuzione Maxwell-Boltzmann</span>
+    <span class="n">velocity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k_B</span> <span class="o">*</span> <span class="n">temperature</span> <span class="o">/</span> <span class="n">mass</span><span class="p">))</span>
+    <span class="c1"># Equazioni del moto corrette</span>
+    <span class="c1"># Condizioni al contorno fisiche</span>
+    <span class="c1"># ...</span>
+</pre></div>
+<h3 id="Conclusione-pratica">Conclusione pratica<a class="anchor-link" href="#Conclusione-pratica">¶</a></h3><p>L'IA è un <strong>acceleratore</strong>, non un sostituto:</p>
+<ul>
+<li>Vi fa risparmiare tempo sulla sintassi</li>
+<li>Vi aiuta con pattern comuni</li>
+<li>Vi suggerisce soluzioni</li>
+</ul>
+<p>Ma VOI dovete:</p>
+<ul>
+<li>Verificare la correttezza fisica</li>
+<li>Adattare l'algoritmo al vostro problema specifico</li>
+<li>Debuggare quando inevitabilmente qualcosa non funziona</li>
+<li>Spiegare e difendere i vostri risultati</li>
+</ul>
+<p><strong>Pensatela così</strong>: L'IA è come una calcolatrice scientifica avanzata. Utilissima, ma se non sapete la matematica, non saprete né cosa chiederle né se la risposta ha senso.</p>
+<p>Nel mondo della ricerca, dove lavorerete su problemi mai risolti prima, la capacità di programmare e capire il codice non  opzionale - è fondamentale per l'integrità scientifica del vostro lavoro.</p>
+<p>
+     
+</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3a95ba25-9f6f-475f-8d2d-945afe9cb45e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Programma-Soluzione_equazione_secondo-grado">Programma Soluzione_equazione_secondo grado<a class="anchor-link" href="#Programma-Soluzione_equazione_secondo-grado">¶</a></h3><p>$$ a x^2 + b x + c = 0$$
-I valori numerici reali di $a,\, b,\, c$ sono gli input che vengono dati al nostro programma<br/>
-I valori numerici reali della variabile $x$ per cui l'equazione è soddisfatta (a valori fissati di $a,\, b,\, c$) sono l'output che vogliamo che il programma ci fornisca.<p>
-A seconda del valore di $a,\, b,\, c$, si possono verificare diverse situazioni:</p>
-<ul>
-<li>Se $a = b = 0 $:<ul>
-<li>se $c = 0 $ qualsiasi $x$ è soluzione;</li>
-<li>se $c \neq 0 $ nessun $x$ è soluzione.</li>
-</ul>
-</li>
-<li>Se $a = 0$:<ul>
-<li>una sola soluzione $x_1 = -c/b$.</li>
-</ul>
-</li>
-<li>Se $a \neq 0$:<br/>
-Calcoliamo $ d = b^2 -4ac $ e salviamone in memoria il valore.<ul>
-<li>Se $ d \lt 0$ : non ci sono soluzioni reali.</li>
-<li>Se $  d = 0$ : c'è una soluzione $x_1 = -b/(2a)$.</li>
-<li>Se $  d \gt 0$ : ci sono due soluzioni reali $x_{1,2} = (-b\pm\sqrt{d})/(2a)$.<br/>
-Le possiamo calcolare entrambi utilizzando il valore di $ d $ che si trova in memoria.</li>
-</ul>
-</li>
-</ul>
-</p></div>
+<p>
+Il vostro
+<center>
+<h3> Claude Opus 4.1</h3>
+</center>
+</p>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=437417cc-f0f8-45b0-af80-4b68d507fba8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
