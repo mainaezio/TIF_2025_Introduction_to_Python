@@ -7879,7 +7879,7 @@ L'istruzione segue il nome della variabile da cui è separata dal simbolo ':'.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">AU_f5_4</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"**</span><span class="si">{</span><span class="n">AU</span><span class="si">:</span><span class="s2">5.4f</span><span class="si">}</span><span class="s2">**"</span>     <span class="c1"># Stile float larghezza minima di 30 caratteri </span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">AU_f5_4</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"**</span><span class="si">{</span><span class="n">AU</span><span class="si">:</span><span class="s2">5.4f</span><span class="si">}</span><span class="s2">**"</span>       <span class="c1"># Stile float larghezza minima di 5 caratteri </span>
                                  <span class="c1"># con quattro cifre dopo il punto.</span>
                                  <span class="c1"># I caratteri * servono a rendere visibile lo spazio riservato</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">AU_f5_4</span><span class="p">)</span>
@@ -7966,7 +7966,6 @@ più semplice è usare <code>"""</code> (triplo doppio-apice) per delimitare la 
 <span class="nb">print</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="s1">'-'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Table</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> 
-<span class="c1">#    print(f"{Table[i][0]:i8} {Table[i][1]:i8} {Table[i][2]:i8}") </span>
 </pre></div>
 </div>
 </div>
@@ -7983,12 +7982,12 @@ più semplice è usare <code>"""</code> (triplo doppio-apice) per delimitare la 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">Table</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
@@ -8000,25 +7999,6 @@ più semplice è usare <code>"""</code> (triplo doppio-apice) per delimitare la 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"| </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="s2"> |"</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="mi">34</span><span class="o">*</span><span class="s1">'-'</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>----------------------------------
-|   dato 1 |   dato 2 |   dato 3 |
-----------------------------------
-|        1 |        2 |        3 |
-|        5 |        6 |        7 |
-|        8 |        9 |       10 |
-----------------------------------
-</pre>
 </div>
 </div>
 </div>
@@ -8050,7 +8030,6 @@ più semplice è usare <code>"""</code> (triplo doppio-apice) per delimitare la 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Table</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"| </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">^8d</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;8d</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">8d</span><span class="si">}</span><span class="s2"> |"</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="mi">34</span><span class="o">*</span><span class="s1">'-'</span><span class="p">)</span>
-<span class="c1">#    print(f"{Table[i][0]:i8} {Table[i][1]:i8} {Table[i][2]:i8}") </span>
 </pre></div>
 </div>
 </div>
@@ -8081,7 +8060,6 @@ più semplice è usare <code>"""</code> (triplo doppio-apice) per delimitare la 
 <span class="nb">print</span><span class="p">(</span><span class="mi">42</span><span class="o">*</span><span class="s1">'-'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Table</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">12.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">12.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">Table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">12.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> 
-<span class="c1">#    print(f"{Table[i][0]:i8} {Table[i][1]:i8} {Table[i][2]:i8}") </span>
 </pre></div>
 </div>
 </div>
@@ -8472,33 +8450,6 @@ This is a third and last line.</code></pre>
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">f3</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile3.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
 <span class="n">f3</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'This is the first line.</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span><span class="s1">'This is the second line.</span><span class="se">\n</span><span class="s1">'</span><span class="p">,</span><span class="s1">'This is the third and last line.'</span><span class="p">)</span>
-<span class="n">f3</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Un metodo corretto è, per esempio:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">f3</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'myfile3.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
-<span class="n">f3</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'This is the first line.</span><span class="se">\n</span><span class="s1">'</span><span class="o">+</span><span class="s1">'This is the second line.</span><span class="se">\n</span><span class="s1">'</span><span class="o">+</span><span class="s1">'This is the third and last line.'</span><span class="p">)</span>
 <span class="n">f3</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
