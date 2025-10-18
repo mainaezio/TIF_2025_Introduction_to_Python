@@ -7682,7 +7682,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Aggiungere,-inserire,-eliminare-elementi-di-un-array">Aggiungere, inserire, eliminare elementi di un array<a class="anchor-link" href="#Aggiungere,-inserire,-eliminare-elementi-di-un-array">¶</a></h4><p><code>Numpy</code> ha i metodi <code>np.append</code>, <code>np.insert</code>, <code>np.delete</code> che permettono di modificare il numero di elementi di un <code>array</code>. Tutti questi metodi però non agiscono <code>in-place</code> ma creano e ritornano un nuovo <code>array</code>, quindi sono computazionalmente costosi. Per questa ragione è preferibile creare un <code>array</code> con metodi come <code>zeroes</code> e <code>ones</code> e poi modificare i valori.</p>
+<h4 id="Aggiungere,-inserire,-eliminare-elementi-di-un-array">Aggiungere, inserire, eliminare elementi di un array<a class="anchor-link" href="#Aggiungere,-inserire,-eliminare-elementi-di-un-array">¶</a></h4><p><code>Numpy</code> ha i metodi <code>np.append</code>, <code>np.insert</code>, <code>np.delete</code> che permettono di modificare il numero di elementi di un <code>array</code>. Tutti questi metodi però non agiscono <code>in-place</code> ma creano e ritornano un nuovo <code>array</code>, quindi sono computazionalmente costosi. Per questa ragione è preferibile creare un <code>array</code> con metodi come <code>zeroes</code> e <code>ones</code> e poi, eventualmente, modificarne i valori.</p>
 </div>
 </div>
 </div>
@@ -7747,6 +7747,62 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="c1">#np.logspace(1.7, 4.4, 40)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Verifichiamo che ilogaritmi degli elementi generati da <code>logspace</code> sono effettivamente equidistanti:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">al</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">al</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Costruiamo la differenza fra elementi successivi di <code>al</code>:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">al</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">al</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">al</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">al</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -9110,7 +9166,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">numpymethod</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-    <span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'d'</span><span class="p">)</span>  <span class="c1"># dtype = 'd' vuol dire double precision</span>
+    <span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'float64'</span><span class="p">)</span>  <span class="c1"># dtype = 'float64' vuol dire double precision</span>
     <span class="k">return</span> <span class="n">a3</span>
 </pre></div>
 </div>
@@ -9186,7 +9242,7 @@ Esempio: per calcolare i valori del polinomio y = 3* x**3 - 2*x**2 + 1 fra -5 e 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Usare il metodo  <span><code>zeros</code></span> (<span><code>ones</code></span>) per creare una matrice di zeri (uno). Un esempio con 5 righe e 4 colonne:</li>
+<li>Usare il metodo  <span><code>zeros</code></span> (<span><code>ones</code></span>) per creare una matrice di zeri (uno). Un esempio per creare una matrice con 5 righe e 4 colonne:</li>
 </ul>
 </div>
 </div>
