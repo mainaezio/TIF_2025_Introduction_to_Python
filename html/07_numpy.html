@@ -7562,7 +7562,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Numpy-e-gli-array">Numpy e gli array<a class="anchor-link" href="#Numpy-e-gli-array">¶</a></h2><p>La librery NumPy (NUMerical PYthon) fornisce un nuovo tipo di struttura dei dati chiamata <code>array</code>s che permette di eseguire in modo efficiente operazioni su vettori e matrici. Fornisce inoltre diverse  operazioni legate all'algebra lineare (come risolvere sistemi di equazioni lineari, calcolo di autovettori e autovalori). Viene tradizionalmente importata come <code>np</code>.<br/></p>
+<h2 id="Numpy-e-gli-array">Numpy e gli array<a class="anchor-link" href="#Numpy-e-gli-array">¶</a></h2><p>La librery NumPy (NUMerical PYthon) fornisce un nuovo tipo di struttura dei dati chiamata <code>array</code>s che permette di eseguire in modo efficiente operazioni su vettori e matrici. Fornisce le  operazioni legate all'algebra lineare (come risolvere sistemi di equazioni lineari, calcolo di autovettori e autovalori). Fornisce le rotine per la generazione di numeri casuali. Viene tradizionalmente importata come <code>np</code>.<br/></p>
 <p>Un Numpy array <em>sembra</em> molto simile a una lista ma può contenere solo elementi di un singolo tipo (mentre una lista può contenere oggetti di tipo diverso). Questo significa che gli array possono essere scritti in memoria in modo più efficiente. Gli array sono la struttura di dati migliore per i calcoli numerici in cui spesso si ha a che fare con vettori e matrici di tipo omogeneo.</p>
 <p>Vettori, matrici bidimensionali e matrici con più di due indici sono tutti chiamati “arrays” in NumPy.</p>
 <h3 id="Vettori-(1d-arrays)">Vettori (1d-arrays)<a class="anchor-link" href="#Vettori-(1d-arrays)">¶</a></h3><p>La struttura dati data che useremo più spesso è il vettore. Qualche esempio di come crearne uno:</p>
@@ -7625,7 +7625,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Creazione di un vettore usando "arange":</li>
+<li>Creazione di un vettore usando "arange" (usando numeri reali per gli estremi e il passo):</li>
 </ul>
 </div>
 </div>
@@ -7955,7 +7955,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -11019,9 +11019,6 @@ Esempi:</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Sezione su broadcasting</strong>: Manca una spiegazione del broadcasting, concetto fondamentale per capire come NumPy gestisce operazioni tra array di dimensioni diverse.</li>
-</ol>
 <h1 id="Sommario-7:-NumPy---La-Matematica-Vettorizzata">Sommario 7: NumPy - La Matematica Vettorizzata<a class="anchor-link" href="#Sommario-7:-NumPy---La-Matematica-Vettorizzata">¶</a></h1><h2 id="%F0%9F%8E%AF-Il-Concetto-Fondamentale">🎯 Il Concetto Fondamentale<a class="anchor-link" href="#%F0%9F%8E%AF-Il-Concetto-Fondamentale">¶</a></h2><p><strong>NumPy trasforma Python in un linguaggio per il calcolo scientifico</strong></p>
 <p>La differenza cruciale:</p>
 <ul>
