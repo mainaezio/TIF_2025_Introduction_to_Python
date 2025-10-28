@@ -9021,7 +9021,7 @@ id of r1: 002
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Introduciamo due classi (<em>Circle</em> and <em>Rectangle</em>), che estendono <em>Shape</em> e contengono gli attributi necessari per calcolare area e perimetroa. I metodi generici vengono sovrascritti per ottenere il risultato corretto.
-L'attributo <em>name</em> viene inizializzato al volore voluto usando il costruttore super().</p>
+L'attributo <em>name</em> viene inizializzato al valore voluto usando il costruttore super().</p>
 </div>
 </div>
 </div>
@@ -9113,7 +9113,7 @@ L'attributo <em>name</em> viene inizializzato al volore voluto usando il costrut
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">my_circle</span><span class="p">)</span>      <span class="c1"># perch&amp;eacute; stampa __main__.Circle? </span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">my_circle</span><span class="p">)</span>      <span class="c1"># perchè stampa __main__.Circle? </span>
 </pre></div>
 </div>
 </div>
@@ -9209,7 +9209,7 @@ my_circle name: 'circle'
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Scriviamo una funzione <em>print_shape</em> che prende un esemplare di <em>Shape</em> e stampa il suo nome, l'area e il perimetro. Poi le pasiamo gli oggetti che abbiamo creato.</p>
+<p>Scriviamo una funzione <em>print_shape</em> che prende un esemplare di <em>Shape</em> e stampa il suo nome, l'area e il perimetro. Poi le passiamo gli oggetti che abbiamo creato.</p>
 </div>
 </div>
 </div>
@@ -9293,14 +9293,7 @@ rectangle area: 6.00, 10.00 perimeter
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Il notebook è ben strutturato per introdurre i concetti OOP. Ecco i miei suggerimenti di miglioramento:</p>
-<h2 id="Suggerimenti-di-miglioramento">Suggerimenti di miglioramento<a class="anchor-link" href="#Suggerimenti-di-miglioramento">¶</a></h2><h3 id="1.-Correzioni-necessarie">1. <strong>Correzioni necessarie</strong><a class="anchor-link" href="#1.-Correzioni-necessarie">¶</a></h3><ul>
-<li>Nell'esempio finale (Sezione 1.4, Esempio 5), ci sono errori di battitura:<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"my_ircle area: </span><span class="si">{</span><span class="n">my_circle</span><span class="o">.</span><span class="n">area</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, perimeter: </span><span class="si">{</span><span class="n">circle</span><span class="o">.</span><span class="n">perimeter</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="c1"># dovrebbe essere my_circle invece di my_ircle e circle</span>
-</pre></div>
-</li>
-<li>Le variabili <code>circle</code> e <code>rectangle</code> non sono definite ma vengono usate. Dovrebbero essere <code>my_circle</code> e <code>my_rectangle</code>.</li>
-</ul>
-<h3 id="2.-Chiarimenti-concettuali">2. <strong>Chiarimenti concettuali</strong><a class="anchor-link" href="#2.-Chiarimenti-concettuali">¶</a></h3><ul>
+<h2 id="Suggerimenti-di-miglioramento">Suggerimenti di miglioramento<a class="anchor-link" href="#Suggerimenti-di-miglioramento">¶</a></h2><h3 id="2.-Chiarimenti-concettuali">2. <strong>Chiarimenti concettuali</strong><a class="anchor-link" href="#2.-Chiarimenti-concettuali">¶</a></h3><ul>
 <li><p><strong>super()</strong>: Il commento "super() va chiarito" è corretto. Suggerirei di aggiungere una spiegazione:</p>
 <div class="highlight"><pre><span></span><span class="c1"># super() permette di chiamare metodi della classe padre</span>
 <span class="c1"># super().__init__() chiama il costruttore della classe padre</span>
