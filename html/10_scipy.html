@@ -8120,23 +8120,6 @@ In questo caso la variabile su cui integrare deve essere al primo posto fra le v
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">vf</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">res2</span> <span class="o">=</span> <span class="n">trapezoid</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-<span class="n">res2</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8312,7 +8295,7 @@ Un invito alla prudenza:
 <br/> <br/>
 Per risolvere  equazioni  differenziali ordinarie del tipo
 $$\frac{\mathrm{d}y}{\mathrm{d}t}(t) = f(y,t)$$</p>
-<p>con condizione iniziale $y(t_0)=y_0$, oppure un sistema di equazioni tali equazioni, si può usare la  funzione <code>odeint</code> di <code>scipy</code>. Ecco un esempio (<code>useodeint.py</code>) per determinare la soluzione
+<p>con condizione iniziale $y(t_0)=y_0$, oppure un sistema di tali equazioni, si può usare la  funzione <code>odeint</code> di <code>scipy</code>. Ecco un esempio (<code>useodeint.py</code>) per determinare la soluzione
 $y(t)$, per $t$ nell'intervallo $[0,2]$
 dell'equazione  differenziale:
 $$\frac{\mathrm{d}y}{\mathrm{d}t}(t) = -2yt$$
